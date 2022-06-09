@@ -14,6 +14,11 @@ class Giohang extends CI_Controller {
         $this->load->model('frontend/Mconfig');
         $this->load->model('frontend/Mdistrict');
         $this->load->model('frontend/Mtinhthanhpho');
+        $this->load->model('frontend/Mconfiguration');
+        $this->load->model('frontend/Msocial');
+        $this->load->model('frontend/Mlocation');
+        $this->load->model('frontend/Mpage');
+        $this->load->model('frontend/Mpagetype');
     }
     
 	public function index(){

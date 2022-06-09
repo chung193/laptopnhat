@@ -112,7 +112,7 @@ $(document).ready(()=>{
 	<div class="container">
 		<div class="title_module_main heading-bar e-tabs not-dqtab d-flex justify-content-between align-items-center flex-wrap">
 			<h2 class="heading-bar__title">
-				<a class="link" href="<?= $val['name'] ?>" title="<?= $val['name'] ?>">
+				<a class="link" href="<?= base_url().'san-pham/'.$val['name'] ?>" title="<?= $val['name'] ?>">
 					<?= $val['name'] ?>
 				</a>
 			</h2>
@@ -185,7 +185,7 @@ $(document).ready(()=>{
 										<span class="price"><?= $this->format->money($value['price'])?></span>			
 									</div>
 									<input class="hidden" type="hidden" name="id" value="1082488448">
-									<button data-href="/products/apple-watch-se-gps" class="product-item-btn btn left-to" title="Tùy chọn" type="button" onclick="onAddCart(<?php echo $value['id']  ?>)">
+									<button data-href="<?= $value['alias']?>" class="product-item-btn btn left-to" title="Tùy chọn" type="button" onclick="onAddCart(<?php echo $value['id']  ?>)">
 									<svg class="icon">
 										<use xlink:href="#icon-cart"></use>
 									</svg>			

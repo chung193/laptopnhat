@@ -1,3 +1,36 @@
+
+
+<section class="bread-crumb mb-3 mt-3">
+	<span class="crumb-border"></span>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 a-left">
+				<ul class="breadcrumb m-0 px-0">					
+					<li>
+						<a href="<?= base_url()?>" target="_self"><span>Trang chủ</span></a>
+						<span class="mr_lr">&nbsp;/&nbsp;</span>		
+					</li>
+					
+					<li>
+						<a href="<?= base_url()?>san-pham" target="_self">
+							<span>Sản phẩm</span>
+						</a>
+						<span class="mr_lr">&nbsp;/&nbsp;</span>
+					</li>
+					
+					
+					<li class="active">
+						<span><?php echo $row['name'] ?>	</span>
+					</li>
+					
+					
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section class="section mt-0 mb-lg-4 mb-3 mb-sm-0">
 		<div class="container">
 			<div class="section wrap-padding-15 wp_product_main m-0">
@@ -7,37 +40,41 @@
 							<div class="pb-3 pt-0col_large_default large-image">
 								<div id="gallery_1">
 
+								<?php 
+									$arr = explode("#", $row['img']);
+								?>
 								<div class="product-slick">
-									<img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/285960952_4776048759173848_2034377260423688542_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0debeb&_nc_ohc=w4Cp60XJAUQAX9K4xlM&_nc_ht=scontent.fhan5-10.fna&oh=00_AT8XaM6KZx93b2bziOQMLpTTVybjjkIJq3zcg5dEGruNdg&oe=62A3A032">
-									<img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/285960952_4776048759173848_2034377260423688542_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0debeb&_nc_ohc=w4Cp60XJAUQAX9K4xlM&_nc_ht=scontent.fhan5-10.fna&oh=00_AT8XaM6KZx93b2bziOQMLpTTVybjjkIJq3zcg5dEGruNdg&oe=62A3A032">
-									<img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/285960952_4776048759173848_2034377260423688542_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0debeb&_nc_ohc=w4Cp60XJAUQAX9K4xlM&_nc_ht=scontent.fhan5-10.fna&oh=00_AT8XaM6KZx93b2bziOQMLpTTVybjjkIJq3zcg5dEGruNdg&oe=62A3A032">
-									<img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/285960952_4776048759173848_2034377260423688542_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0debeb&_nc_ohc=w4Cp60XJAUQAX9K4xlM&_nc_ht=scontent.fhan5-10.fna&oh=00_AT8XaM6KZx93b2bziOQMLpTTVybjjkIJq3zcg5dEGruNdg&oe=62A3A032">
-									<img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/285960952_4776048759173848_2034377260423688542_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0debeb&_nc_ohc=w4Cp60XJAUQAX9K4xlM&_nc_ht=scontent.fhan5-10.fna&oh=00_AT8XaM6KZx93b2bziOQMLpTTVybjjkIJq3zcg5dEGruNdg&oe=62A3A032">
+									<?php  foreach($arr as $val){?>
+									<div>
+										<img src="<?= base_url().'public/images/products/'.$val ?>">
+									</div>
+									<?php } ?>
 								</div>
 
+								</div>
+							</div>
+
+							<div class="share-group d-flex justify-content-center align-items-center mt-5">
+								<strong class="share-group__heading mr-3">Chia sẻ</strong>
+								<div class="share-group__list">
+									<a class="share-group__item facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=<?= base_url().$row['alias']?>">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+									<a class="share-group__item messenger d-lg-none" target="_blank" href="fb-messenger://share/?link=<?= base_url().$row['alias']?>">
+										<i class="fab fa-facebook-messenger"></i>
+									</a>
+									<a class="share-group__item pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?= base_url().$row['alias']?>">
+										<i class="fab fa-pinterest-p"></i>
+									</a>
+									<a class="share-group__item twitter" target="_blank" href="http://twitter.com/share?text=<?= base_url().$row['alias']?>">
+										<i class="fab fa-twitter"></i>
+									</a>
 								</div>
 							</div>	
+
 						</div>
 			
-						<div class="share-group d-flex justify-content-center align-items-center mt-5">
-							<strong class="share-group__heading mr-3">Chia sẻ</strong>
-							<div class="share-group__list">
-								<a class="share-group__item facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=<?= base_url().$row['alias']?>">
-									<i class="fab fa-facebook-f"></i>
-								</a>
-								<a class="share-group__item messenger d-lg-none" target="_blank" href="fb-messenger://share/?link=<?= base_url().$row['alias']?>">
-									<i class="fab fa-facebook-messenger"></i>
-								</a>
-								<a class="share-group__item pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?= base_url().$row['alias']?>">
-									<i class="fab fa-pinterest-p"></i>
-								</a>
-								<a class="share-group__item twitter" target="_blank" href="http://twitter.com/share?text=<?= base_url().$row['alias']?>">
-									<i class="fab fa-twitter"></i>
-								</a>
-							</div>
-						</div>	
-
-</div>
+				
 						<div class="col-xs-12 col-lg-6 col-xl-5 details-pro bg-white py-3 mt-3 mt-lg-0 px-3">
 							<div class="">
 								<div class="">
@@ -123,12 +160,40 @@
 								</button>
 							</div>
 						<?php } ?>
-									
-			<?php $config = $this->Mconfig->all();?>
+
+						<div class="form_button_details w-100">
+		<div class="form_product_content type1">
+			<div class="soluong soluong_type_1 show">
+				<label>Số lượng:</label>
+				<div class="custom input_number_product custom-btn-number ">									
+					<button class="btn btn_num num_1 button button_qty" onclick="var result = document.getElementsByClassName('pd-qtym')[0];var stick_result = document.getElementsByClassName('pd-qtym')[1]; var qtypro = result.value; if(!isNaN( qtypro ) &amp;&amp; qtypro > 1){result.value--;stick_result.value--;}else{return false;}" type="button">
+						<svg class="icon">
+	<use xlink:href="#icon-minus"></use>
+</svg></button>
+					<input type="text" id="qtym" name="quantity" value="1" maxlength="3" class="form-control prd_quantity pd-qtym" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="var stick_result = document.getElementsByClassName('pd-qtym')[1];if(this.value == 0){this.value=1;}else{stick_result.value=this.value}">
+					<button class="btn btn_num num_2 button button_qty" onclick="var result = document.getElementsByClassName('pd-qtym')[0];var stick_result = document.getElementsByClassName('pd-qtym')[1]; var qtypro = result.value; if( !isNaN( qtypro )) result.value++;stick_result.value++;return false;" type="button">
+						<svg class="icon">
+							<use xlink:href="#icon-plus"></use>
+						</svg>					
+					</button>
+					</div>
+				</div>
+				<div class="button_actions">				
+									<button type="submit" class="btn btn_base buynow" onclick="onAddCart(<?php echo $row['id']  ?>)">MUA NGAY<span>Giao hàng tận nơi hoặc nhận tại cửa hàng</span></button>
+									<div style="display: flex; flex-wrap: wrap; width: 100%">
+									<button type="submit" class="btn btn_add_cart btn-cart add_to_cart" onclick="onAddCart(<?php echo $row['id']  ?>)">THÊM VÀO GIỎ</button>
+								</div>
+							</div>
+
+																			
+								<?php $config = $this->Mconfig->all();?>
 			<p class="product-hotline mb-0 text-center">
 				Gọi đặt mua <a href="tel:<?= $config['phone_for_sale']?>"><?= $config['phone_for_sale']?></a> (<?= $config['timework']?>)
 			</p>
-			
+				
+			</div>
+		</div>
+									
 		</div>
 	</div>
 </div>									</form>
@@ -264,7 +329,7 @@ $(document).ready(()=>{
 							</div>
 					</div>
 					<div class="product-comment product-v-desc">
-						<h3>Bình luận</h3>
+						<!-- <h3>Bình luận</h3> -->
 						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
 							<!-- <?php if(!$this->session->userdata('session24hStore')):?>
 								<p>Bạn chưa đăng nhập, nhấn vào <a href="dang-nhap"> đây </a> để đăng nhập !</p>

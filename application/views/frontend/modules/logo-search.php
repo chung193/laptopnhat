@@ -206,7 +206,7 @@
 	
 	<li class="cartgroup ml-3">
 		<div class="mini-cart text-xs-center">
-			<a class="img_hover_cart" href="<?= base_url() ?>cart" title="Giỏ hàng">  
+			<a class="img_hover_cart" href="<?= base_url() ?>gio-hang" title="Giỏ hàng">  
 				<img src="<?= base_url()?>/public/techstore/EGA Techstore_files/cart-icon.png" width="24" height="24" alt="cart_icon">
 
 				<span class="ml-2 d-xl-block d-none">Giỏ hàng</span>
@@ -221,9 +221,18 @@
 				?>
 				</span>
 			</a>
-			<div class="top-cart-content card ">
-				<ul id="cart-sidebar" class="mini-products-list count_li list-unstyled"><div class="no-item"><p>Không có sản phẩm nào.</p></div></ul>
-			</div>
+			
+					<?php 
+					if($this->session->userdata('cart')){
+						$val = $this->session->userdata('cart');
+					}else{
+						echo '<div class="top-cart-content card ">
+						<ul id="cart-sidebar" class="mini-products-list count_li list-unstyled"><div class="no-item"><p>Không có sản phẩm nào.</p></div></ul>
+						</div>';
+					}
+					?>
+					
+				
 		</div>
 	</li>
 </ul>

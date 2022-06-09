@@ -28,7 +28,9 @@
 <meta property="og:description" content="">
 <meta property="og:url" content="<?= base_url() ?>">
 <meta property="og:site_name" content="Macstore">
-
+<link rel="stylesheet" href="https://theme.hstatic.net/200000458129/1000869299/14/cartpage.css?v=59">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- <link rel="icon" href="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/240603177_246778910615649_3890510487922753768_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FtLNUgbL_0kAX9DUPDI&_nc_ht=scontent.fhan5-10.fna&oh=00_AT_u56HK3D9LDWbrFPvpEbAM8GJRxEBsg0USaOiuRW1V2w&oe=62A1B5C6" type="image/x-icon">
 <link rel="dns-prefetch" href="<?= base_url() ?>">
 <link rel="dns-prefetch" href="https://hstatic.net/">

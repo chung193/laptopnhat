@@ -61,6 +61,9 @@ class Product extends CI_Controller {
 				'status'=>$_POST['status'],
 				'access'=>$_POST['access']
 			);
+			
+
+
 			$config = array();
 	         //thuc mục chứa file
          	$config['upload_path']   = './public/images/products/';
@@ -106,6 +109,23 @@ class Product extends CI_Controller {
             }else{
             	$mydata['avatar']='default.png';
             }
+
+			$config['upload_path']          = './public/images/products/';
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 2000;
+            $this->load->library('upload', $config);
+			if ( $this->upload->do_upload('img'))
+			{
+				$data = $this->upload->data();
+				if(strlen($data['file_name'])!=0)
+				{
+					$mydata['avatar']=$data['file_name'];
+				}
+			}
+			else
+			{
+				$mydata['avatar']='default.png';
+			}
 
 			//print_r($mydata); die();
 			$this->Mproduct->product_insert($mydata);

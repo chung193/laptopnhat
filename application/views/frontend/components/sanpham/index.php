@@ -1,6 +1,26 @@
 
 
 
+<section class="bread-crumb mb-3 mt-3">
+	<span class="crumb-border"></span>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 a-left">
+				<ul class="breadcrumb m-0 px-0">					
+					<li>
+						<a href="<?= base_url()?>" target="_self"><span>Trang chủ</span></a>
+						<span class="mr_lr">&nbsp;/&nbsp;</span>		
+					</li>	
+					
+					<li class="active">
+						<span>Tất cả sản phẩm</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section class="section wrap_background">
 	<div class="container">
 		<div class="bg_collection section">
@@ -20,7 +40,8 @@
 						</div>
 					</div>
 					<div class="category-products products">
-		<div class=" d-flex justify-content-between align-items-baseline">
+						
+<div class=" d-flex justify-content-between align-items-baseline mb-2">
 	<div class="sortPagiBar">
 	<div class="sort-cate clearfix">
 		<div id="sort-by" class="d-flex align-items-baseline">
@@ -128,7 +149,7 @@
 		<span class="product-promo-tag product-promo-tag--1 product-promo-tag--image" style="--color: #333; --background: #f0f0f0; --border-color: #f0f0f0">
 			<img src="<?= base_url() ?>public/images/products/<?= $row['img'] ?>" alt="<?= $row['name'] ?>">
 		</span>
-		<a class="image_thumb pos-relative embed-responsive embed-responsive-1by1" href="<?= base_url() ?>san-pham/<?= $row['alias'] ?>" title="<?= $row['name'] ?>">
+		<a class="image_thumb pos-relative embed-responsive embed-responsive-1by1" href="<?= base_url() ?><?= $row['alias'] ?>" title="<?= $row['name'] ?>">
 			<img class="product-thumbnail__img product-thumbnail__img--primary" width="480" height="480" style="--image-scale: 1;" 
 				src="<?= base_url() ?>public/images/products/<?= $row['avatar'] ?>" alt="<?= $row['name'] ?>">
 			<img class="product-thumbnail__img product-thumbnail__img--secondary" width="480" height="480" style="--image-scale: 1;" 
@@ -154,7 +175,7 @@
 	</div>
 	<div class="product-info">
 			<h3 class="product-name">
-				<a href="/products/thong-so-ky-thuat-va-khuyen-mai" title="<?= $row['name'] ?>"><?= $row['name'] ?></a>
+				<a href="<?= base_url()?><?= $row['alias'] ?>" title="<?= $row['name'] ?>"><?= $row['name'] ?></a>
 			</h3>
 			<div class="product-rating">
 	<div class="starbaprv-widget starbaprv-preview-badge starbaprv-preview-badge--with-link" data-id="1037739911" data-url="thong-so-ky-thuat-va-khuyen-mai">
@@ -228,22 +249,24 @@
 
 								
 		
-	<div class="section pagenav">
+	<!-- <div class="section pagenav">
 		
 		<nav class="clearfix relative nav_pagi w_100">
-	<ul class="pagination clearfix float-right">
-				  
-		<li class="page-item disabled"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
-		<li class="active page-item disabled"><a class="page-link" href="javascript:;">1</a></li>		
-		<li class="page-item"><a class="page-link" onclick="doSearch(2)" href="?&amp;page=2&amp;view=grid">2</a></li>		
-		<li class="page-item"><a class="page-link" onclick="doSearch(3)" href="?&amp;page=3&amp;view=grid">3</a></li>
-		<li class="page-item"><a class="page-link" href="javascript:;">…</a></li>			
-		<li class="page-item"><a class="page-link" onclick="doSearch(9)" href="?&amp;page=9&amp;view=grid">9</a></li>
-		<li class="page-item hidden-xs"><a class="page-link" onclick="doSearch(2)" href="?&amp;page=2&amp;view=grid"><i class="fa fa-angle-right" aria-hidden="true"></i>
-		</a></li>
-		
-	</ul>
-</nav>
+			<ul class="pagination clearfix float-right">
+						
+				<li class="page-item disabled"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+				<li class="active page-item disabled"><a class="page-link" href="javascript:;">1</a></li>		
+				<li class="page-item"><a class="page-link" onclick="doSearch(2)" href="?&amp;page=2&amp;view=grid">2</a></li>		
+				<li class="page-item"><a class="page-link" onclick="doSearch(3)" href="?&amp;page=3&amp;view=grid">3</a></li>
+				<li class="page-item"><a class="page-link" href="javascript:;">…</a></li>			
+				<li class="page-item"><a class="page-link" onclick="doSearch(9)" href="?&amp;page=9&amp;view=grid">9</a></li>
+				<li class="page-item hidden-xs"><a class="page-link" onclick="doSearch(2)" href="?&amp;page=2&amp;view=grid"><i class="fa fa-angle-right" aria-hidden="true"></i>
+				</a></li>
+				
+			</ul>
+		</nav>
+	</div> -->
+
 <script>
 	
 	var cuPage = 1

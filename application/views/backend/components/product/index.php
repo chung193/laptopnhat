@@ -81,7 +81,7 @@
 											<td class="text-center" style="width:20px"><input name="checkboxid[]" type="checkbox" value="$id"></td>
 											<td class="text-center"><?php echo $val['id'] ?></td>
 											<td style="width:50px">
-												<img src="public/images/products/<?php echo $val['img'] ?>" alt="<?php echo $val['name'] ?>" class="img-responsive">
+												<img src="public/images/products/<?php echo $val['avatar'] ?>" alt="<?php echo $val['name'] ?>" class="img-responsive">
 											</td>
 											<td><a href="<?php echo base_url() ?>admin/product/update/<?php echo $val['id'] ?>"><?php echo $val['name'] ?>(<?php echo $val['number'] ?>)</a></td>
 											<?php 
