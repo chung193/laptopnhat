@@ -46,6 +46,18 @@ $route['product/recyclebin'] ='product/recyclebin';
 $route['product/trash/(:num)'] ='product/trash/$1';
 $route['product/recyclebin/(:num)'] ='product/recyclebin/$1';
 
+
+$route['admin/product_option'] ='admin/product_option';
+$route['admin/product_option/(:num)'] ='admin/product_option/index/$1';
+$route['product_option/insert'] ='product/insert';
+$route['product_option/status/(:num)'] ='product_option/status/$1';
+$route['product_option/update/(:num)'] ='product_option/update/$1';
+$route['product_option/import/(:num)'] ='product_option/import/$1';
+$route['product_option/recyclebin'] ='produc_option/recyclebin';
+$route['product_option/trash/(:num)'] ='product_option/trash/$1';
+$route['product_option/recyclebin/(:num)'] ='product_option/recyclebin/$1';
+
+
 $route['admin/producer'] ='admin/producer';
 $route['admin/producer/(:num)'] ='admin/producer/index/$1';
 $route['producer/insert'] ='producer/insert';

@@ -20,7 +20,7 @@ class Dangnhap extends CI_Controller {
             $password = md5($_POST['password']);
             if($this->Mcustomer->customer_login($email, $password)!=FALSE){
                 $row = $this->Mcustomer->customer_login($email, $password);
-                $this->session->set_userdata('session24hStore',$row);
+                $this->session->set_userdata('sessionMacStore',$row);
                 $this->session->set_userdata('id',$row['id']);
                 redirect('/trang-chu','refresh');
             }else{
@@ -30,14 +30,14 @@ class Dangnhap extends CI_Controller {
                 $this->load->view('frontend/layout',$this->data);
             }
         }else{
-            $this->data['title']='24hStore - Đăng nhập tài khoản';
+            $this->data['title']='MacStore - Đăng nhập tài khoản';
             $this->data['view']='dangnhap';
             $this->load->view('frontend/layout',$this->data);
         }     
     }
 
     public function dangxuat(){
-        $array_items = array('user', 'fullname', 'id', 'access', 'cart','session24hStore');
+        $array_items = array('user', 'fullname', 'id', 'access', 'cart','sessionMacStore');
         $this->session->unset_userdata($array_items);
         //$this->session->sess_destroy();
         redirect('trang-chu','refresh');
@@ -74,7 +74,7 @@ class Dangnhap extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'sale.24hstore@gmail.com';
+            $config['smtp_user']    = 'sale.MacStore@gmail.com';
             $config['smtp_pass']    = 'jgqunljqbtoiervp';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
@@ -83,17 +83,17 @@ class Dangnhap extends CI_Controller {
             $config['validation'] = TRUE; // bool whether to validate email or not      
             $this->email->initialize($config);
             $this->email->set_newline("\r\n");
-            $this->email->from('24hstore@gmail.com', '24hStore');
+            $this->email->from('MacStore@gmail.com', 'MacStore');
             $list = array('ngotrungphat@gmail.com');
             $this->email->to($list);
-            $this->email->subject('Hệ thống 24hStore');
+            $this->email->subject('Hệ thống MacStore');
             $this->email->message('Người dùng '.$this->input->post('username').' vừa trở thành thành viên trên website của bạn !');
             if ($this->email->send()) {
                 $this->data['msg']='Đăng ký thành công !';
                 redirect('dang-nhap','refresh');
             } 
         }  
-        $this->data['title']='24hStore - Đăng ký tài khoản';   
+        $this->data['title']='MacStore - Đăng ký tài khoản';   
         $this->data['view']='dangky';
         $this->load->view('frontend/layout',$this->data);  
     }

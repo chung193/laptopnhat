@@ -27,7 +27,7 @@
 		            	<li><a href="lien-he">Liên hệ</a></li>
 		            	<li><a href="thong-tin-tai-khoan">Tài khoản</a></li>
 						<?php 
-							if($this->session->userdata('session24hStore')){
+							if($this->session->userdata('sessionMacStore')){
 								echo "<li><a href='dang-xuat'>Thoát</a></li>";
 							}else{
 								echo "<li><a href='dang-ky'>Đăng ký</a></li>";
@@ -42,7 +42,7 @@
 		            	<li><a href="dang-nhap">Đăng nhập</a></li> -->
 		            	<li><a href="thong-tin-tai-khoan">Tài khoản</a></li>
 		            	<?php 
-							if($this->session->userdata('session24hStore')){
+							if($this->session->userdata('sessionMacStore')){
 								echo "<li><a href='dang-xuat'>Thoát</a></li>";
 							}else{
 								echo "<li><a href='dang-ky'>Đăng ký</a></li>";

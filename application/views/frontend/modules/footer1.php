@@ -36,7 +36,7 @@
                             </li>
                             <li class="clearfix">
                                 <i class="fa fa-envelope"></i>
-                                <span><a href="mailto:sale.24hstore@gmail.com">sale.24hstore@gmail.com</a></span>
+                                <span><a href="mailto:sale.MacStore@gmail.com">sale.MacStore@gmail.com</a></span>
                             </li>
                         </ul>
                     </div>

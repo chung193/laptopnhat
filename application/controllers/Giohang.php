@@ -28,7 +28,7 @@ class Giohang extends CI_Controller {
 	}
 
     public function checkout(){
-        if($this->session->userdata('session24hStore')){
+        if($this->session->userdata('sessionMacStore')){
             redirect('info-order','refresh');
         }else{
             $d=getdate();
@@ -96,8 +96,8 @@ class Giohang extends CI_Controller {
                     $idCustomer=$info['id'];
                 }
             }else{
-                if($this->session->userdata('session24hStore')){
-                    $info=$this->session->userdata('session24hStore');
+                if($this->session->userdata('sessionMacStore')){
+                    $info=$this->session->userdata('sessionMacStore');
                     $idCustomer=$info['id'];
                 }
             }
@@ -160,7 +160,7 @@ class Giohang extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'sale.24hstore@gmail.com';
+            $config['smtp_user']    = 'sale.MacStore@gmail.com';
             $config['smtp_pass']    = 'jgqunljqbtoiervp';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
@@ -169,10 +169,10 @@ class Giohang extends CI_Controller {
             $config['validation'] = TRUE; // bool whether to validate email or not      
             $this->email->initialize($config);
             $this->email->set_newline("\r\n");
-            $this->email->from('24hstore@gmail.com', '24hStore');
+            $this->email->from('MacStore@gmail.com', 'MacStore');
             $list = array('ngotrungphat@gmail.com');//Mặc định là email của admin
             $this->email->to($list);
-            $this->email->subject('Hệ thống 24hStore');
+            $this->email->subject('Hệ thống MacStore');
             $this->email->message('Website của bạn vừa nhận được một đơn hàng mới, đăng nhập trang quản trị để xem chi tiết !');
             if ($this->email->send()) {
                 $array_items = array('cart');
@@ -188,9 +188,9 @@ class Giohang extends CI_Controller {
     }
 
     public function thankyou(){
-        if($this->session->userdata('info-customer')||$this->session->userdata('session24hStore')){
-            if($this->session->userdata('session24hStore')){
-                $val = $this->session->userdata('session24hStore');
+        if($this->session->userdata('info-customer')||$this->session->userdata('sessionMacStore')){
+            if($this->session->userdata('sessionMacStore')){
+                $val = $this->session->userdata('sessionMacStore');
             }else{
                 $val = $this->session->userdata('info-customer');
             }
@@ -212,7 +212,7 @@ class Giohang extends CI_Controller {
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'sale.24hstore@gmail.com';
+            $config['smtp_user']    = 'sale.MacStore@gmail.com';
             $config['smtp_pass']    = 'jgqunljqbtoiervp';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
@@ -221,10 +221,10 @@ class Giohang extends CI_Controller {
             $config['validation'] = TRUE; // bool whether to validate email or not      
             $this->email->initialize($config);
             $this->email->set_newline("\r\n");
-            $this->email->from('24hstore@gmail.com', '24hStore');
+            $this->email->from('MacStore@gmail.com', 'MacStore');
             $list = array($val['email']);//Mặc định là email của admin
             $this->email->to($list);
-            $this->email->subject('Hệ thống 24hStore');
+            $this->email->subject('Hệ thống MacStore');
             $body = $this->load->view('frontend/modules/email',$data,TRUE);
             $this->email->message($body); 
             $this->email->send();

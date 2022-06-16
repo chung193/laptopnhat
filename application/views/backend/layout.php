@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="public/css/_all-skins.min.css">
 <!--   <link rel="stylesheet" href="public/css/style.css"> -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
   <script src="public/js/loader.js"></script>
   <script src="public/ckeditor/ckeditor.js"></script>
@@ -62,5 +63,12 @@
 	<script src="public/js/bootstrap.js"></script>
 	<!-- AdminLTE App -->
 	<script src="public/js/app.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+        $('.js-select-product').select2();
+    });
+  </script>
 </body>
 </html>

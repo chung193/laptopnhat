@@ -8,7 +8,7 @@
                 <div class="checkout-header _block bg-pri hidden-xs">
                     <div class="checkout-header _container">
                         <a href="#" class="checkout-header _logo">
-                            <!-- <h1 class="color-fff">24hStore</h1> -->
+                            <!-- <h1 class="color-fff">MacStore</h1> -->
                         </a>
                         <div class="checkout-header _progress-bar">
                             <ol class="step-breadcrumb _list">
@@ -33,8 +33,8 @@
                                     $data=$this->session->userdata('info-customer');
                                     echo $data['email'];
                                 }else{
-                                    if($this->session->userdata('session24hStore')){
-                                    $data=$this->session->userdata('session24hStore');
+                                    if($this->session->userdata('sessionMacStore')){
+                                    $data=$this->session->userdata('sessionMacStore');
                                     echo $data['email'];
                                 }
                                 }

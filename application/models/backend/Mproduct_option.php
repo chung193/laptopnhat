@@ -1,93 +1,86 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Mproduct extends CI_Model {
+class Mproduct_option extends CI_Model {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table = $this->db->dbprefix('product');
+		$this->table = $this->db->dbprefix('product_option');
 	}
 
-	public function product_sanpham_count()
+	public function product_option_sanpham_count()
     {
-        $this->db->where('status', 1);
-        $this->db->where('trash', 1);
+       
         $query = $this->db->get($this->table);
         return count($query->result_array());
     }
 
-	public function all()
-    {
-        $this->db->where('status', 1);
-        $this->db->where('trash', 1);
-        $query = $this->db->get($this->table);
-        return $query->result_array();
-    }
-
-    public function product_count_parentid($catid)
+    public function product_option_count_parentid($catid)
     {
     	$this->db->where('catid', $catid);
-    	$this->db->where('status', 1);
-        $this->db->where('trash', 1);
+    	
         $query = $this->db->get($this->table);
         return count($query->result_array());
     }
 
-    public function product_sanpham($limit,$first)
+    public function product_option_sanpham($limit,$first)
     {
-        $this->db->where('trash', 1);
-        $this->db->order_by('id', 'desc');
+        $this->db->select('db_product.*, db_product_instance.*, db_product_option.*, db_product_option.sale as option_sale,db_product_option.price as option_price, db_product_option.price_sale as option_pricesale');
+		$this->db->join('db_product_instance', 'db_product_instance.id_option =  db_product_option.id');
+		$this->db->join('db_product', 'db_product.id =  db_product_instance.id_product');
         $query = $this->db->get($this->table, $limit,$first);
         return $query->result_array();
     }
 
-	public function product_detail($id)
+	public function product_option_detail($id)
     {
-        $this->db->where('trash', 1);
+        
         $this->db->where('id', $id);
         $query = $this->db->get($this->table);
         return $query->row_array();   
     }
 
-    public function product_delete_detail($id)
+    public function product_option_delete_detail($id)
     {
         $this->db->where('id', $id);
         $query = $this->db->get($this->table);
         return $query->row_array();   
     }
 
-	public function product_trash($limit, $first)
+	public function product_option_trash($limit, $first)
 	{
-		$this->db->where('trash',0);
+		
 		$query = $this->db->get($this->table, $limit, $first);
         return $query->result_array();
 	}
 
-	public function product_trash_count()
+	public function product_option_trash_count()
 	{
-        $this->db->where('trash', 0);
+        
         $query = $this->db->get($this->table);
         return count($query->result_array());
 	}
 
-	public function product_insert($mydata)
+	public function product_option_insert($mydata)
 	{
 		$this->db->insert($this->table,$mydata);
+		$insertId = $this->db->insert_id();
+		return $insertId;
 	}
 
-	public function product_update($mydata,$id)
+	public function product_option_update($mydata,$id)
 	{
 		$this->db->where('id',$id);
 		$this->db->update($this->table, $mydata);
 	}
 
-	public function product_restore($id)
+	public function product_option_restore($id)
 	{
-		$data=array('trash'=>1);
+		
 		$this->db->where('id',$id);
 		$this->db->update($this->table, $data);
 	}
-	public function product_delete($id)
+	public function product_option_delete($id)
 	{
 		$this->db->where('id',$id);
 		$this->db->delete($this->table);
@@ -95,5 +88,5 @@ class Mproduct extends CI_Model {
 
 }
 
-/* End of file mproduct.php */
-/* Location: ./application/models/mproduct.php */
+/* End of file mproduct_option.php */
+/* Location: ./application/models/mproduct_option.php */

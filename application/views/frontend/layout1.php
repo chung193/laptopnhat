@@ -15,7 +15,7 @@
                 echo "Macstore Hải Phòng - Vua bán lẻ điện thoại di động, máy tính bảng chính hãng";
         ?>
     </title>
-    <link href="public/images/24hstore-favicon.png" rel="shortcut icon" type="image/png">
+    <link href="public/images/MacStore-favicon.png" rel="shortcut icon" type="image/png">
     <link href="public/css/bootstrap.css" rel="stylesheet">
     <link href="public/css/font-awesome.css" rel="stylesheet">
     <link href="public/css/lte.css" rel="stylesheet">

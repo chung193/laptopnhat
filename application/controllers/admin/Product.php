@@ -178,6 +178,73 @@ class Product extends CI_Controller {
 				'status'=>$_POST['status'],
 				'access'=>$_POST['access']
 			);
+
+
+			if(strlen($_FILES['img']['name']) > 0 || strlen($_FILES['avatar']['name']) > 0){
+				$config = array();
+				//thuc mục chứa file
+				$config['upload_path']   = './public/images/products/';
+				//Định dạng file được phép tải
+				$config['allowed_types'] = 'jpg|png|gif';
+				//Dung lượng tối đa
+				$config['max_size']      = '500';
+				$config['encrypt_name'] = TRUE;
+				//Chiều rộng tối đa
+				$config['max_width']     = '1028';
+				//Chiều cao tối đa
+				$config['max_height']    = '768';
+				//load thư viện upload
+				//bien chua cac ten file upload
+				$name_array = array();
+				
+				//lưu biến môi trường khi thực hiện upload
+				$file  = $_FILES['image_list'];
+				$count = count($file['name']);
+				$img = '';
+				$this->load->library('upload', $config);
+				for($i=0; $i<=$count-1; $i++){
+					
+					$_FILES['userfile']['name']     = $file['name'][$i];  //khai báo tên của file thứ i
+					$_FILES['userfile']['type']     = $file['type'][$i]; //khai báo kiểu của file thứ i
+					$_FILES['userfile']['tmp_name'] = $file['tmp_name'][$i]; //khai báo đường dẫn tạm của file thứ i
+					$_FILES['userfile']['error']    = $file['error'][$i]; //khai báo lỗi của file thứ i
+					$_FILES['userfile']['size']     = $file['size'][$i]; //khai báo kích cỡ của file thứ i
+					//load thư viện upload và cấu hình
+					//thực hiện upload từng file
+					if($this->upload->do_upload()){
+						//nếu upload thành công thì lưu toàn bộ dữ liệu
+						$data = $this->upload->data();
+						//in cấu trúc dữ liệu của các file
+						$img .= $data['file_name'].'#';
+					}     
+				}
+				$img = rtrim($img, '#');
+				$mydata['img']= $img;
+				if ( $this->upload->do_upload('img')){
+					$data = $this->upload->data();
+					$mydata['avatar']=$data['file_name'];
+				}else{
+					$mydata['avatar']='default.png';
+				}
+
+				$config['upload_path']          = './public/images/products/';
+				$config['allowed_types']        = 'gif|jpg|png';
+				$config['max_size']             = 2000;
+				$this->load->library('upload', $config);
+				if ( $this->upload->do_upload('img'))
+				{
+					$data = $this->upload->data();
+					if(strlen($data['file_name'])!=0)
+					{
+						$mydata['avatar']=$data['file_name'];
+					}
+				}
+				else
+				{
+					$mydata['avatar']='default.png';
+				}
+			}
+
 			$this->Mproduct->product_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật sản phẩm thành công');
 			redirect('admin/product','refresh');

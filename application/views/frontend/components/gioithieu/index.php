@@ -34,7 +34,7 @@ Nếu c&oacute; dịp gh&eacute; thăm Macstore Hải Phòng, chắc chắn qu&y
 <p><img alt="" src="/TTTN-Green/public/uploadimages/13.jpg" style="width:100%" /></p>
 
 <p><br />
-Mua hoặc kh&ocirc;ng mua tại Macstore Hải Phòng ho&agrave;n to&agrave;n kh&ocirc;ng quan trọng, sự hiện diện của qu&yacute; kh&aacute;ch tại đ&acirc;y v&agrave; ng&agrave;y qua ng&agrave;y đều tin tưởng, y&ecirc;u mến thương hiệu 24hStore đối với ch&uacute;ng t&ocirc;i đ&atilde; l&agrave; niềm hạnh ph&uacute;c, l&agrave; m&oacute;n qu&agrave; v&ocirc; gi&aacute; nhất.<br />
+Mua hoặc kh&ocirc;ng mua tại Macstore Hải Phòng ho&agrave;n to&agrave;n kh&ocirc;ng quan trọng, sự hiện diện của qu&yacute; kh&aacute;ch tại đ&acirc;y v&agrave; ng&agrave;y qua ng&agrave;y đều tin tưởng, y&ecirc;u mến thương hiệu MacStore đối với ch&uacute;ng t&ocirc;i đ&atilde; l&agrave; niềm hạnh ph&uacute;c, l&agrave; m&oacute;n qu&agrave; v&ocirc; gi&aacute; nhất.<br />
 <br />
 Macstore Hải Phòng lu&ocirc;n lu&ocirc;n mở rộng cửa ch&agrave;o đ&oacute;n qu&yacute; kh&aacute;ch, đội ngũ nh&acirc;n vi&ecirc;n trẻ trung, nhiệt huyết của ch&uacute;ng t&ocirc;i lu&ocirc;n mong chờ được phục vụ, h&aacute;o hức được mang đến cho qu&yacute; kh&aacute;ch&nbsp;<strong>&quot;Niềm tin v&agrave; hơn thế nữa&quot;.</strong></p>
 

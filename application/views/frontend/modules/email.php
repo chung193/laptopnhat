@@ -11,7 +11,7 @@
 					}
 				}
 			?></p>
-			<p>Cảm ơn Anh/chị đã đặt hàng tại <strong>24hStore</strong>!</p>
+			<p>Cảm ơn Anh/chị đã đặt hàng tại <strong>MacStore</strong>!</p>
 			<p>Đơn hàng của Anh/chị đã được tiếp nhận, chúng tôi sẽ nhanh chóng liên hệ với Anh/chị.</p>
 			<div>
 			<table style="width:100%;border-collapse:collapse">
@@ -183,7 +183,7 @@
 	<hr>
 	<p style="text-align:right">Nếu Anh/chị có bất kỳ câu hỏi nào, xin liên hệ với chúng tôi tại <span style="color:#17a3dd"><a href="mailto:ngotrungphat@gmail.com" target="_blank">ngotrungphat@gmail.com</a></span></p>
 	<p style="text-align:right"><i>Trân trọng,</i></p>
-	<p style="text-align:right"><strong>Ban quản trị cửa hàng 24hStore</strong></p><div class="yj6qo"></div><div class="adL">
+	<p style="text-align:right"><strong>Ban quản trị cửa hàng MacStore</strong></p><div class="yj6qo"></div><div class="adL">
 	</div>
 	</div>
 	</body>

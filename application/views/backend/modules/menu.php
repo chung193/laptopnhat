@@ -56,6 +56,13 @@
                     <i class="fa fa-leaf"></i> Sản phẩm
                 </a>
             </li>
+
+            <li>
+                <a href="<?php echo base_url()?>admin/product_option">
+                    <i class="fa fa-leaf"></i> Chi tiết sản phẩm
+                </a>
+            </li>
+
             <li >
                 <a href="<?php echo base_url() ?>admin/content">
                     <i class="glyphicon glyphicon-list"></i> Tin tức

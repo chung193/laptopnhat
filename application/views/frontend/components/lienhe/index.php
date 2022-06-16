@@ -68,7 +68,7 @@
 	                                        </li>
 	                                        <li class="clearfix">
 	                                            <i class="fa fa-envelope fa-1x " style="color:#8ac400"></i>
-	                                            <span style="color: black"><a href="mailto:sale.24hstore@gmail.com">sale.24hstore@gmail.com</a></span>
+	                                            <span style="color: black"><a href="mailto:sale.MacStore@gmail.com">sale.MacStore@gmail.com</a></span>
 	                                        </li>
 	                                    </ul>
 	                                </div> -->

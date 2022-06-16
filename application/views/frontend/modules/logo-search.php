@@ -185,7 +185,7 @@
 			</a>
 			<small>
 						<?php 
-							if($this->session->userdata('session24hStore')){
+							if($this->session->userdata('sessionMacStore')){
 								echo "<a  class='font-weight: light' href='dang-xuat'>Thoát</a>";
 							}else{
 								

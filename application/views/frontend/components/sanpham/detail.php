@@ -331,7 +331,7 @@ $(document).ready(()=>{
 					<div class="product-comment product-v-desc">
 						<!-- <h3>Bình luận</h3> -->
 						<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-							<!-- <?php if(!$this->session->userdata('session24hStore')):?>
+							<!-- <?php if(!$this->session->userdata('sessionMacStore')):?>
 								<p>Bạn chưa đăng nhập, nhấn vào <a href="dang-nhap"> đây </a> để đăng nhập !</p>
 							<?php  else :?>
 								<div class="user-comments">

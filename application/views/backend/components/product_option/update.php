@@ -107,24 +107,6 @@
 										<option value="0" <?php if($row['status'] == 0) {echo 'selected';}?>>Chưa xuất bản</option>
 									</select>
 								</div>
-
-								<img src="<?php echo base_url().'public/images/products/'.$row['avatar'] ?>" style="width:100%">
-
-								<div class="form-group">
-                                    <label>Thay hình đại diện</label>
-                                    <input type="file"  id="image_list" name="img" required style="width: 100%">
-                                </div>
-
-								<?php $arr = explode("#", $row['img']); 
-									foreach($arr as $val){
-								?>
-								<img src="<?php echo base_url().'public/images/products/'.$val ?>" style="width:100%">
-								<?php } ?>
-								<div class="form-group">
-									<label>Thay hình ảnh sản phẩm</label>
-									<input type="file"  id="image_list" name="image_list[]" multiple required>
-								</div>
-
 							</div>
 						</div>
 					</div><!-- /.box -->
