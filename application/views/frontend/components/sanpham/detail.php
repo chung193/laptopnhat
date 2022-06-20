@@ -24,7 +24,6 @@
 					</li>
 					
 					
-					
 				</ul>
 			</div>
 		</div>
@@ -81,19 +80,21 @@
 									<h1 class="title-product"><?php echo $row['name']?></h1>
 									<form enctype="multipart/form-data" id="add-to-cart-form" action="/cart/add" method="post" class="form_background  margin-bottom-0">
 											<div class="product-rating">
-	<div class="starbaprv-widget starbaprv-preview-badge starbaprv-preview-badge--with-link" data-id="1037739907" data-url="oppo-reno6-z-5g">
-	
-</div>
+									<div class="starbaprv-widget starbaprv-preview-badge starbaprv-preview-badge--with-link" data-id="1037739907" data-url="oppo-reno6-z-5g">
+									
+									</div>
 
-<div class="group-status">
-			<span class="first_status mr-2">
-		Thương hiệu:
-		<span class="status_name">
-			<a href="#" target="_blank" class="text-primary" title="Oppo">
-				<?php $name=$this->Mcategory->category_name($row['catid']); echo $name; ?>
-			</a>
-		</span>
-</div>
+									<div class="group-status">
+												<span class="first_status mr-2">
+											Thương hiệu:
+											<span class="status_name">
+												<a href="#" target="_blank" class="text-primary" title="Oppo">
+													<?php $name=$this->Mcategory->category_name($row['catid']); echo $name; ?>
+												</a>
+											</span>
+									</div>
+
+	
 
 
 
@@ -132,6 +133,19 @@
 				<li>Giảm giá 10% khi mua từ 5 sản phẩm</li>
 				<li>Tặng phiếu mua hàng khi mua từ 500k </li>
 			</ul>
+
+			<?php 
+				$option = $this->Mproduct->get_all_option($row['id']);
+				if(count($option)){
+					echo '<strong>Cấu hình: </strong>';
+					$i = 1;
+					foreach($option as $val){
+						echo '<span class="p-2 mr-2 rounded border">cấu hình '.$i.'</span>';
+						$i++;
+					}	
+				}	
+						
+			?>
 		</div> 
 
 
@@ -200,12 +214,79 @@
 																	</div>
 							</div>
 						</div>
-						
+						</div>
 			<div class="col-12 col-xl-3 pl-0 pl-xl-3 product-right pr-0">
-			<link rel="preload" as="style" type="text/css" href="//theme.hstatic.net/200000458129/1000869299/14/coupon.css?v=53">
-			<link rel="stylesheet" href="//theme.hstatic.net/200000458129/1000869299/14/coupon.css?v=53">
-																																																																																																																																	</div>
-	</div>
+				<link rel="preload" as="style" type="text/css" href="//theme.hstatic.net/200000458129/1000869299/14/coupon.css?v=53">
+				<link rel="stylesheet" href="//theme.hstatic.net/200000458129/1000869299/14/coupon.css?v=53">
+				<div class="section_coupons">
+				<div class="card border-0">
+					<div class="row scroll">																																									
+						
+					<div class="col-xl-12 col-lg col-md-5 col-9">
+					<?php 
+						$i = 1;
+						foreach($option as $vl){
+							if($i = 1){
+							echo '
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<td>CPU</td>
+										<td>'.$vl['cpu'].'</td>
+									</tr>
+									<tr>
+										<td>RAM</td>
+										<td>'.$vl['ram'].'</td>
+									</tr>
+									<tr>
+										<td>ổ cứng</td>
+										<td>'.$vl['hard_drive'].'</td>
+									</tr>
+									<tr>
+										<td>VGA</td>
+										<td>'.$vl['vga'].'</td>
+									</tr>
+									<tr>
+										<td>Màn hình</td>
+										<td>'.$vl['screen'].'</td>
+									</tr>
+									<tr>
+										<td>Hệ điều hành</td>
+										<td>'.$vl['hdh'].'</td>
+									</tr>
+									<tr>
+										<td>Màu</td>
+										<td>'.$vl['color'].'</td>
+									</tr>
+									<tr>
+										<td>Kích thước</td>
+										<td>'.$vl['kichthuoc'].'</td>
+									</tr>
+									<tr>
+										<td>Cân nặng</td>
+										<td>'.$vl['cannang'].'</td>
+									</tr>
+									<tr>
+										<td>Phụ kiện</td>
+										<td>'.$vl['phukien'].'</td>
+									</tr>
+								</tbody>
+							</table>
+							';
+							}
+							$i++;
+						}
+					?>
+					
+					</div>
+			</div>			
+		</div>
+
+
+																																																																																																																																						</div>
+				
+			</div>																																																																																																																												</div>
+			</div>
 </div>
 
 <script>

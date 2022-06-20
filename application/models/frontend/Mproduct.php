@@ -17,6 +17,18 @@ class Mproduct extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_all_option($id)
+    {
+        $this->db->select('db_product_option.*, db_product_option.sale as op_sale, db_product_option.price_sale as op_price_sale, db_product_option.price as op_price');
+        $this->db->join('db_product_instance', 'db_product_instance.id_product = product.id');
+        $this->db->join('db_product_option', 'db_product_option.id = db_product_instance.id_option');
+        $this->db->where('status', 1);
+        $this->db->where('trash', 1);
+        $this->db->where('product.id', $id);
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
+
     public function product_sanpham($limit,$first,$f,$od)
     {       
         $this->db->where('status', 1);
