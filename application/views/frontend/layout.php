@@ -765,6 +765,10 @@ changelog: //theme.hstatic.net/200000458129/1000825962/14/ega-changelog.js?v=196
           max-height: 45vh;
         }
       }
+
+	  .section, .subheader, #template-index{
+		background-color:#F9F9FA
+	  }
     </style>
 	<link rel="prefetch" href="<?= base_url() ?>collections/san-pham-noi-bat">
 	<style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">

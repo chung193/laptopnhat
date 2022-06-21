@@ -3,6 +3,17 @@
 	.bg-light{
 		background-color:#f8f9fa
 	}
+	.view-product{
+		display:none;
+	}
+	.cursor-pointer{
+		cursor:pointer;
+	}
+
+	.bordercs{
+		color:green;
+		border: 2px solid green;
+	}
 </style>
 <section class="bread-crumb mb-3 mt-3">
 	<span class="crumb-border"></span>
@@ -138,23 +149,25 @@
 				<li>Tặng phiếu mua hàng khi mua từ 500k </li>
 			</ul>
 
-			<?php 
+			
+		</div> 
+
+
+		<div class="mt-2 mb-2">
+		<?php 
 				$option = $this->Mproduct->get_all_option($row['id']);
 				if(count($option)){
 					echo '<strong>Cấu hình: </strong>';
 					$i = 1;
 					foreach($option as $val){
-						echo '<span class="p-2 mr-2 rounded border">cấu hình '.$i.'</span>';
+						echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="'.$val['id'].'">cấu hình '.$i.'</span>';
 						$i++;
 					}	
 				}	
 						
 			?>
-		</div> 
+	</div>
 
-
-
-	
 	<div class="form_button_details w-100">
 		<div class="form_product_content type1">
 			<div class="soluong soluong_type_1 hidden">
@@ -227,60 +240,59 @@
 					<div class="row scroll">																																									
 						
 					<div class="col-xl-12 col-lg col-md-5 col-9">
+						<h3><strong>Cấu hình chi tiết</strong></h3>
 					<?php 
-						$i = 1;
 						foreach($option as $vl){
-							if($i == 2){
 							echo '
-							<h3><strong>Cấu hình chi tiết</strong></h3>
-							<table class="table table-striped">
-								<tbody>
-									<tr class="bg-light">
-										<td class="p-2" style="min-width: 95px">CPU</td>
-										<td class="p-2">'.$vl['cpu'].'</td>
-									</tr>
-									<tr>
-										<td class="p-2">RAM</td>
-										<td class="p-2">'.$vl['ram'].'</td>
-									</tr>
-									<tr class="bg-light">
-										<td class="p-2">ổ cứng</td>
-										<td class="p-2">'.$vl['hard_drive'].'</td>
-									</tr>
-									<tr>
-										<td class="p-2">VGA</td>
-										<td class="p-2">'.$vl['vga'].'</td>
-									</tr>
-									<tr class="bg-light">
-										<td class="p-2">Màn hình</td>
-										<td class="p-2">'.$vl['screen'].'</td>
-									</tr>
-									<tr>
-										<td class="p-2">Hệ điều hành</td>
-										<td class="p-2">'.$vl['hdh'].'</td>
-									</tr>
-									<tr class="bg-light">
-										<td class="p-2">Màu</td>
-										<td class="p-2">'.$vl['color'].'</td>
-									</tr>
-									<tr>
-										<td class="p-2"> Kích thước</td>
-										<td class="p-2">'.$vl['kichthuoc'].'</td>
-									</tr>
-									<tr class="bg-light">
-										<td class="p-2">Cân nặng</td>
-										<td class="p-2"> '.$vl['cannang'].'</td>
-									</tr>
-									<tr>
-										<td class="p-2">Phụ kiện</td>
-										<td class="p-2">'.$vl['phukien'].'</td>
-									</tr>
-								</tbody>
-							</table>
+							
+							<div id="full-description-box">
+								<table class="table table-striped view-product" id="product'.$vl['id'].'">
+									<tbody>
+										<tr class="bg-light">
+											<td class="p-2" style="min-width: 95px">CPU</td>
+											<td class="p-2">'.$vl['cpu'].'</td>
+										</tr>
+										<tr>
+											<td class="p-2">RAM</td>
+											<td class="p-2">'.$vl['ram'].'</td>
+										</tr>
+										<tr class="bg-light">
+											<td class="p-2">ổ cứng</td>
+											<td class="p-2">'.$vl['hard_drive'].'</td>
+										</tr>
+										<tr>
+											<td class="p-2">VGA</td>
+											<td class="p-2">'.$vl['vga'].'</td>
+										</tr>
+										<tr class="bg-light">
+											<td class="p-2">Màn hình</td>
+											<td class="p-2">'.$vl['screen'].'</td>
+										</tr>
+										<tr>
+											<td class="p-2">Hệ điều hành</td>
+											<td class="p-2">'.$vl['hdh'].'</td>
+										</tr>
+										<tr class="bg-light">
+											<td class="p-2">Màu</td>
+											<td class="p-2">'.$vl['color'].'</td>
+										</tr>
+										<tr>
+											<td class="p-2"> Kích thước</td>
+											<td class="p-2">'.$vl['kichthuoc'].'</td>
+										</tr>
+										<tr class="bg-light">
+											<td class="p-2">Cân nặng</td>
+											<td class="p-2"> '.$vl['cannang'].'</td>
+										</tr>
+										<tr>
+											<td class="p-2">Phụ kiện</td>
+											<td class="p-2">'.$vl['phukien'].'</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 							';
 							}
-							$i++;
-						}
 					?>
 					
 					</div>
@@ -481,5 +493,18 @@ $(document).ready(()=>{
 	</section>
 
 	<script>
-		
+		$(document).ready(function() {
+			$('.view-product:first').show() 
+
+			$(".view").click(function() { 
+				$('.view-product').show();
+				$('.view').removeClass('bordercs');
+				$(this).addClass('bordercs');
+				//console.log('click');
+				// $(this).attr('id') is the id of the clicked .view element   
+				$('[id="product'+$(this).attr('id')+'"]').toggle();
+			});
+		});
 	</script>
+
+
