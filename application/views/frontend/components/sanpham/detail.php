@@ -1,5 +1,9 @@
 
-
+<style>
+	.bg-light{
+		background-color:#f8f9fa
+	}
+</style>
 <section class="bread-crumb mb-3 mt-3">
 	<span class="crumb-border"></span>
 	<div class="container">
@@ -226,49 +230,50 @@
 					<?php 
 						$i = 1;
 						foreach($option as $vl){
-							if($i = 1){
+							if($i == 2){
 							echo '
+							<h3><strong>Cấu hình chi tiết</strong></h3>
 							<table class="table table-striped">
 								<tbody>
-									<tr>
-										<td>CPU</td>
-										<td>'.$vl['cpu'].'</td>
+									<tr class="bg-light">
+										<td class="p-2" style="min-width: 95px">CPU</td>
+										<td class="p-2">'.$vl['cpu'].'</td>
 									</tr>
 									<tr>
-										<td>RAM</td>
-										<td>'.$vl['ram'].'</td>
+										<td class="p-2">RAM</td>
+										<td class="p-2">'.$vl['ram'].'</td>
+									</tr>
+									<tr class="bg-light">
+										<td class="p-2">ổ cứng</td>
+										<td class="p-2">'.$vl['hard_drive'].'</td>
 									</tr>
 									<tr>
-										<td>ổ cứng</td>
-										<td>'.$vl['hard_drive'].'</td>
+										<td class="p-2">VGA</td>
+										<td class="p-2">'.$vl['vga'].'</td>
+									</tr>
+									<tr class="bg-light">
+										<td class="p-2">Màn hình</td>
+										<td class="p-2">'.$vl['screen'].'</td>
 									</tr>
 									<tr>
-										<td>VGA</td>
-										<td>'.$vl['vga'].'</td>
+										<td class="p-2">Hệ điều hành</td>
+										<td class="p-2">'.$vl['hdh'].'</td>
+									</tr>
+									<tr class="bg-light">
+										<td class="p-2">Màu</td>
+										<td class="p-2">'.$vl['color'].'</td>
 									</tr>
 									<tr>
-										<td>Màn hình</td>
-										<td>'.$vl['screen'].'</td>
+										<td class="p-2"> Kích thước</td>
+										<td class="p-2">'.$vl['kichthuoc'].'</td>
+									</tr>
+									<tr class="bg-light">
+										<td class="p-2">Cân nặng</td>
+										<td class="p-2"> '.$vl['cannang'].'</td>
 									</tr>
 									<tr>
-										<td>Hệ điều hành</td>
-										<td>'.$vl['hdh'].'</td>
-									</tr>
-									<tr>
-										<td>Màu</td>
-										<td>'.$vl['color'].'</td>
-									</tr>
-									<tr>
-										<td>Kích thước</td>
-										<td>'.$vl['kichthuoc'].'</td>
-									</tr>
-									<tr>
-										<td>Cân nặng</td>
-										<td>'.$vl['cannang'].'</td>
-									</tr>
-									<tr>
-										<td>Phụ kiện</td>
-										<td>'.$vl['phukien'].'</td>
+										<td class="p-2">Phụ kiện</td>
+										<td class="p-2">'.$vl['phukien'].'</td>
 									</tr>
 								</tbody>
 							</table>
@@ -474,3 +479,7 @@ $(document).ready(()=>{
 			</div>
 		</div>
 	</section>
+
+	<script>
+		
+	</script>
