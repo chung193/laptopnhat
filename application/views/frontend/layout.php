@@ -769,6 +769,19 @@ changelog: //theme.hstatic.net/200000458129/1000825962/14/ega-changelog.js?v=196
 	  .section, .subheader, #template-index{
 		background-color:#F9F9FA
 	  }
+
+	  #livesearch{
+		display: none;
+	  }
+
+	  .lives{
+		background-color:white;
+		padding: 5px;
+		width: 100%;
+	  }
+	  .lives a:hover{
+		background-color:#F9F9FA
+	  }
     </style>
 	<link rel="prefetch" href="<?= base_url() ?>collections/san-pham-noi-bat">
 	<style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">
@@ -807,4 +820,84 @@ changelog: //theme.hstatic.net/200000458129/1000825962/14/ega-changelog.js?v=196
         <?php 
             $this->load->view('frontend/modules/footer');
         ?>
-</body></html>
+
+<script>
+
+function showResult(str) {
+  if (str.length==0) {
+      // var ele = document.getElementById("livesearch");
+      // removeAllChildNodes(ele);
+	  document.getElementById("livesearch").style.display="none";
+      document.getElementById("livesearch").innerHTML="";
+      document.getElementById("livesearch").style.border="0px";
+      return;
+  }
+  
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+      if (this.readyState==4 && this.status==200) {
+
+          var response = this.responseText;
+          response = response.replace(/\\n/g, "\\n")  
+             .replace(/\\'/g, "\\'")
+             .replace(/\\"/g, '\\"')
+             .replace(/\\&/g, "\\&")
+             .replace(/\\r/g, "\\r")
+             .replace(/\\t/g, "\\t")
+             .replace(/\\b/g, "\\b")
+             .replace(/\\f/g, "\\f");
+          // remove non-printable and other non-valid JSON chars
+          response = response.replace(/[\u0000-\u0019]+/g,""); 
+          response = JSON.parse(response);
+          
+          if(typeof(response) == 'object'){
+			document.getElementById("livesearch").style.display = "block";
+            response.forEach(showitem, removeAllChildNodes(document.getElementById("livesearch")));
+          }else{
+                  if(typeof(response) == 'string'){
+					document.getElementById("livesearch").style.display = "block";
+                    shownotfound(response, removeAllChildNodes(document.getElementById("livesearch")));
+                  }
+          }
+      }
+  }
+  xmlhttp.open("GET","sanpham/livesearch/"+str,true);
+  xmlhttp.send();
+  }
+  function shownotfound(response){
+      const a = document.createElement('p');
+      var linkText = document.createTextNode(response);
+      a.appendChild(linkText);
+      document.getElementById("livesearch").appendChild(a);
+      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+	  document.getElementById("livesearch").classList.add("lives");
+  }
+
+  function showitem(item, index){
+      const a = document.createElement('a');
+      var linkText = document.createTextNode(item.name);
+      a.appendChild(linkText);
+      a.title = item.name;
+	  var base_url = "<?php echo base_url()?>";
+      a.href = base_url+item.alias;
+      document.getElementById("livesearch").appendChild(a);
+      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+	  document.getElementById("livesearch").classList.add("lives");
+  }
+
+  function removeAllChildNodes(parent) {
+		parent.classList.remove("lives");
+		console.log(123);
+      	while (parent.firstChild) {
+        	parent.removeChild(parent.firstChild);
+      	}
+  }
+
+  x=document.getElementsByClassName("toc-title");  // Find the elements
+  for(var i = 0; i < x.length; i++){
+    x[i].innerText="Mục lục";    // Change the content
+  }
+
+</script>
+</body>
+</html>

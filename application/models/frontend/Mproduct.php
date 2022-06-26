@@ -17,6 +17,14 @@ class Mproduct extends CI_Model {
         return $query->result_array();
     }
 
+    public function livesearch($key){
+        $this->db->select('product.*');
+        $this->db->like('product.name', $key);
+        $this->db->limit(10, 0);
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
+
     public function get_all_option($id)
     {
         $this->db->select('db_product_option.*, db_product_option.sale as op_sale, db_product_option.price_sale as op_price_sale, db_product_option.price as op_price');

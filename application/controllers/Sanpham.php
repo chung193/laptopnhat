@@ -21,6 +21,16 @@ class Sanpham extends CI_Controller {
         $this->load->library('session');
         $this->load->library('phantrang');
     }
+
+    public function livesearch($key){
+        $result = $this->Mproduct->livesearch($key);
+
+        if(count($result)){
+            echo json_encode($result);
+        }else{
+            echo json_encode('không tìm thấy kết quả');
+        }
+    }
     
 	public function index(){
         if(isset($_POST['sapxep'])){

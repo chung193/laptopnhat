@@ -66,6 +66,7 @@
       								<script>CKEDITOR.replace('detail');</script>
 								</div>
 							</div>
+
 							<div class="col-md-3">
 								<div class="form-group">
 									<label>Giá gốc</label>
@@ -84,6 +85,15 @@
 									<label>Số lượng</label>
 									<input name="number" class="form-control" type="number" value="1" min="1" step="1" max="1000">
 								</div>
+
+								<div class="form-group">
+									<label>Hiện giá/ giá liên hệ</label>
+									<select name="showprice" class="form-control">
+										<option value="1">Hiện giá</option>
+										<option value="0">Giá liên hệ</option>
+									</select>
+								</div>
+
 								<div class="form-group">
                                     <label>Hình đại diện</label>
                                     <input type="file"  id="image_list" name="img" required style="width: 100%">
@@ -107,12 +117,106 @@
 									</select>
 								</div>
 							</div>
+
+							
+
 						</div>
 					</div><!-- /.box -->
 				</div>
 			<!-- /.col -->
+		
 		  </div>
 		  <!-- /.row -->
+		  				<div class="box">	
+						  <div class="box-body">	
+						 	<label>Option 1</label>	
+							<hr>					
+		  					<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>RAM</label>
+										<input name="ram" class="form-control" type="text" >
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Ổ cứng</label>
+										<input name="ocung" class="form-control" type="text">
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+
+						<div class="box">	
+						  <div class="box-body">	
+						 	<label>Option 2</label>	
+							<hr>					
+		  					<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>RAM</label>
+										<input name="ram1" class="form-control" type="text" >
+									</div>
+									<div class="form-group">
+										<label>Giá gốc</label>
+										<input name="price1" class="form-control" type="number" value="0" min="0" step="1" max="1000000000">
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Ổ cứng</label>
+										<input name="ocung1" class="form-control" type="text">
+									</div>
+									<div class="form-group">
+										<label>Khuyến mãi (%)</label>
+										<input name="sale1" class="form-control" type="number">
+									</div>
+									<div class="form-group">
+										<label>Giá bán</label>
+										<input name="price_sale1" class="form-control" type="number" value="0" min="0" step="1" max="1000000000">
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+
+						<div class="box">	
+						  <div class="box-body">	
+						 	<label>Option 3</label>	
+							<hr>					
+		  					<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>RAM</label>
+										<input name="ram2" class="form-control" type="text" >
+									</div>
+									<div class="form-group">
+										<label>Giá gốc</label>
+										<input name="price2" class="form-control" type="number" value="0" min="0" step="1" max="1000000000">
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Ổ cứng</label>
+										<input name="ocung2" class="form-control" type="text">
+									</div>
+									<div class="form-group">
+										<label>Khuyến mãi (%)</label>
+										<input name="sale2" class="form-control" type="number">
+									</div>
+									<div class="form-group">
+										<label>Giá bán</label>
+										<input name="price_sale2" class="form-control" type="number" value="0" min="0" step="1" max="1000000000">
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+
 		</section>
 	</form>
 <!-- /.content -->

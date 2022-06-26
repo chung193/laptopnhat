@@ -59,7 +59,24 @@ class Product extends CI_Controller {
 				'modified_by'=>$this->session->userdata('id'),
 				'trash'=>1,
 				'status'=>$_POST['status'],
-				'access'=>$_POST['access']
+				'access'=>$_POST['access'],
+
+				'ram'=>$_POST['ram'],
+				'ocung'=>$_POST['ocung'],
+
+				'ram1'=>$_POST['ram1'],
+				'ocung1'=>$_POST['ocung1'],
+				'sale1'=>$_POST['sale1'],
+				'price1'=>$_POST['price1'],
+				'price_sale1'=>$_POST['price_sale1'],
+
+				'ram2'=>$_POST['ram2'],
+				'ocung2'=>$_POST['ocung2'],
+				'sale2'=>$_POST['sale2'],
+				'price2'=>$_POST['price2'],
+				'price_sale2'=>$_POST['price_sale2'],
+
+				'showprice'=>$_POST['showprice'],
 			);
 			
 
@@ -176,7 +193,24 @@ class Product extends CI_Controller {
 				'modified'=>$today,
 				'modified_by'=>$this->session->userdata('id'),
 				'status'=>$_POST['status'],
-				'access'=>$_POST['access']
+				'access'=>$_POST['access'],
+
+				'ram'=>$_POST['ram'],
+				'ocung'=>$_POST['ocung'],
+
+				'ram1'=>$_POST['ram1'],
+				'ocung1'=>$_POST['ocung1'],
+				'sale1'=>$_POST['sale1'],
+				'price1'=>$_POST['price1'],
+				'price_sale1'=>$_POST['price_sale1'],
+
+				'ram2'=>$_POST['ram2'],
+				'ocung2'=>$_POST['ocung2'],
+				'sale2'=>$_POST['sale2'],
+				'price2'=>$_POST['price2'],
+				'price_sale2'=>$_POST['price_sale2'],
+
+				'showprice'=>$_POST['showprice'],
 			);
 
 

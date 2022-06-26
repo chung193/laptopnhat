@@ -125,17 +125,21 @@
 
 	<div class="col-lg-4 col-12 header-center pl-lg-0" id="search-header">
 		<form action="<?= base_url() ?>search" method="get" class="input-group search-bar custom-input-group" role="search">
-					<input type="text" name="q" value="" autocomplete="off" class="input-group-field auto-search form-control " required="" data-placeholder="Bạn cần tìm gì..;
-				Nhập tên sản phẩm.." placeholder="Bạn cần tìm gì">
-					<input type="hidden" name="type" value="product">
-					<input type="hidden" name="sortby" value="quantity:product=desc">
+
+				<input type="text" name="q" value="" autocomplete="off" class="input-group-field auto-search form-control " required="" data-placeholder="Bạn cần tìm gì..;
+				Nhập tên sản phẩm.." onkeyup="showResult(this.value)" placeholder="Bạn cần tìm gì">
+
+				<div id="livesearch"></div>
+
+				<!-- <input type="hidden" name="type" value="product">
+				<input type="hidden" name="sortby" value="quantity:product=desc">
 				<span class="input-group-btn btn-action">
-				<button type="submit" aria-label="search" class="btn text-white icon-fallback-text h-100">
-					<svg class="icon">
-						<use xlink:href="#icon-search"></use>
-					</svg>		
-				</button>
-			</span>
+					<button type="submit" aria-label="search" class="btn text-white icon-fallback-text h-100">
+						<svg class="icon">
+							<use xlink:href="#icon-search"></use>
+						</svg>		
+					</button>
+				</span> -->
 		</form>
 
 	<div class="search-overlay"></div>
@@ -242,3 +246,5 @@
 	</div>
 
 </header>
+
+

@@ -93,6 +93,15 @@
 									<label>Số lượng</label>
 									<input name="number" class="form-control" type="number" value="<?php echo $row['number'] ?>" min="1" step="1" max="1000">
 								</div>
+
+								<div class="form-group">
+									<label>Hiện giá/ giá liên hệ</label>
+									<select name="showprice" class="form-control">
+										<option value="1" <?php if($row['showprice'] == 1) {echo 'selected';}?> >Hiện giá</option>
+										<option value="0" <?php if($row['showprice'] == 0) {echo 'selected';}?>>Giá liên hệ</option>
+									</select>
+								</div>
+
 								<div class="form-group">
 									<label>Quyền truy cập</label>
 									<select name="access" class="form-control">
@@ -132,6 +141,98 @@
 			<!-- /.col -->
 		  </div>
 		  <!-- /.row -->
+
+		  <div class="box">	
+						  <div class="box-body">	
+						 	<label>Option 1</label>	
+							<hr>					
+		  					<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>RAM</label>
+										<input name="ram" class="form-control" type="text"  value="<?= $row['ram'] ?>">
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Ổ cứng</label>
+										<input name="ocung" class="form-control" type="text"  value="<?= $row['ocung'] ?>">
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+
+						<div class="box">	
+						  <div class="box-body">	
+						 	<label>Option 2</label>	
+							<hr>					
+		  					<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>RAM</label>
+										<input name="ram1" class="form-control" type="text" value="<?= $row['ram1'] ?>">
+									</div>
+									<div class="form-group">
+										<label>Giá gốc</label>
+										<input name="price1" class="form-control" type="number"  value="<?= $row['price1'] ?>" min="0" step="1" max="1000000000">
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Ổ cứng</label>
+										<input name="ocung1" class="form-control" type="text" value="<?= $row['ocung1'] ?>">
+									</div>
+									<div class="form-group">
+										<label>Khuyến mãi (%)</label>
+										<input name="sale1" class="form-control" type="number" value="<?= $row['sale1'] ?>">
+									</div>
+									<div class="form-group">
+										<label>Giá bán</label>
+										<input name="price_sale1" class="form-control" value="<?= $row['price_sale1'] ?>" type="number"  min="0" step="1" max="1000000000">
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+
+						<div class="box">	
+						  <div class="box-body">	
+						 	<label>Option 3</label>	
+							<hr>					
+		  					<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>RAM</label>
+										<input name="ram2" class="form-control" type="text" value="<?= $row['ram2'] ?>">
+									</div>
+									<div class="form-group">
+										<label>Giá gốc</label>
+										<input name="price2" class="form-control" type="number" value="<?= $row['price2'] ?>" min="0" step="1" max="1000000000">
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Ổ cứng</label>
+										<input name="ocung2" class="form-control" type="text"  value="<?= $row['ocung2'] ?>">
+									</div>
+									<div class="form-group">
+										<label>Khuyến mãi (%)</label>
+										<input name="sale2" class="form-control" type="number" value="<?= $row['sale2'] ?>">
+									</div>
+									<div class="form-group">
+										<label>Giá bán</label>
+										<input name="price_sale2" class="form-control" type="number" value="<?= $row['price_sale2'] ?>" min="0" step="1" max="1000000000">
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+
+
 		</section>
 	</form>
 <!-- /.content -->
