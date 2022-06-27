@@ -117,14 +117,14 @@ $(document).ready(()=>{
 				</a>
 			</h2>
 			<ul class="mt-2 mt-sm-0 tabs tabs-title list-unstyled mb-0 tabs-group d-flex align-items-center">
-				<li class="ega-small tab-link px-3 py-2 link mr-2">
+				<!-- <li class="ega-small tab-link px-3 py-2 link mr-2">
 					<a href="#" title="Sản phẩm khuyến mãi">Sản phẩm khuyến mãi</a>	
-				</li>
-				<li class="ega-small tab-link px-3 py-2 link mr-2">
-					<a href="<?= $val['link'] ?>" title="Tất cả sản phẩm">Tất cả sản phẩm</a>	
-				</li>
+				</li> -->
+				<!-- <li class="ega-small tab-link px-3 py-2 link mr-2">
+					<a href="san-pham/<?= $val['link'] ?>" title="Tất cả sản phẩm">Tất cả sản phẩm</a>	
+				</li> -->
 				<li class="ega-small tab-link px-3 py-2 link d-none d-sm-block">
-					<a href="<?= $val['link'] ?>" title="Xem tất cả" class="text-primary">
+					<a href="san-pham/<?= $val['link'] ?>" title="Xem tất cả" class="text-primary">
 						Xem tất cả 
 
 						<svg class="icon">

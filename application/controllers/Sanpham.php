@@ -127,16 +127,19 @@ class Sanpham extends CI_Controller {
     public function addcart(){
         $this->load->library('session');
         $id=$_POST['id'];
+        $item = $_POST; 
+
         //Lưu vào session
         if($this->session->userdata('cart')){
             $cart=$this->session->userdata('cart');
+            
             if(array_key_exists($id, $cart)){
-                $cart[$id]++;
+                $cart[$id] = $item;
             }else{
-                $cart[$id] = 1;
+                $cart[$id] = $item;
             }
         }else{
-            $cart[$id]=1;//chưa có session
+            $cart[$id]=$item;//chưa có session
         }
         $this->session->set_userdata('cart',$cart);
         //Thống kê số lượng & trả về

@@ -13,7 +13,7 @@
 						<span>Giỏ hàng (
 						<?php
 							if($this->session->userdata('cart')){
-								$val = $this->session->userdata('cart');
+								$val = array_filter($this->session->userdata('cart'));
 								echo count($val);
 							}else{
 								echo 0;
@@ -229,7 +229,10 @@ $(document).ready(()=>{
 	</div>
 </div>
 <?php if($this->session->userdata('cart')):
-			$cart = $this->session->userdata('cart');?>
+			$cart = $this->session->userdata('cart');
+			$cart = array_filter($cart);
+			//print_r($cart); die();
+?>
 
 <div class="cart-coupon-overlay coupon-toggle-btn"></div>
 <div id="tab-header"></div>
@@ -243,7 +246,7 @@ $(document).ready(()=>{
 					</div>
 				</div>
 
-	<?php foreach ($cart as $key => $value) : 
+	<?php foreach ($cart as $key => $value) {
 			$row = $this->Mproduct->product_detail_id($key);?>					
 				<div class="header-cart-content">
 					<div class="cart_page_mobile content-product-list">
@@ -285,11 +288,35 @@ $(document).ready(()=>{
 		<div class="cart-price">
 			<span class="product-price price">
 			<?php 
-				if($row['price_sale'] > 0){
-					echo (number_format($row['price_sale'])).'₫';
-				}else{
-					echo (number_format($row['price'])).'₫';
+				if($value['option'] == 1){
+					if($row['price_sale'] > 0){
+						echo (number_format($row['price_sale']*$value['qty'])).'₫';
+					}else{
+						echo (number_format($row['price']*$value['qty'])).'₫';
+					}
+					echo '<p style="font-weight: 100; font-size:12px; color: black">Phiên bản '.$row['ram'].'/ '.$row['ocung'].'</p>';
 				}
+
+				if($value['option'] == 2){
+					if($row['price_sale1'] > 0){
+						echo (number_format($row['price_sale1']*$value['qty'])).'₫';
+					}else{
+						echo (number_format($row['price1']*$value['qty'])).'₫';
+					}
+					echo '<p style="font-weight: 100; font-size:12px; color: black">Phiên bản '.$row['ram1'].'/ '.$row['ocung1'].'</p>';
+
+				}
+
+				if($value['option'] == 3){
+					if($row['price_sale2'] > 0){
+						echo (number_format($row['price_sale2']*$value['qty'])).'₫';
+					}else{
+						echo (number_format($row['price2']*$value['qty'])).'₫';
+					}
+					echo '<p style="font-weight: 100; font-size:12px; color: black">Phiên bản '.$row['ram2'].'/ '.$row['ocung2'].'</p>';
+
+				}
+				
 			?>
 			</span>
 		</div>
@@ -332,18 +359,39 @@ $(document).ready(()=>{
 		  <div class="timedeli-overaly">
 		</div>
 	  </div>
-	  <?php endforeach; ?>
+	  <?php } ?>
 	  
 
 	  <?php $total = 0; ?>
-						<?php foreach ($cart as $key => $value) : 
+						<?php 
+						$cart = array_filter($cart);
+						foreach ($cart as $key => $value) : 
 							$row = $this->Mproduct->product_detail_id($key);?>
 							<?php
+							if($value['option'] == 1){
 								if($row['price_sale'] > 0)
-									$sum = $row['price_sale'] * $value;
+									$sum = $row['price_sale'] * $value['qty'];
 								else
-									$sum = $row['price'] * $value;
+									$sum = $row['price'] * $value['qty'];
 								$total += $sum;
+							}
+
+							if($value['option'] == 2){
+								if($row['price_sale1'] > 0)
+									$sum = $row['price_sale1'] * $value['qty'];
+								else
+									$sum = $row['price1'] * $value['qty'];
+								$total += $sum;
+							}
+
+							if($value['option'] == 3){
+								if($row['price_sale2'] > 0)
+									$sum = $row['price_sale2'] * $value['qty'];
+								else
+									$sum = $row['price2'] * $value['qty'];
+								$total += $sum;
+							}
+								
 							?>	
 						<?php endforeach; ?>
 

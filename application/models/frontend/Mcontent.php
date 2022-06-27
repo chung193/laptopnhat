@@ -24,6 +24,8 @@ class Mcontent extends CI_Model {
     }
 
     public function content_detail($link){
+        $this->db->select('content.*,db_content_type.name as typename,db_content_type.slug as typeslug');
+        $this->db->join('db_content_type', 'content.id_type = db_content_type.id');
         $this->db->where('status', 1);
         $this->db->where('trash', 1);
         $this->db->where('alias', $link);

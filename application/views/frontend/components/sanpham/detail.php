@@ -263,7 +263,7 @@
 					</div>
 				</div>
 
-				<input type="hidden" id="option" value="">
+				<input type="hidden" id="option" value="1">
 
 							<div class="button_actions">				
 									<button type="submit" class="btn btn_base buynow" onclick="onAddCart(<?php echo $row['id']  ?>, document.getElementById('qtym').value, document.getElementById('option').value)">MUA NGAY<span>Giao hàng tận nơi hoặc nhận tại cửa hàng</span></button>
@@ -498,6 +498,7 @@
 					option: option
 				},
 				success: function(data) {
+					console.log(data);
 					document.location.reload(true);
 					alert('Thêm sản phẩm vào giỏ hàng thành công !');
 				}

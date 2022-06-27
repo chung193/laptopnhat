@@ -803,7 +803,7 @@ changelog: //theme.hstatic.net/200000458129/1000825962/14/ega-changelog.js?v=196
             ?>
         </section> -->
         <?php 
-				if($this->uri->segment(1) == ''){
+				if($this->uri->segment(1) == '' || $this->uri->segment(1) == 'trang-chu'){
 					$this->load->view('frontend/modules/slider');
 				}
                

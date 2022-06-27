@@ -75,18 +75,41 @@ class Giohang extends CI_Controller {
             //Tinh tien don hang
             $money=0;
             if($this->session->userdata('cart')){
-                $data=$this->session->userdata('cart');
+                $data=array_filter($this->session->userdata('cart'));
                 foreach ($data as $key => $value) {
                     $row = $this->Mproduct->product_detail_id($key);
                     $total=0;
-                    if($row['price_sale'] > 0){
-                        $total=$row['price_sale']*$value;
-                    }else{
-                        $total=$row['price'] * $value;
+                    if($value['option'] == 1){
+                        if($row['price_sale'] > 0){
+                            $total=$row['price_sale']*$value['qty'];
+                        }else{
+                            $total=$row['price'] * $value['qty'];
+                        }
+                        $money+=$total;
                     }
-                    $money+=$total;
+
+                    if($value['option'] == 2){
+                        if($row['price_sale1'] > 0){
+                            $total=$row['price_sale1']*$value['qty'];
+                        }else{
+                            $total=$row['price1'] * $value['qty'];
+                        }
+                        $money+=$total;
+                    }
+
+                    if($value['option'] == 3){
+                        if($row['price_sale2'] > 0){
+                            $total=$row['price_sale2']*$value['qty'];
+                        }else{
+                            $total=$row['price2'] * $value['qty'];
+                        }
+                        $money+=$total;
+                    }
+                    
                 }
             }
+
+           
 
             $idCustomer=null; $mailCustomer=null;
             //GET INFO CUSTOMER
@@ -101,12 +124,18 @@ class Giohang extends CI_Controller {
                     $idCustomer=$info['id'];
                 }
             }
+
+            // print_r($_POST);
+            // die();
+           
             //Xu ly du lieu tu form
             //Province
-            $provinceId = $_POST['city'];echo "<script>console.log( 'provinceId: " . $provinceId . "' );</script>";
+            $provinceId = $_POST['city'];
+            echo "<script>console.log( 'provinceId: " . $provinceId . "' );</script>";
             //$provinceName = $this->Mtinhthanhpho->province_name($provinceId);
             //District
-            $districtId = $_POST['DistrictId'];echo "<script>console.log( 'districtId: " . $districtId . "' );</script>";
+            $districtId = $_POST['DistrictId'];
+            echo "<script>console.log( 'districtId: " . $districtId . "' );</script>";
             //$districtName = $this->Mdistrict->district_name($districtId);
             //Ward
             //$wardName = $this->Mxaphuongthitran->district_name($wardId);
@@ -120,6 +149,7 @@ class Giohang extends CI_Controller {
                 'money' => $money + $priceShip,
                 'province' => $provinceId,
                 'district' => $districtId,
+                'email' => $_POST['email'],
                 'trash' => 1, 'status' => 0
             );
             //Insert to DB_order
@@ -131,8 +161,11 @@ class Giohang extends CI_Controller {
                 $orderid = $order_detail['id'];
             //}
             $data=[];
+
+           
+            
             if($this->session->userdata('cart')){
-                $val = $this->session->userdata('cart');
+                $val = array_filter($this->session->userdata('cart'));
                 foreach ($val as $key => $value){
                     $row = $this->Mproduct->product_detail_id($key);
                     //Lưu theo giá gốc || giá khuyến mãi
@@ -145,23 +178,28 @@ class Giohang extends CI_Controller {
                         'orderid' => $orderid,
                         'productid' => $key,
                         'price' => $price,
-                        'count' => $value,
+                        'count' => $value['qty'],
                         'trash' => 1,
-                        'status' => 1
+                        'status' => 1, 
                     );
                     $this->Morderdetail->orderdetail_insert($data);
                 }
             }
+
+
+            // print_r($val);
+            // die();
             //GUI MAIL
             $this->load->library('email');
             $this->load->library('parser');
             $this->email->clear();
             $config['protocol']    = 'smtp';
-            $config['smtp_host']    = 'ssl://smtp.gmail.com';
-            $config['smtp_port']    = '465';
+            $config['smtp_host']    = 'mail.vishipel.com.vn';
+            $config['smtp_port']    = '587';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'sale.MacStore@gmail.com';
-            $config['smtp_pass']    = 'jgqunljqbtoiervp';
+            $config['smtp_crypto'] = 'tls';
+            $config['smtp_user']    = 'vdchung@vishipel.com.vn';
+            $config['smtp_pass']    = 'Vdc@1234';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
@@ -169,15 +207,23 @@ class Giohang extends CI_Controller {
             $config['validation'] = TRUE; // bool whether to validate email or not      
             $this->email->initialize($config);
             $this->email->set_newline("\r\n");
-            $this->email->from('MacStore@gmail.com', 'MacStore');
-            $list = array('ngotrungphat@gmail.com');//Mặc định là email của admin
+            $this->email->from('vdchung@vishipel.com.vn', 'MacStore');
+            $list = array($_POST['email']);//Mặc định là email của admin
             $this->email->to($list);
             $this->email->subject('Hệ thống MacStore');
             $this->email->message('Website của bạn vừa nhận được một đơn hàng mới, đăng nhập trang quản trị để xem chi tiết !');
+
+            
+
+
             if ($this->email->send()) {
                 $array_items = array('cart');
                 $this->session->unset_userdata($array_items);
                 redirect('/thankyou','refresh');
+            }else{
+                echo 'Có lỗi xảy ra khi gửi mail';
+                print_r($this->email->print_debugger());
+                
             }
 
         }else{

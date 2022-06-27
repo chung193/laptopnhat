@@ -47,7 +47,7 @@
                                         <tr>
                                             <td class="width30 text-right td-right-order">Email:</td>
                                             <td>
-                                                <input type="text" class="form-control" id="" value="<?php echo $user['email'] ?>" placeholder="Email" disabled>
+                                                <input type="text" class="form-control" id="" name="email" value="<?php echo $user['email'] ?>" placeholder="Email">
                                             </td>
                                         </tr>
                                         <tr>
@@ -114,23 +114,47 @@
                                             <td class="text-center">Giá</td>
                                         </tr>
                                         <?php if($this->session->userdata('cart')):
-                                            $data=$this->session->userdata('cart');
+                                            $data=array_filter($this->session->userdata('cart'));
                                             $money=0;
                                             foreach ($data as $key => $value) :
                                                 $row = $this->Mproduct->product_detail_id($key);?>
                                                 <tr>
                                                     <td><?php echo $row['name']; ?></td>
-                                                    <td class="text-center"><?php echo $value ?></td>
+                                                    <td class="text-center"><?php echo $value['qty'] ?></td>
                                                     <td class="text-center">    
                                                         <?php 
                                                             $total=0;
-                                                            if($row['price_sale'] > 0){
-                                                                $total=$row['price_sale']*$value;
-                                                            }else{
-                                                                $total=$row['price'] * $value;
+
+                                                            if($value['option'] ==1){
+                                                                if($row['price_sale'] > 0){
+                                                                    $total=$row['price_sale']*$value['qty'];
+                                                                }else{
+                                                                    $total=$row['price'] * $value['qty'];
+                                                                }
+                                                                $money+=$total;
+                                                                echo number_format($total).' VNĐ';
                                                             }
-                                                            $money+=$total;
-                                                            echo number_format($total).' VNĐ';
+
+                                                            if($value['option'] ==2){
+                                                                if($row['price_sale1'] > 0){
+                                                                    $total=$row['price_sale1']*$value['qty'];
+                                                                }else{
+                                                                    $total=$row['price1'] * $value['qty'];
+                                                                }
+                                                                $money+=$total;
+                                                                echo number_format($total).' VNĐ';
+                                                            }
+
+                                                            if($value['option'] ==3){
+                                                                if($row['price_sale2'] > 0){
+                                                                    $total=$row['price_sale2']*$value['qty'];
+                                                                }else{
+                                                                    $total=$row['price2'] * $value['qty'];
+                                                                }
+                                                                $money+=$total;
+                                                                echo number_format($total).' VNĐ';
+                                                            }
+                                                            
                                                         ?>
                                                     </td>
                                                 </tr>

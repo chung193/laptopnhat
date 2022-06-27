@@ -25,6 +25,36 @@
 		</div>
 	</div>
 </section> -->
+
+
+
+<section class="bread-crumb mb-3 mt-3">
+	<span class="crumb-border"></span>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 a-left">
+				<ul class="breadcrumb m-0 px-0">					
+					<li>
+						<a href="/" target="_self"><span>Trang chủ</span></a>
+						<span class="mr_lr">&nbsp;/&nbsp;</span>		
+					</li>
+					
+					<li>
+						<a href="<?= $row['typeslug'] ?>">
+							<span><?= $row['typename']?></span>
+						</a>
+						<span class="mr_lr">&nbsp;/&nbsp;</span>
+					</li>
+					<li class="active">
+						<span><?php echo $row['title']; ?></span>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
 <div class="container mt-2">
 	<div class="wrap_background_aside padding-top-0 margin-bottom-40 ">
 			<div class="row">		
