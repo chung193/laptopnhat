@@ -12,6 +12,7 @@
 
 	.bordercs{
 		color:green;
+		font-weight: bold;
 		border: 2px solid green;
 	}
 </style>
@@ -32,12 +33,10 @@
 						</a>
 						<span class="mr_lr">&nbsp;/&nbsp;</span>
 					</li>
-					
-					
+										
 					<li class="active">
 						<span><?php echo $row['name'] ?>	</span>
 					</li>
-					
 					
 				</ul>
 			</div>
@@ -108,14 +107,14 @@
 												</a>
 											</span>
 									</div>
-
-	
-
-
-
-<div class="price-box">
-	<span class="special-price"><span class="price product-price"><?php echo number_format($row['price'])?>₫</span> 
-	</span> <!-- Giá Khuyến mại -->
+				<div class="price-box" id="price1">
+					<span class="special-price">
+						<span class="price product-price">
+							<?php 
+								echo number_format($row['price']);
+							?>₫
+						</span> 
+					</span> <!-- Giá Khuyến mại -->
 								<?php if($row['price_sale']>0&&$row['sale']>0): ?>
 									<span class="old-price">
 										<del class="price product-price-old sale"><?php echo number_format($row['price_sale']) ?>₫</del> 
@@ -124,8 +123,46 @@
 									<div class="save-price">(Tiết kiệm <span><?php echo number_format($row['price'] - $row['price_sale'])?>₫</span>)</div>
 								<?php endif; ?>
 
-	<!-- Giá gốc -->
-</div>
+					<!-- Giá gốc -->
+				</div>
+
+				<div class="price-box" id="price2">
+					<span class="special-price">
+						<span class="price product-price">
+							<?php 
+								echo number_format($row['price1']);
+							?>₫
+						</span> 
+					</span> <!-- Giá Khuyến mại -->
+								<?php if($row['price_sale1']>0&&$row['sale1']>0): ?>
+									<span class="old-price">
+										<del class="price product-price-old sale"><?php echo number_format($row['price_sale1']) ?>₫</del> 
+									</span>
+									<div class="label_product">-<?php echo $row['sale1'] ?>%</div>
+									<div class="save-price">(Tiết kiệm <span><?php echo number_format($row['price1'] - $row['price_sale1'])?>₫</span>)</div>
+								<?php endif; ?>
+
+					<!-- Giá gốc -->
+				</div>
+
+				<div class="price-box" id="price3">
+					<span class="special-price">
+						<span class="price product-price">
+							<?php 
+								echo number_format($row['price2']);
+							?>₫
+						</span> 
+					</span> <!-- Giá Khuyến mại -->
+								<?php if($row['price_sale2']>0&&$row['sale']>0): ?>
+									<span class="old-price">
+										<del class="price product-price-old sale"><?php echo number_format($row['price_sale2']) ?>₫</del> 
+									</span>
+									<div class="label_product">-<?php echo $row['sale2'] ?>%</div>
+									<div class="save-price">(Tiết kiệm <span><?php echo number_format($row['price2'] - $row['price_sale2'])?>₫</span>)</div>
+								<?php endif; ?>
+
+					<!-- Giá gốc -->
+				</div>
 
 <!-- <span class="product-promo-tag product-promo-tag--1 product-promo-tag--image" style="--color: #333; --background: #f0f0f0; --border-color: #f0f0f0">
 		<img src="//theme.hstatic.net/200000458129/1000869299/14/promo_tag_1.png?v=53" alt="OPPO Reno6 Z 5G">
@@ -170,8 +207,16 @@
 			?>
 			<strong>Cấu hình: </strong>
 			<span class="p-2 mr-2 rounded border view cursor-pointer" id="1">cấu hình 1</span>
-			<span class="p-2 mr-2 rounded border view cursor-pointer" id="2">cấu hình 2</span>
-			<span class="p-2 mr-2 rounded border view cursor-pointer" id="3">cấu hình 3</span>
+			<?php 
+				if($row['ram1']!= '' && $row['ocung1']!= '' ){
+					echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="2">cấu hình 2</span>';
+				}
+				if($row['ram2']!= '' && $row['ocung2']!= '' ){
+					echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="3">cấu hình 3</span>';
+				}
+			?>
+			
+			
 	</div>
 
 	<div class="form_button_details w-100">
@@ -202,11 +247,13 @@
 		<div class="form_product_content type1">
 			<div class="soluong soluong_type_1 show">
 				<label>Số lượng:</label>
+
 				<div class="custom input_number_product custom-btn-number ">									
 					<button class="btn btn_num num_1 button button_qty" onclick="var result = document.getElementsByClassName('pd-qtym')[0];var stick_result = document.getElementsByClassName('pd-qtym')[1]; var qtypro = result.value; if(!isNaN( qtypro ) &amp;&amp; qtypro > 1){result.value--;stick_result.value--;}else{return false;}" type="button">
 						<svg class="icon">
-	<use xlink:href="#icon-minus"></use>
-</svg></button>
+							<use xlink:href="#icon-minus"></use>
+						</svg>
+					</button>
 					<input type="text" id="qtym" name="quantity" value="1" maxlength="3" class="form-control prd_quantity pd-qtym" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="var stick_result = document.getElementsByClassName('pd-qtym')[1];if(this.value == 0){this.value=1;}else{stick_result.value=this.value}">
 					<button class="btn btn_num num_2 button button_qty" onclick="var result = document.getElementsByClassName('pd-qtym')[0];var stick_result = document.getElementsByClassName('pd-qtym')[1]; var qtypro = result.value; if( !isNaN( qtypro )) result.value++;stick_result.value++;return false;" type="button">
 						<svg class="icon">
@@ -215,19 +262,21 @@
 					</button>
 					</div>
 				</div>
-				<div class="button_actions">				
-									<button type="submit" class="btn btn_base buynow" onclick="onAddCart(<?php echo $row['id']  ?>)">MUA NGAY<span>Giao hàng tận nơi hoặc nhận tại cửa hàng</span></button>
+
+				<input type="hidden" id="option" value="">
+
+							<div class="button_actions">				
+									<button type="submit" class="btn btn_base buynow" onclick="onAddCart(<?php echo $row['id']  ?>, document.getElementById('qtym').value, document.getElementById('option').value)">MUA NGAY<span>Giao hàng tận nơi hoặc nhận tại cửa hàng</span></button>
 									<div style="display: flex; flex-wrap: wrap; width: 100%">
-									<button type="submit" class="btn btn_add_cart btn-cart add_to_cart" onclick="onAddCart(<?php echo $row['id']  ?>)">THÊM VÀO GIỎ</button>
+									<button type="submit" class="btn btn_add_cart btn-cart add_to_cart" onclick="onAddCart(<?php echo $row['id']  ?>, document.getElementById('qtym').value, document.getElementById('option').value)">THÊM VÀO GIỎ</button>
 								</div>
 							</div>
 
 																			
 								<?php $config = $this->Mconfig->all();?>
-			<p class="product-hotline mb-0 text-center">
-				Gọi đặt mua <a href="tel:<?= $config['phone_for_sale']?>"><?= $config['phone_for_sale']?></a> (<?= $config['timework']?>)
-			</p>
-				
+								<p class="product-hotline mb-0 text-center">
+									Gọi đặt mua <a href="tel:<?= $config['phone_for_sale']?>"><?= $config['phone_for_sale']?></a> (<?= $config['timework']?>)
+								</p>
 			</div>
 		</div>
 									
@@ -247,62 +296,9 @@
 						
 					<div class="col-xl-12 col-lg col-md-5 col-9">
 						<h3><strong>Cấu hình chi tiết</strong></h3>
-					<?php 
-						// foreach($option as $vl){
-						// 	echo '
-							
-						// 	<div id="full-description-box">
-						// 		<table class="table table-striped view-product" id="product'.$vl['id'].'">
-						// 			<tbody>
-						// 				<tr class="bg-light">
-						// 					<td class="p-2" style="min-width: 95px">CPU</td>
-						// 					<td class="p-2">'.$vl['cpu'].'</td>
-						// 				</tr>
-						// 				<tr>
-						// 					<td class="p-2">RAM</td>
-						// 					<td class="p-2">'.$vl['ram'].'</td>
-						// 				</tr>
-						// 				<tr class="bg-light">
-						// 					<td class="p-2">ổ cứng</td>
-						// 					<td class="p-2">'.$vl['hard_drive'].'</td>
-						// 				</tr>
-						// 				<tr>
-						// 					<td class="p-2">VGA</td>
-						// 					<td class="p-2">'.$vl['vga'].'</td>
-						// 				</tr>
-						// 				<tr class="bg-light">
-						// 					<td class="p-2">Màn hình</td>
-						// 					<td class="p-2">'.$vl['screen'].'</td>
-						// 				</tr>
-						// 				<tr>
-						// 					<td class="p-2">Hệ điều hành</td>
-						// 					<td class="p-2">'.$vl['hdh'].'</td>
-						// 				</tr>
-						// 				<tr class="bg-light">
-						// 					<td class="p-2">Màu</td>
-						// 					<td class="p-2">'.$vl['color'].'</td>
-						// 				</tr>
-						// 				<tr>
-						// 					<td class="p-2"> Kích thước</td>
-						// 					<td class="p-2">'.$vl['kichthuoc'].'</td>
-						// 				</tr>
-						// 				<tr class="bg-light">
-						// 					<td class="p-2">Cân nặng</td>
-						// 					<td class="p-2"> '.$vl['cannang'].'</td>
-						// 				</tr>
-						// 				<tr>
-						// 					<td class="p-2">Phụ kiện</td>
-						// 					<td class="p-2">'.$vl['phukien'].'</td>
-						// 				</tr>
-						// 			</tbody>
-						// 		</table>
-						// 	</div>
-						// 	';
-						// 	}
-					?>
+					
 							<div id="full-description-box">
-
-								<table class="table table-striped view-product" id="product1">
+							<table class="table table-striped view-product" id="product1">
 									<tbody>
 										<tr class="bg-light">
 											<td class="p-2" style="min-width: 95px">RAM</td>
@@ -315,6 +311,7 @@
 									</tbody>
 								</table>
 
+							<?php if($row['ram1']!= '' && $row['ocung1']!= '' ){ ?>
 								<table class="table table-striped view-product" id="product2">
 									<tbody>
 										<tr class="bg-light">
@@ -327,7 +324,9 @@
 										</tr>
 									</tbody>
 								</table>
-
+							<?php } ?>
+								
+							<?php if($row['ram2']!= '' && $row['ocung2']!= '' ){ ?>
 								<table class="table table-striped view-product" id="product3">
 									<tbody>
 										<tr class="bg-light">
@@ -340,6 +339,7 @@
 										</tr>
 									</tbody>
 								</table>
+							<?php } ?>
 
 							</div>
 					</div>
@@ -347,78 +347,14 @@
 		</div>
 
 
-																																																																																																																																						</div>
+																																																																																																																																	</div>
 				
 			</div>																																																																																																																												</div>
 			</div>
 </div>
 
-<script>
-$(document).ready(()=>{
-		let initCoupon = false
-		function initCoupons (){
-		if( initCoupon) return
-		initCoupon = true
-		if(!$('#coupon-modal').length){
-		$('body').append($('[data-template="couponPopup"]').html())
-		}
-		$('.coupon_info_toggle').click(function(e){
-				e.preventDefault();
-				const code = $(this).data('coupon')
-				const info = $(this).next('.coupon_info').html()|| ''
-				const title = $(this).parents('.coupon_body').find('.coupon_title').text() || ''
-				const couponHtml = `
-					<div class="coupon-title">${title}</div>
-					<div class="coupon-row">
-						<div class="coupon-label">Mã khuyến mãi:</div><span class="code">${code}</span>
-	
-					</div>
-					<div class="coupon-row">
-						<div class="coupon-label">Điều kiện:</div><div class="coupon-info">${info}</div>
-					</div>
-					<div class="coupon-action">
-					<button type="button" class="btn btn-main" data-dismiss="modal" data-backdrop="false"
-        				aria-label="Close" style="z-index: 9;">Đóng</button>
-					<button class="btn btn-main coupon_copy" data-ega-coupon="${code}">
-						<span>Sao chép</span></button>
-					</div>
-					`
-				$('.coupon-modal .coupon-content').html(couponHtml)
-				$("#coupon-modal").modal();
-			})
-			$(document).on('click','.coupon_copy', function() {
-				
-		const copyText = "Sao chép";
-		const copiedText = "Đã chép";
-		const coupon = $(this).data().egaCoupon;
-		const _this = $(this);
-		_this.html(`<span>${copiedText}</span>`);
-		_this.addClass('disabled');
-		setTimeout(function() {
-			_this.html(`<span>${copyText}</span>`);
-			_this.removeClass('disabled');
-		}, 3000)
-		navigator.clipboard.writeText(coupon);
-	})
-		
-		}
-	$(window).one(' mousemove touchstart scroll', initCoupons)
-			
-	})
-</script><script>
-	$('.filter-item-toggle').click(function(){
-		$(this).toggleClass('show')
-		let overflowItem = $(this).parent().find('.overflow-item')
-		overflowItem.toggleClass('show')
-		let text = !$(this).hasClass('show') ? 'Xem tất cả ưu đãi <i class="fas fa-chevron-down "></i>' : 'Thu gọn <i class="fas fa-chevron-down "></i>'  
-		$(this).html(text)
-	})
+<div class="product-policises-wrapper">
 
-
-</script>																					<div class="product-policises-wrapper">
-<!--	<h5 class="m-0 mb-3">
-	Chỉ có tại EGA Techstore
-</h5> -->
 <ul class="product-policises list-unstyled card border-0 p-3 m-0">
 
 	<li class="media">
@@ -438,16 +374,6 @@ $(document).ready(()=>{
 			Trả góp lãi suất 0% qua thẻ tín dụng Visa, Master, JCB
 		</div>
 	</li>
-
-	<!-- <li class="media">
-		<div class="mr-2">
-			<img class="img-fluid " width="24" height="24" src="//theme.hstatic.net/200000458129/1000869299/14/policy_product_image_4.png?v=53" alt="Đổi trả miễn phí trong 30 ngày">
-		</div>
-		<div class="media-body"> 
-			Đổi trả miễn phí trong 30 ngày
-		</div>
-	</li> -->
-
 </ul>
 
 </div>
@@ -541,18 +467,108 @@ $(document).ready(()=>{
 
 	<script>
 		$(document).ready(function() {
-			$('.view-product:first').show() 
-
+			$('.view-product:first').show(); 
+			$('.price-box').hide();
+			$('.price-box:first').show() 
 			$(".view").click(function() { 
 				$('.view-product').hide();
+				$('.price-box').hide();
 				$('.view').removeClass('bordercs');
 				$(this).addClass('bordercs');
 				//console.log('click');
 				// $(this).attr('id') is the id of the clicked .view element   
 				//$()
+				$('#option').val($(this).attr('id'));
+
 				$('[id="product'+$(this).attr('id')+'"]').toggle();
+				$('[id="price'+$(this).attr('id')+'"]').toggle();
+
 			});
 		});
+
+		function onAddCart(id, qty, option){
+			var strurl="<?php echo base_url();?>"+'/sanpham/addcart';
+			jQuery.ajax({
+				url: strurl,
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					id: id,
+					qty: qty,
+					option: option
+				},
+				success: function(data) {
+					document.location.reload(true);
+					alert('Thêm sản phẩm vào giỏ hàng thành công !');
+				}
+			});
+		}
 	</script>
+
+<script>
+$(document).ready(()=>{
+		let initCoupon = false
+		function initCoupons (){
+		if( initCoupon) return
+		initCoupon = true
+		if(!$('#coupon-modal').length){
+		$('body').append($('[data-template="couponPopup"]').html())
+		}
+		$('.coupon_info_toggle').click(function(e){
+				e.preventDefault();
+				const code = $(this).data('coupon')
+				const info = $(this).next('.coupon_info').html()|| ''
+				const title = $(this).parents('.coupon_body').find('.coupon_title').text() || ''
+				const couponHtml = `
+					<div class="coupon-title">${title}</div>
+					<div class="coupon-row">
+						<div class="coupon-label">Mã khuyến mãi:</div><span class="code">${code}</span>
+	
+					</div>
+					<div class="coupon-row">
+						<div class="coupon-label">Điều kiện:</div><div class="coupon-info">${info}</div>
+					</div>
+					<div class="coupon-action">
+					<button type="button" class="btn btn-main" data-dismiss="modal" data-backdrop="false"
+        				aria-label="Close" style="z-index: 9;">Đóng</button>
+					<button class="btn btn-main coupon_copy" data-ega-coupon="${code}">
+						<span>Sao chép</span></button>
+					</div>
+					`
+				$('.coupon-modal .coupon-content').html(couponHtml)
+				$("#coupon-modal").modal();
+			})
+			$(document).on('click','.coupon_copy', function() {
+				
+		const copyText = "Sao chép";
+		const copiedText = "Đã chép";
+		const coupon = $(this).data().egaCoupon;
+		const _this = $(this);
+		_this.html(`<span>${copiedText}</span>`);
+		_this.addClass('disabled');
+		setTimeout(function() {
+			_this.html(`<span>${copyText}</span>`);
+			_this.removeClass('disabled');
+		}, 3000)
+		navigator.clipboard.writeText(coupon);
+	})
+		
+		}
+	$(window).one(' mousemove touchstart scroll', initCoupons)
+			
+	})
+</script>
+
+<script>
+	$('.filter-item-toggle').click(function(){
+		$(this).toggleClass('show')
+		let overflowItem = $(this).parent().find('.overflow-item')
+		overflowItem.toggleClass('show')
+		let text = !$(this).hasClass('show') ? 'Xem tất cả ưu đãi <i class="fas fa-chevron-down "></i>' : 'Thu gọn <i class="fas fa-chevron-down "></i>'  
+		$(this).html(text)
+	})
+
+
+</script>	
 
 

@@ -123,6 +123,7 @@ class Sanpham extends CI_Controller {
         $this->data['view']='detail';
         $this->load->view('frontend/layout',$this->data);
     }
+    
     public function addcart(){
         $this->load->library('session');
         $id=$_POST['id'];
