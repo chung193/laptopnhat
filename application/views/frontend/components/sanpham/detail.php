@@ -155,17 +155,23 @@
 
 		<div class="mt-2 mb-2">
 		<?php 
-				$option = $this->Mproduct->get_all_option($row['id']);
-				if(count($option)){
-					echo '<strong>Cấu hình: </strong>';
-					$i = 1;
-					foreach($option as $val){
-						echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="'.$val['id'].'">cấu hình '.$i.'</span>';
-						$i++;
-					}	
-				}	
+				// $option = $this->Mproduct->get_all_option($row['id']);
+				// if(count($option)){
+				// 	echo '<strong>Cấu hình: </strong>';
+				// 	$i = 1;
+				// 	foreach($option as $val){
+				// 		echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="'.$val['id'].'">cấu hình '.$i.'</span>';
+				// 		$i++;
+				// 	}	
+				// }	
+
+
 						
 			?>
+			<strong>Cấu hình: </strong>
+			<span class="p-2 mr-2 rounded border view cursor-pointer" id="1">cấu hình 1</span>
+			<span class="p-2 mr-2 rounded border view cursor-pointer" id="2">cấu hình 2</span>
+			<span class="p-2 mr-2 rounded border view cursor-pointer" id="3">cấu hình 3</span>
 	</div>
 
 	<div class="form_button_details w-100">
@@ -242,59 +248,100 @@
 					<div class="col-xl-12 col-lg col-md-5 col-9">
 						<h3><strong>Cấu hình chi tiết</strong></h3>
 					<?php 
-						foreach($option as $vl){
-							echo '
+						// foreach($option as $vl){
+						// 	echo '
 							
+						// 	<div id="full-description-box">
+						// 		<table class="table table-striped view-product" id="product'.$vl['id'].'">
+						// 			<tbody>
+						// 				<tr class="bg-light">
+						// 					<td class="p-2" style="min-width: 95px">CPU</td>
+						// 					<td class="p-2">'.$vl['cpu'].'</td>
+						// 				</tr>
+						// 				<tr>
+						// 					<td class="p-2">RAM</td>
+						// 					<td class="p-2">'.$vl['ram'].'</td>
+						// 				</tr>
+						// 				<tr class="bg-light">
+						// 					<td class="p-2">ổ cứng</td>
+						// 					<td class="p-2">'.$vl['hard_drive'].'</td>
+						// 				</tr>
+						// 				<tr>
+						// 					<td class="p-2">VGA</td>
+						// 					<td class="p-2">'.$vl['vga'].'</td>
+						// 				</tr>
+						// 				<tr class="bg-light">
+						// 					<td class="p-2">Màn hình</td>
+						// 					<td class="p-2">'.$vl['screen'].'</td>
+						// 				</tr>
+						// 				<tr>
+						// 					<td class="p-2">Hệ điều hành</td>
+						// 					<td class="p-2">'.$vl['hdh'].'</td>
+						// 				</tr>
+						// 				<tr class="bg-light">
+						// 					<td class="p-2">Màu</td>
+						// 					<td class="p-2">'.$vl['color'].'</td>
+						// 				</tr>
+						// 				<tr>
+						// 					<td class="p-2"> Kích thước</td>
+						// 					<td class="p-2">'.$vl['kichthuoc'].'</td>
+						// 				</tr>
+						// 				<tr class="bg-light">
+						// 					<td class="p-2">Cân nặng</td>
+						// 					<td class="p-2"> '.$vl['cannang'].'</td>
+						// 				</tr>
+						// 				<tr>
+						// 					<td class="p-2">Phụ kiện</td>
+						// 					<td class="p-2">'.$vl['phukien'].'</td>
+						// 				</tr>
+						// 			</tbody>
+						// 		</table>
+						// 	</div>
+						// 	';
+						// 	}
+					?>
 							<div id="full-description-box">
-								<table class="table table-striped view-product" id="product'.$vl['id'].'">
+
+								<table class="table table-striped view-product" id="product1">
 									<tbody>
 										<tr class="bg-light">
-											<td class="p-2" style="min-width: 95px">CPU</td>
-											<td class="p-2">'.$vl['cpu'].'</td>
+											<td class="p-2" style="min-width: 95px">RAM</td>
+											<td class="p-2"><?= $row['ram'] ?></td>
 										</tr>
 										<tr>
-											<td class="p-2">RAM</td>
-											<td class="p-2">'.$vl['ram'].'</td>
-										</tr>
-										<tr class="bg-light">
-											<td class="p-2">ổ cứng</td>
-											<td class="p-2">'.$vl['hard_drive'].'</td>
-										</tr>
-										<tr>
-											<td class="p-2">VGA</td>
-											<td class="p-2">'.$vl['vga'].'</td>
-										</tr>
-										<tr class="bg-light">
-											<td class="p-2">Màn hình</td>
-											<td class="p-2">'.$vl['screen'].'</td>
-										</tr>
-										<tr>
-											<td class="p-2">Hệ điều hành</td>
-											<td class="p-2">'.$vl['hdh'].'</td>
-										</tr>
-										<tr class="bg-light">
-											<td class="p-2">Màu</td>
-											<td class="p-2">'.$vl['color'].'</td>
-										</tr>
-										<tr>
-											<td class="p-2"> Kích thước</td>
-											<td class="p-2">'.$vl['kichthuoc'].'</td>
-										</tr>
-										<tr class="bg-light">
-											<td class="p-2">Cân nặng</td>
-											<td class="p-2"> '.$vl['cannang'].'</td>
-										</tr>
-										<tr>
-											<td class="p-2">Phụ kiện</td>
-											<td class="p-2">'.$vl['phukien'].'</td>
+											<td class="p-2">Ổ cứng</td>
+											<td class="p-2"><?= $row['ocung']?></td>
 										</tr>
 									</tbody>
 								</table>
+
+								<table class="table table-striped view-product" id="product2">
+									<tbody>
+										<tr class="bg-light">
+											<td class="p-2" style="min-width: 95px">RAM</td>
+											<td class="p-2"><?=$row['ram1']?></td>
+										</tr>
+										<tr>
+											<td class="p-2">Ổ cứng</td>
+											<td class="p-2"><?=$row['ocung1']?></td>
+										</tr>
+									</tbody>
+								</table>
+
+								<table class="table table-striped view-product" id="product3">
+									<tbody>
+										<tr class="bg-light">
+											<td class="p-2" style="min-width: 95px">RAM</td>
+											<td class="p-2"><?=$row['ram2']?></td>
+										</tr>
+										<tr>
+											<td class="p-2">Ổ cứng</td>
+											<td class="p-2"><?=$row['ocung2']?></td>
+										</tr>
+									</tbody>
+								</table>
+
 							</div>
-							';
-							}
-					?>
-					
 					</div>
 			</div>			
 		</div>
@@ -497,11 +544,12 @@ $(document).ready(()=>{
 			$('.view-product:first').show() 
 
 			$(".view").click(function() { 
-				$('.view-product').show();
+				$('.view-product').hide();
 				$('.view').removeClass('bordercs');
 				$(this).addClass('bordercs');
 				//console.log('click');
 				// $(this).attr('id') is the id of the clicked .view element   
+				//$()
 				$('[id="product'+$(this).attr('id')+'"]').toggle();
 			});
 		});
