@@ -320,27 +320,29 @@
 </div>
 
 		</div>
-		<ul class="shop-policises list-unstyled d-flex align-items-center flex-wrap m-0 pr-0">
+
+	<!-- <ul class="shop-policises list-unstyled d-flex align-items-center flex-wrap m-0 pr-0">
 							<li>
 		<div class="">
-			<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_1.png" width="32" height="32" alt="Hướng dẫn bán máy cũ">
-		</div>
-		<a class="link" href="<?= base_url() ?>pages/huong-dan-ban-may-cu" title="Hướng dẫn bán máy cũ">Hướng dẫn bán máy cũ</a>
-	</li>
-								<li>
-		<div class="">
-			<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_2.png" width="32" height="32" alt="Hướng dẫn mua online">
-		</div>
-		<a class="link" href="<?= base_url() ?>pages/huong-dan-mua-hang-online" title="Hướng dẫn mua online">Hướng dẫn mua online</a>
-	</li>
-								<li>
-		<div class="">
-			<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_3.png" width="32" height="32" alt="Hướng dẫn trả góp">
-		</div>
-		<a class="link" href="<?= base_url() ?>pages/huong-dan-tra-gop" title="Hướng dẫn trả góp">Hướng dẫn trả góp</a>
-	</li>
-			
-</ul>
+				<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_1.png" width="32" height="32" alt="Hướng dẫn bán máy cũ">
+			</div>
+			<a class="link" href="<?= base_url() ?>pages/huong-dan-ban-may-cu" title="Hướng dẫn bán máy cũ">Hướng dẫn bán máy cũ</a>
+		</li>
+									<li>
+			<div class="">
+				<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_2.png" width="32" height="32" alt="Hướng dẫn mua online">
+			</div>
+			<a class="link" href="<?= base_url() ?>pages/huong-dan-mua-hang-online" title="Hướng dẫn mua online">Hướng dẫn mua online</a>
+		</li>
+									<li>
+			<div class="">
+				<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_3.png" width="32" height="32" alt="Hướng dẫn trả góp">
+			</div>
+			<a class="link" href="<?= base_url() ?>pages/huong-dan-tra-gop" title="Hướng dẫn trả góp">Hướng dẫn trả góp</a>
+		</li>
+				
+	</ul> -->
+
 	</div>
 </div>
 

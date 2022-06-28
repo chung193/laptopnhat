@@ -3408,7 +3408,7 @@ $(document).ready(function ($) {
 			</a>
 		</li>
 		<li class="addThis_item">
-			<a class="addThis_item--icon" href="<?= $zalo['url']?>" target="_blank" rel="nofollow">
+			<a class="addThis_item--icon" href="https://chat.zalo.me/?phone=<?= $zalo['url']?>" target="_blank" rel="nofollow">
 				<img class="img-fluid" src="<?= base_url() ?>/public/techstore/EGA Techstore_files/addthis-zalo.svg" alt="Gọi ngay cho chúng tôi" width="44" height="44">
 				<span class="tooltip-text">Chat với chúng tôi qua zalo</span>
 			</a>
