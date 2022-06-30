@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 28, 2022 lúc 01:53 AM
--- Phiên bản máy phục vụ: 10.4.22-MariaDB
--- Phiên bản PHP: 7.3.33
+-- Thời gian đã tạo: Th6 30, 2022 lúc 05:16 PM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -218,9 +218,7 @@ INSERT INTO `db_customer` (`id`, `fullname`, `username`, `password`, `gender`, `
 (20, 'admin1234', 'admin1234', 'e10adc3949ba59abbe56e057f20f883e', NULL, '0000-00-00', '', '01234567814', 'admin1234@gmail.com', '2017-04-27 02:24:23', 1, 1, 1),
 (38, '', '', '', NULL, '0000-00-00', '', '', 'abcaxyz@gmail.com', '2017-05-13 00:52:23', 1, 1, 1),
 (35, 'Sale 24hStore', 'Sale 24hStore', 'e10adc3949ba59abbe56e057f20f883e', NULL, '0000-00-00', '', '01234567878', 'sale.24hstore@gmail.com', '2017-05-05 21:03:20', 1, 1, 1),
-(39, 'Ngo Trung Phat', 'Phat Admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, '0000-00-00', '', '0102030405', 'customer.24hstore@gmail.com', '2017-05-13 08:20:53', 1, 1, 1),
-(40, '', '', '', NULL, '0000-00-00', '', '', 'chungvd.it@gmail.com', '2022-06-27 20:29:20', 1, 1, 1),
-(41, '', '', '', NULL, '0000-00-00', '', '', 'chungcnt52dh1@gmail.com', '2022-06-27 21:11:07', 1, 1, 1);
+(39, 'Ngo Trung Phat', 'Phat Admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, '0000-00-00', '', '0102030405', 'customer.24hstore@gmail.com', '2017-05-13 08:20:53', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -260,36 +258,8 @@ CREATE TABLE `db_order` (
   `district` int(10) NOT NULL,
   `address` varchar(255) NOT NULL,
   `trash` tinyint(1) NOT NULL DEFAULT 1,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
-  `email` varchar(255) NOT NULL
+  `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Đang đổ dữ liệu cho bảng `db_order`
---
-
-INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`, `phone`, `money`, `province`, `district`, `address`, `trash`, `status`, `email`) VALUES
-(29, 'zwRGvf', 40, '2022-06-27 20:34:38', 'chung vũ đình', '0123456789', 21030000, 64, 622, 'fasfsasfasfasfasfasfasfasfasfasfasfasfasfasfasf', 1, 0, ''),
-(30, 'isTK23', 40, '2022-06-27 20:35:41', 'chung vũ đình', '0123456789', 21030000, 92, 925, 'yewysysysdysdsdtsdtsdtsdtsdgsdgsdgsdgsdgsdg', 1, 0, ''),
-(31, 'JUg9mV', 40, '2022-06-27 20:36:22', 'chung vũ đình', '0123456789', 21030000, 92, 925, 'gsdgasdgdsgdsgsdsdgsdgsdgsdgsdgsdgsdgsdgsdg', 1, 0, ''),
-(32, 'oNwxzf', 40, '2022-06-27 20:42:45', 'ìbasikfbasuikfbsaifbsa', '0123456789', 21030000, 92, 925, 'uiydysdsdtsdgsdghsdgh', 1, 0, ''),
-(33, '4asvuH', 40, '2022-06-27 20:43:38', 'FGASGDSGDSDGSDG', '0123456789', 21030000, 92, 925, 'GDSGDSDGSGDSSDGSDGDGSDGDGDGSDG', 1, 0, ''),
-(34, 'V8volh', 40, '2022-06-27 20:45:42', 'fsafsafasasfasfasfasf', '0123456789', 21030000, 92, 925, 'fasfsafsasffsasfsfasfasffsasfasfasfasfsfasfaasfsfasfsf', 1, 0, ''),
-(35, '1DXh4H', 40, '2022-06-27 20:46:12', 'fsfssfaasfsfaasfsfasf', '0123455668', 21030000, 92, 926, 'fsafssfaasfasfasfasfasfasf', 1, 0, ''),
-(36, '08xhIO', 40, '2022-06-27 20:46:40', 'fasfsfsasfsfasfsfa', '0123456789', 21030000, 92, 926, 'fasfsasasdggasdgsdasgasfgasfgasgasgasg', 1, 0, ''),
-(37, '5KaScx', 40, '2022-06-27 20:51:05', 'fasfssasfasfasf', '0123455678', 21030000, 92, 925, 'vzvbzgzxzxdgdhfnfndfjdfjdfjdfjdrfj', 1, 0, ''),
-(38, 'QJyCRk', 40, '2022-06-27 20:53:29', 'fasfgssfasdgsdgasdg', '0123456789', 21030000, 92, 925, 'fgaasggđfhdfhdfhjfgjfgjgjfgjfgjfgjfgj', 1, 0, ''),
-(39, 'Bx6eEK', 40, '2022-06-27 20:55:21', 'fasfasasfasfasfasf', '0123456789', 21030000, 92, 925, 'fasfsasfasfasfasfasfasfsfasf', 1, 0, ''),
-(40, 'eIMF21', 40, '2022-06-27 20:57:54', 'fasfsafssfasfasfasf', '0123456789', 21030000, 92, 926, 'fsafsafsasfasfasfasfasf', 1, 0, ''),
-(41, 'JdRGBM', 40, '2022-06-27 21:05:29', 'sfasfsaafsasfasf', '0123456789', 21030000, 92, 926, 'fasfsasfaasfasfasfasfasfasfasf', 1, 0, ''),
-(42, 'Fh8q2H', 41, '2022-06-27 21:11:16', 'gsdgdgdsdgsdgsdg', '0123456789', 21030000, 92, 925, 'gdsgđgdgsdgdgsdgsdgsdg', 1, 0, ''),
-(43, 'JHk3Gw', 41, '2022-06-27 21:12:23', 'fasfasfasfasf', '01234567852', 21030000, 92, 925, 'fsafsasfaasfasfasfasf', 1, 0, ''),
-(44, 'Z8vGYS', 41, '2022-06-27 21:13:57', 'dfsafsfsasf', '0123456789', 21030000, 92, 925, 'fassfasffsaasfasfasf', 1, 0, ''),
-(45, 'h5CAFE', 41, '2022-06-27 21:14:45', 'vbzvvsvasvasgsg', '0123456789', 21030000, 92, 925, 'fasfssfasfasfsfsaasfasfasfasf', 1, 0, ''),
-(46, 'CvIL4E', 41, '2022-06-27 21:15:50', 'fasfsfsasfasf', '0123456789', 21030000, 92, 925, 'fasfsafsaasfasfasfasfasfasf', 1, 0, ''),
-(47, '0U6JHy', 41, '2022-06-27 22:02:18', 'fsafsasfasfasfasf', '0123456789', 21030000, 92, 926, 'fsafssfaasfasfasfasfasf', 1, 0, 'chungcnt52dh1@gmail.com'),
-(48, 'l2wQVM', 41, '2022-06-27 22:09:29', 'àasfsaasfasf', '01213456789', 21030000, 92, 925, 'fasfsasfasfasf', 1, 0, 'chungcnt52dh1@gmail.com'),
-(49, 'WEv29M', 41, '2022-06-27 22:10:13', 'fasffsfsasf', '0123456788', 21030000, 92, 925, 'fsafsasfasfasfasfasfasf', 1, 0, 'chungcnt52dh1@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -306,27 +276,6 @@ CREATE TABLE `db_orderdetail` (
   `trash` tinyint(1) NOT NULL DEFAULT 1,
   `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Đang đổ dữ liệu cho bảng `db_orderdetail`
---
-
-INSERT INTO `db_orderdetail` (`id`, `orderid`, `productid`, `count`, `price`, `trash`, `status`) VALUES
-(44, 30, 1, 1, 21000000, 1, 1),
-(45, 31, 1, 1, 21000000, 1, 1),
-(46, 32, 1, 1, 21000000, 1, 1),
-(47, 33, 1, 1, 21000000, 1, 1),
-(48, 35, 1, 1, 21000000, 1, 1),
-(49, 36, 1, 1, 21000000, 1, 1),
-(50, 37, 1, 1, 21000000, 1, 1),
-(51, 38, 1, 1, 21000000, 1, 1),
-(52, 39, 1, 1, 21000000, 1, 1),
-(53, 40, 1, 1, 21000000, 1, 1),
-(54, 41, 1, 1, 21000000, 1, 1),
-(55, 42, 1, 1, 21000000, 1, 1),
-(56, 43, 1, 1, 21000000, 1, 1),
-(57, 48, 1, 1, 21000000, 1, 1),
-(58, 49, 1, 1, 21000000, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -462,7 +411,7 @@ CREATE TABLE `db_product` (
   `sale2` int(11) NOT NULL,
   `price2` int(11) NOT NULL,
   `price_sale2` int(11) NOT NULL,
-  `showprice` tinyint(4) NOT NULL
+  `showprice` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -470,15 +419,14 @@ CREATE TABLE `db_product` (
 --
 
 INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sortDesc`, `detail`, `producer`, `number`, `number_buy`, `sale`, `price`, `price_sale`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `access`, `status`, `metakey`, `metadesc`, `ram`, `ocung`, `ram1`, `ocung1`, `sale1`, `price1`, `price_sale1`, `ram2`, `ocung2`, `sale2`, `price2`, `price_sale2`, `showprice`) VALUES
-(1, 2, 'HP Probook 450 G7', 'hp-probook-450-g7', '2cd863892213bf7a5e5f8032c0273381.jpg', '2cd863892213bf7a5e5f8032c0273381.jpg', 'HP Probook 450 G7 màu bạc cực sang trọng\r\n', '<p>M&aacute;y Nhật x&aacute;ch tay cực bền, h&igrave;nh thức như mới</p>\r\n\r\n<p>Cấu h&igrave;nh:</p>\r\n\r\n<p>CPU i5 10210u</p>\r\n\r\n<p>Ram 16gb</p>\r\n\r\n<p>Ổ cứng 1T SSD</p>\r\n\r\n<p>M&agrave;n h&igrave;nh 15,6</p>\r\n\r\n<p>Gi&aacute; 21,x tr</p>\r\n\r\n<p>BH 03 th&aacute;ng</p>\r\n\r\n<p>Tặng k&egrave;m cặp, chuột kh&ocirc;ng d&acirc;y mới</p>\r\n', '18', 1, 1, 0, 21000000, 21000000, '2022-06-06 11:13:28', '4', '2022-06-06 11:13:28', '4', 1, 1, 1, '', '', '0', '0', '1', '1', 0, 0, 0, '2', '2', 0, 0, 0, 0),
+(1, 2, 'HP Probook 450 G7', 'hp-probook-450-g7', '2cd863892213bf7a5e5f8032c0273381.jpg', '2cd863892213bf7a5e5f8032c0273381.jpg', 'HP Probook 450 G7 màu bạc cực sang trọng\r\n', '<p>M&aacute;y Nhật x&aacute;ch tay cực bền, h&igrave;nh thức như mới</p>\r\n\r\n<p>Cấu h&igrave;nh:</p>\r\n\r\n<p>CPU i5 10210u</p>\r\n\r\n<p>Ram 16gb</p>\r\n\r\n<p>Ổ cứng 1T SSD</p>\r\n\r\n<p>M&agrave;n h&igrave;nh 15,6</p>\r\n\r\n<p>Gi&aacute; 21,x tr</p>\r\n\r\n<p>BH 03 th&aacute;ng</p>\r\n\r\n<p>Tặng k&egrave;m cặp, chuột kh&ocirc;ng d&acirc;y mới</p>\r\n', '18', 1, 1, 0, 21000000, 21000000, '2022-06-06 11:13:28', '4', '2022-06-06 11:13:28', '4', 1, 1, 1, '', '', '10', '1000', '10', '1', 0, 0, 0, '0', '0', 0, 0, 0, 0),
 (2, 8, 'Nec Lavie LX850', 'nec-lavie-lx850', '', '285190565_414524797174392_1287337625674404125_n.jpg', 'Chiếc Ultrabook 15,6 inch mỏng nhất thế giới, được xem là \"kẻ kế nhiệm\" của chiếc Ultrabook nhẹ nhất thế giới Lavie Z mà hãng ra mắt. LaVie X gây ấn tượng đặc biệt với độ mỏng chỉ 12,8 mm và cân nặng chỉ khoảng 1,58 kg trong \"hình hài\" có thể coi là \"to lớn\" nhất trong làng Ultrabook hiện nay với màn hình 15,6 inch. \r\n', '<p>Nec Lavie LX850</p>\r\n\r\n<p>Chiếc Ultrabook 15,6 inch mỏng nhất thế giới, được xem l&agrave; &quot;kẻ kế nhiệm&quot; của chiếc Ultrabook nhẹ nhất thế giới Lavie Z m&agrave; h&atilde;ng ra mắt. LaVie X g&acirc;y ấn tượng đặc biệt với độ mỏng chỉ 12,8 mm v&agrave; c&acirc;n nặng chỉ khoảng 1,58 kg trong &quot;h&igrave;nh h&agrave;i&quot; c&oacute; thể coi l&agrave; &quot;to lớn&quot; nhất trong l&agrave;ng Ultrabook hiện nay với m&agrave;n h&igrave;nh 15,6 inch.</p>\r\n\r\n<p>Cấu h&igrave;nh:</p>\r\n\r\n<p>CPU i7 3537u</p>\r\n\r\n<p>Ram 4gb</p>\r\n\r\n<p>SSD 60gb</p>\r\n\r\n<p>Gi&aacute; 10.x tr (Gi&aacute; chuẩn l&agrave; 12,5tr tuy nhi&ecirc;n do pin k&eacute;m n&ecirc;n b&aacute;n = gi&aacute; pin hỏng)</p>\r\n\r\n<p>MAC STORE HP</p>\r\n', '18', 1, 1, 0, 12500000, 12500000, '2022-06-06 16:01:12', '4', '2022-06-06 16:01:12', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
 (3, 8, 'faffsafsafs', 'faffsafsafs', 'default.png', '', 'sfsafsfs', '<p>faffsafsafs</p>\r\n', '19', 1, 1, 0, 100000, 100000, '2022-06-06 16:34:42', '4', '2022-06-06 16:34:42', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
 (4, 8, '1`131313', '1-131313', 'default.png', 'c9aab1096a5e8c63420e33f9e2150fd8.jpg#c5721617b8ab5ac5116003dd93fc5078.jpg', '4142', '<p>42142421421</p>\r\n', '19', 1, 1, 0, 1000, 900, '2022-06-09 11:13:13', '4', '2022-06-09 11:13:13', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
 (5, 8, '1314124214', '1314124214', 'cbe122601872b0925778d16c7b921b66.jpg', '17af9d5d150159de60714ad08b57d549.jpg#e7f45ac1c778466b43096805403406aa.jpg', '421424', '<p>214124214242421</p>\r\n', '19', 1, 1, 0, 10000, 10000, '2022-06-09 11:19:53', '4', '2022-06-09 11:19:53', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
 (6, 1, '123', '123', '0a99d9e9098afcd5d4927c9af83308c5.jpg', '9f71102bc8b80834b43a9cd3ddadd704.png', '124214214', '<p>2142424214214242</p>\r\n', '19', 1, 1, 0, 100, 100, '2022-06-14 11:09:57', '4', '2022-06-14 11:09:57', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(7, 8, 'abcdef', 'abcdef', '25530b0196db04faa842fa524894ee4e.png', 'b21d9cd3a6886a1598361435ba85073c.jpg', 'abcdef', '<p>abcdef</p>\r\n', '19', 100, 100, 0, 10000, 10000, '2022-06-16 16:35:41', '4', '2022-06-16 16:51:02', '4', 1, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(8, 8, '1124124124', '1124124124', 'default.png', '', 'rafs', '<p>&aacute;afsasf</p>\r\n', '19', 1, 1, 1111, 1111, 1111, '2022-06-25 19:18:32', '4', '2022-06-25 19:18:32', '4', 1, 1, 1, '', '', '1111', '1111', '1111', '1111', 1111, 1111, 1111, '1111', '1111', 1111, 1111, 1111, 0),
-(9, 1, 'gdgdgdssdg', 'gdgdgdssdg', 'default.png', '', 'gdgsdgdssd', '<p>sdgsdgsdgd</p>\r\n', '18', 1, 1, 111, 111, 11, '2022-06-26 07:29:12', '4', '2022-06-26 07:29:12', '4', 1, 1, 1, '', '', '111', '111', '111', '111', 111, 111, 1111, '1111', '111', 111, 1111, 1111, 1);
+(7, 8, 'abcdef', 'abcdef', '25530b0196db04faa842fa524894ee4e.png', 'b21d9cd3a6886a1598361435ba85073c.jpg', 'abcdef', '<p>abcdef</p>\r\n', '19', 100, 100, 0, 10000, 10000, '2022-06-16 16:35:41', '4', '2022-06-16 16:51:02', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
+(8, 2, 'Laptop Lenovo Legion Gaming Y7000', 'laptop-lenovo-legion-gaming-y7000', '6dc7523f48bca92e3703d0d4f15fe851.jpg', '95fce5f930a04467e247e8bb5c4d31a1.jpg#2439dfed631548e471116fbc6139e530.jpg#5e7969e49d7546c48b7fb92d4a1f9e8f.jpg', 'Laptop Lenovo Legion Gaming Y7000', '<p>Laptop Lenovo Legion Gaming Y7000 c&oacute; thiết kế c&aacute; t&iacute;nh b&ecirc;n ngo&agrave;i v&agrave; mạnh mẽ ở b&ecirc;n trong, mang lại sự c&acirc;n bằng l&iacute; tưởng giữa hiệu năng chơi game v&agrave; t&iacute;nh di động, tiện lợi. Nh&igrave;n v&agrave;o bề ngo&agrave;i, người ta sẽ biết ngay đ&acirc;y l&agrave; một cỗ m&aacute;y để chơi game, với thiết kế rất đẳng cấp kể cả khi so s&aacute;nh với phần lớn những laptop gaming c&oacute; cấu h&igrave;nh tương đương, Y7000 vẫn mang nhiều phong c&aacute;ch hơn</p>\r\n\r\n<p>CPU Intel Core i7 -8750H 2.20GHz up to 4.10GHz 9MB</p>\r\n\r\n<p>RAM 16GB DDR4 2666MHz (2x SO-DIMM socket, up to 32GB SDRAM)</p>\r\n\r\n<p>&Ocirc;̉ cứng HDD 1TB + SSD 128GB M2</p>\r\n\r\n<p>Card đồ họa NVIDIA GeForce GTX 1050ti 4GB GDDR5 + Intel UHD Graphics 630</p>\r\n\r\n<p>M&agrave;n h&igrave;nh 15.6&quot; FHD (1920 x 1080) IPS, Anti-Glare, 60Hz, 45% Color Gamut, 250nits</p>\r\n\r\n<p>Gi&aacute; LH để c&oacute; gi&aacute; đẹp</p>\r\n\r\n<p>BH 03 th&aacute;ng</p>\r\n\r\n<p>Tặng k&egrave;m cặp, chuột kh&ocirc;ng d&acirc;y mới</p>\r\n\r\n<p>MAC STORE HP</p>\r\n\r\n<p><img alt=\"⛔️\" src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t44/1.5/16/26d4.png\" style=\"height:16px; width:16px\" /> 12 Lạch Tray - Hải Ph&ograve;ng</p>\r\n\r\n<p><img alt=\"⛔️\" src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t44/1.5/16/26d4.png\" style=\"height:16px; width:16px\" /> 0916020826</p>\r\n', '18', 1, 1, 0, 20000000, 20000000, '2022-06-30 10:07:59', '4', '2022-06-30 10:07:59', '4', 1, 1, 1, '', '', '8GB', '256GB', '16GB', '512GB', 0, 22000000, 22000000, '32GB', '1TB', 0, 25000000, 25000000, 1);
 
 -- --------------------------------------------------------
 
@@ -1646,7 +1594,7 @@ ALTER TABLE `db_content_type`
 -- AUTO_INCREMENT cho bảng `db_customer`
 --
 ALTER TABLE `db_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT cho bảng `db_location`
@@ -1658,13 +1606,13 @@ ALTER TABLE `db_location`
 -- AUTO_INCREMENT cho bảng `db_order`
 --
 ALTER TABLE `db_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT cho bảng `db_page`
@@ -1688,7 +1636,7 @@ ALTER TABLE `db_producer`
 -- AUTO_INCREMENT cho bảng `db_product`
 --
 ALTER TABLE `db_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `db_product_instance`
