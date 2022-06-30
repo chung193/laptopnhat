@@ -29,7 +29,7 @@
                     </div>
                 <?php endif; ?>
                 <div class="btn-action">
-                    <button type="button" class="fa fa-shopping-cart" onclick="onAddCart(<?php echo $row['id']  ?>)"></button>
+                    <button type="button" class="fa fa-shopping-cart" onclick="onAddCart(<?php echo $row['id']  ?>,1,1)"></button>
                     <button type="button" class="fa fa-eye""></button>
                 </div>
                 </div>

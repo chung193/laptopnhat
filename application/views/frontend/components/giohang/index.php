@@ -2,6 +2,7 @@
 	<span class="crumb-border"></span>
 	<div class="container">
 		<div class="row">
+			
 			<div class="col-12 a-left">
 				<ul class="breadcrumb m-0 px-0">					
 					<li>
@@ -24,6 +25,7 @@
 					
 				</ul>
 			</div>
+
 		</div>
 	</div>
 </section>
@@ -159,17 +161,7 @@
 		</div>
 	</div>
 </div>
-<script type="text/x-custom-template" data-template="couponPopup">
-<div id="coupon-modal" class="coupon-modal modal fade " role="dialog" style="display:none;">
-	<div class="modal-dialog align-vertical">
-    <div class="modal-content">
-		<button type="button" class="close window-close" data-dismiss="modal" data-backdrop="false"
-        aria-label="Close" style="z-index: 9;"><span aria-hidden="true">×</span></button>
-		<div class="coupon-content"></div>
-	</div>
-	</div>
-	</div>
-</script>
+
 <script>
 $(document).ready(()=>{
 		let initCoupon = false

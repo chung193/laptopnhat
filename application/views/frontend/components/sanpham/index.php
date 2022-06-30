@@ -212,7 +212,7 @@
 				</div>															
 			</div>
 			<!-- <input class="hidden" type="hidden" name="id" value="1082488526"> -->
-			<button style="z-index:10" class="product-item-btn btn left-to" title="Tùy chọn" type="button" onclick="onAddCart(<?php echo $row['id']  ?>)">
+			<button style="z-index:10" class="product-item-btn btn left-to" title="Tùy chọn" type="button" onclick="onAddCart(<?php echo $row['id']  ?>,1,1)">
 				<svg class="icon">
 					<use xlink:href="#icon-cart"></use>
 				</svg>			
@@ -284,19 +284,25 @@
 
 
 <script>
-    function onAddCart(id){
-        var strurl="<?php echo base_url();?>"+'/sanpham/addcart';
-        jQuery.ajax({
-            url: strurl,
-            type: 'POST',
-            dataType: 'json',
-            data: {id: id},
-            success: function(data) {
-                document.location.reload(true);
-                alert('Thêm sản phẩm vào giỏ hàng thành công !');
-            }
-        });
-    }
+   function onAddCart(id, qty, option){
+			var strurl="<?php echo base_url();?>"+'/sanpham/addcart';
+			jQuery.ajax({
+				url: strurl,
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					id: id,
+					qty: qty,
+					option: option
+				},
+				success: function(data) {
+					console.log(data);
+					document.location.reload(true);
+					alert('Thêm sản phẩm vào giỏ hàng thành công !');
+				}
+			});
+		}
+
     function sortby(option){
         var strurl="<?php echo base_url();?>"+'/sanpham/index';
         jQuery.ajax({

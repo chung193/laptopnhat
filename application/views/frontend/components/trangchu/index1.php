@@ -131,7 +131,7 @@
                                     </div>
                                 <?php endif; ?>
                                 <div class="btn-action">
-                                    <button type="button" class="fa fa-shopping-cart" onclick="onAddCart(<?php echo $rowProducts['id']  ?>)"></button>
+                                    <button type="button" class="fa fa-shopping-cart" onclick="onAddCart(<?php echo $rowProducts['id']  ?>,1,1)"></button>
                                     <button type="button" class="fa fa-eye""></button>
                                 </div>
                             </div>
@@ -258,17 +258,22 @@
    </div>
  </div>
 <script>
-    function onAddCart(id){
-        var strurl="<?php echo base_url();?>"+'/sanpham/addcart';
-        jQuery.ajax({
-            url: strurl,
-            type: 'POST',
-            dataType: 'json',
-            data: {id: id},
-            success: function(data) {
-                document.location.reload(true);
-                alert('Thêm sản phẩm vào giỏ hàng thành công !');
-            }
-        });
-    }
+    function onAddCart(id, qty, option){
+			var strurl="<?php echo base_url();?>"+'/sanpham/addcart';
+			jQuery.ajax({
+				url: strurl,
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					id: id,
+					qty: qty,
+					option: option
+				},
+				success: function(data) {
+					console.log(data);
+					document.location.reload(true);
+					alert('Thêm sản phẩm vào giỏ hàng thành công !');
+				}
+			});
+		}
 </script>

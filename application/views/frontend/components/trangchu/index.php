@@ -165,17 +165,7 @@ $(document).ready(()=>{
 								href="<?= $value['alias']?>" title="<?= $value['name']?>">
 									<img class="product-thumbnail__img product-thumbnail__img--primary" width="480" height="480" style="--image-scale: 1;" src="<?= base_url() ?>/public/images/products/<?= $value['img']?>" alt="<?= $value['name']?>">
 									<img class="product-thumbnail__img product-thumbnail__img--secondary" width="480" height="480" style="--image-scale: 1;" src="<?= base_url() ?>/public/images/products/<?= $value['img']?>" alt="<?= $value['name']?>">
-								</a>		
-							<div class="product-action">
-								<div class="group_action" data-url="/products/apple-watch-se-gps">
-									<a title="Xem nhanh" href="<?= base_url()?>san-pham/<?= $value['alias']?>" data-handle="apple-watch-se-gps" class="xem_nhanh btn-circle btn-views btn_view btn right-to quick-view">
-										<i class="fas fa-search"></i>
-									</a>
-									<a title="So sánh" data-id="1037739896" class="btn-circle btn-views btn js-compare-product-add">
-										<i class="fas fa-random"></i>
-									</a>
-								</div>
-							</div>
+								</a>
 						</div>
 
 							<div class="product-info">
@@ -185,7 +175,7 @@ $(document).ready(()=>{
 										<span class="price"><?= $this->format->money($value['price'])?></span>			
 									</div>
 									<input class="hidden" type="hidden" name="id" value="1082488448">
-									<button data-href="<?= $value['alias']?>" class="product-item-btn btn left-to" title="Tùy chọn" type="button" onclick="onAddCart(<?php echo $value['id']  ?>)">
+									<button data-href="<?= $value['alias']?>" class="product-item-btn btn left-to" title="Tùy chọn" type="button" onclick="onAddCart(<?php echo $value['id']  ?>,1,1)">
 									<svg class="icon">
 										<use xlink:href="#icon-cart"></use>
 									</svg>			
@@ -318,18 +308,23 @@ $(document).ready(()=>{
 		
 
 <script>
-    function onAddCart(id){
-        var strurl="<?php echo base_url();?>"+'/sanpham/addcart';
-        jQuery.ajax({
-            url: strurl,
-            type: 'POST',
-            dataType: 'json',
-            data: {id: id},
-            success: function(data) {
-                document.location.reload(true);
-                alert('Thêm sản phẩm vào giỏ hàng thành công !');
-            }
-        });
-    }
+    function onAddCart(id, qty, option){
+			var strurl="<?php echo base_url();?>"+'/sanpham/addcart';
+			jQuery.ajax({
+				url: strurl,
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					id: id,
+					qty: qty,
+					option: option
+				},
+				success: function(data) {
+					console.log(data);
+					document.location.reload(true);
+					alert('Thêm sản phẩm vào giỏ hàng thành công !');
+				}
+			});
+		}
 </script>
 </body></html>
