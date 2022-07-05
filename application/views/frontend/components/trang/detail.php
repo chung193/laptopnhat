@@ -146,7 +146,7 @@
 						?>
 						<div class="blogwp clearfix media">
 								<a class="image-blog  text-center mr-3" href="<?= base_url()?>tin-tuc/<?= $val['alias']?>" title="<?= $val['title']?>">
-									<img class="img-fluid" src="<?= base_url()?>images/posts/<?= $val['img']?>" alt="<?= $val['title']?>">
+									<img class="img-fluid" src="<?= base_url()?>public/images/posts/<?= $val['img']?>" alt="<?= $val['title']?>">
 								</a>
 								<div class="content_blog clearfix media-body ">
 								<h3 class="mt-0">

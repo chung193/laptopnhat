@@ -13,6 +13,21 @@
       }
     }
 ?>
+
+<style>
+    .width30{
+        width: 30%
+    }
+
+    table, td, th{
+        padding: 10px;
+    }
+
+    .table-thongtin td,.table-thongtin th,.table-thongtin tr{
+        padding: 10px;
+        border: 1px solid #4d5b7c
+    }
+</style>
 <section id="checkout-cart">
     <div class="container">
         <div class="col-md-12">
@@ -25,20 +40,22 @@
                         <div class="checkout-header _progress-bar">
                             <ol class="step-breadcrumb _list">
                                 <li class="step-breadcrumb _item">
-                                    <span class="step-breadcrumb _text">1.Cửa hàng</span>
+                                    <span class="step-breadcrumb _text">Cửa hàng</span>
                                 </li>
                                 <li class="step-breadcrumb _item -current">
-                                    <span class="step-breadcrumb _text">2.Địa chỉ</span>
+                                    <span class="step-breadcrumb _text">Địa chỉ</span>
                                 </li>
                                 <li class="step-breadcrumb _item">
-                                    <span class="step-breadcrumb _text">3.Kết quả</span>
+                                    <span class="step-breadcrumb _text">Kết quả</span>
                                 </li>
                             </ol>
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
                 <form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8" name='info-order' novalidate>
-                    <div class="checkout-content">
+                    <div class="checkout-content row">
                         <div class="col-xs-12 col-sm-12 col-md-8 col-login-checkout" style="margin-bottom: 20px">
                             <p class="text-center">Địa chỉ giao hàng của quý khách</p>
                             <div class="wrap-info" style="width: 100%; min-height: 1px; overflow: hidden; padding: 10px;">
@@ -99,16 +116,17 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-xs-12 col-sm-12 col-md-4 products-detail">
-                            <div class="no-margin-table" style="width: 95%; float: right;">
-                                <table class="table" style="color: #333;">
+                            <div class="no-margin-table" style="width: 95%;">
+                                <table class="table table-thongtin" style="color: #333;">
                                     <thead>
                                         <tr>
                                             <th colspan="3" style="font-weight: 600;">Thông tin đơn hàng</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr style="background: #fafafa; color: #333;" class="text-transform font-weight-600">
+                                        <tr style="background: #fafafa; color: #333;" class="text-transform  font-weight-600">
                                             <td>Sản phẩm</td>
                                             <td class="text-center">Số lượng</td>
                                             <td class="text-center">Giá</td>
@@ -173,10 +191,15 @@
                             </div>
                         </div>
                     </div>
+                    
+
+                </div>
+
                     <div class="btn-checkout frame-100-1 overflow-hidden border-pri">
-                        <button type="submit" style="width: 400px" class="pull-left bg-pri border-pri col-fff" name="dathang">Tiếp tục</button>
+                        <button type="submit" name="dathang" style="color:white;border:none;background-color: #f39c12;padding:5px 8px;width:150px;">Tiếp tục</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>

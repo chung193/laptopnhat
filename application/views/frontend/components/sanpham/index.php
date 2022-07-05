@@ -127,12 +127,9 @@
 </div>
 	
 
-<div class="products-view products-view-grid collection_reponsive list_hover_pro">
+<div class="products-view products-view-grid collection_reponsive list_hover_pro" id="list-product">
 	<div class="row product-list content-col">
-		
-		
-		
-		
+
         <!-- product list start -->
 		
         <?php 
@@ -152,8 +149,8 @@
 		<a class="image_thumb pos-relative embed-responsive embed-responsive-1by1" href="<?= base_url() ?><?= $row['alias'] ?>" title="<?= $row['name'] ?>">
 			<img class="product-thumbnail__img product-thumbnail__img--primary" width="480" height="480" style="--image-scale: 1;" 
 				src="<?= base_url() ?>public/images/products/<?= $row['avatar'] ?>" alt="<?= $row['name'] ?>">
-			<img class="product-thumbnail__img product-thumbnail__img--secondary" width="480" height="480" style="--image-scale: 1;" 
-                src="<?= base_url() ?>public/images/products/<?= $row['img'] ?>" alt="<?= $row['name'] ?>">
+			<!-- <img class="product-thumbnail__img product-thumbnail__img--secondary" width="480" height="480" style="--image-scale: 1;" 
+                src="<?= base_url() ?>public/images/products/<?= $row['img'] ?>" alt="<?= $row['name'] ?>"> -->
 		</a>		
 		<div class="label_product d-none">
 			<div class="label_wrapper">
@@ -311,6 +308,7 @@
             dataType: 'json',
             data: {'sapxep': option},
             success: function(data) {
+				console.log('sort');
                 $('#list-product').html(data);
             }
         });

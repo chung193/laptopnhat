@@ -1,12 +1,45 @@
 <?php echo form_open('dang-ky'); ?>
+<style>
+.acctitle{
+	text-align: center;
+}
+.require_symbol{
+	color: red
+}
+.nobottommargin{
+	margin-top: 20px;
+}
+.right{
+	margin-top: 20px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left:0;
+}
+.right a{
+	color: blue
+}
+.right a:hover{
+	color: #3498db
+}
+ul{
+	margin-left: 0;
+	padding-left:0;
+}
+.col_full{
+	margin-top: 15px;
+}
+</style>
 <section id="product-detail">
 	<div class="container">
+		<div class="row">
 		<div class="col-md-3 col-sm-3 hidden-xs"></div>
 		<div class="col-md-6 col-sm-6 col-xs-12">
 			<div class="products-wrap">
 				<div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;">
 					<div id="register">
-						<div class="acctitle acctitlec"><i class="acc-closed fa fa-user"></i><i class="acc-open fa fa-user-plus"></i>Đăng ký tài khoản</div>
+						<div class="acctitle acctitlec">
+							<h2><strong>Đăng ký tài khoản</strong></h2>
+						</div>
 						<div class="acc_content clearfix" style="display: block;">
 							<form accept-charset="UTF-8" action="" id="customer_register" method="post">
 								
@@ -44,7 +77,7 @@
 									<div class="error" id="name_error"><?php echo form_error('phone')?></div>
 								</div>
 								<div class="col_full nobottommargin">
-									<button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" type="submit" style="margin-bottom: 20px">Đăng ký</button>
+									<button style="color:white;border:none;background-color: #f39c12;padding:5px 8px;width:150px;" class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" type="submit" style="margin-bottom: 20px">Đăng ký</button>
 									<ul>
 										<li class="right" style="font-size: 0.9em">Nếu đã có tài khoản, nhấp vào <a href="<?php echo base_url() ?>dang-nhap" style="padding-right:3px;font-size: 0.9em"> đây</a>để đăng nhập !</li>
 									</ul>
@@ -56,5 +89,6 @@
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-3 hidden-xs"></div>
+		</div>
 	</div>
 </section>

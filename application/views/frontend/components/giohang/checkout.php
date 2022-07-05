@@ -5,11 +5,23 @@
         redirect('gio-hang');
     }
 ?>
+
+<style>
+    table{
+        background-color: white
+    }
+    td, th{
+        padding: 10px;
+        border: 1px solid #4d5b7c
+    }
+</style>
 <section id="checkout-cart">
     <div class="container">
         <br>
+
         <div class="col-md-12">
             <div class="wrapper overflow-hidden">
+
                 <div class="checkout-header _block bg-pri hidden-xs">
                     <div class="checkout-header _container">
                         <a href="#" class="checkout-header _logo">
@@ -18,21 +30,23 @@
                         <div class="checkout-header _progress-bar">
                             <ol class="step-breadcrumb _list">
                                 <li class="step-breadcrumb _item -current">
-                                    <span class="step-breadcrumb _text">1.Cửa hàng</span>
+                                    <span class="step-breadcrumb _text">Cửa hàng</span>
                                 </li>
                                 <li class="step-breadcrumb _item">
-                                    <span class="step-breadcrumb _text">2.Địa chỉ</span>
+                                    <span class="step-breadcrumb _text">Địa chỉ</span>
                                 </li>
                                 <li class="step-breadcrumb _item">
-                                    <span class="step-breadcrumb _text">3.Kết quả</span>
+                                    <span class="step-breadcrumb _text">Kết quả</span>
                                 </li>
                             </ol>
                         </div>
                     </div>
                 </div>
-                <div class="checkout-content">
+
+                <div class="checkout-content row">
+
                     <div class="col-xs-12 col-sm-12 col-md-6 col-login-checkout" style="margin-bottom: 20px">
-                        <p class="text-center"><a href="dang-nhap">Đăng nhập</a> hoặc đặt hàng không cần đăng ký</p>
+                        <p class="text-center"><a href="dang-nhap" style="color: blue">Đăng nhập</a> hoặc đặt hàng không cần đăng ký</p>
                         <div class="wrap-info" style="width: 100%; min-height: 1px; overflow: hidden; padding-top: 40px;">
                             <div class="cell-30 pull-left hidden-xs" style="min-height: 1px;"></div>
                             <div class="col-xs-12 col-sm-12 cell-40  pull-left left-panel-info-cart">
@@ -52,6 +66,7 @@
                             <div class="cell-30 pull-left hidden-xs" style="min-height: 1px;"></div>
                         </div>
                     </div>
+
                     <div class="col-xs-12 col-sm-12 col-md-6 products-detail">
                         <div class="no-margin-table" style="width: 95%; float: right;">
                             <table class="table" style="color: #333">
@@ -124,6 +139,7 @@
                             </table>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

@@ -57,19 +57,21 @@
 		<div id="sort-by" class="d-flex align-items-baseline">
 			<label class="left">
 				<span class="">Sắp xếp: </span></label>
-			<!-- <ul class="ul_col ml-2 mb-0">
-				<li><span class="d-flex d-lg-none align-items-center justify-content-between">Thứ tự </span>
-					<i class="fas fa-chevron-down float-right"></i>
-					<ul class="content_ul">                    
-						
-						<li data-sort="name:asc"><a class="link" href="javascript:;" onclick="sortby('alpha-asc')">Tên A → Z</a></li>
-						<li data-sort="name:desc"><a class="link" href="javascript:;" onclick="sortby('alpha-desc')">Tên Z → A</a></li>
-						<li data-sort="price_min:asc"><a class="link" href="javascript:;" onclick="sortby('price-asc')">Giá tăng dần</a></li>
-						<li data-sort="price_min:desc"><a class="link" href="javascript:;" onclick="sortby('price-desc')">Giá giảm dần</a></li>
-						<li data-sort="created_on:desc"><a class="link" href="javascript:;" onclick="sortby('created-desc')">Hàng mới </a></li>
-											</ul>
-				</li>
-			</ul> -->
+
+					<!-- <ul class="ul_col ml-2 mb-0">
+						<li><span class="d-flex d-lg-none align-items-center justify-content-between">Thứ tự </span>
+							<i class="fas fa-chevron-down float-right"></i>
+							<ul class="content_ul">                    
+								
+								<li data-sort="name:asc"><a class="link" href="javascript:;" onclick="sortby('alpha-asc')">Tên A → Z</a></li>
+								<li data-sort="name:desc"><a class="link" href="javascript:;" onclick="sortby('alpha-desc')">Tên Z → A</a></li>
+								<li data-sort="price_min:asc"><a class="link" href="javascript:;" onclick="sortby('price-asc')">Giá tăng dần</a></li>
+								<li data-sort="price_min:desc"><a class="link" href="javascript:;" onclick="sortby('price-desc')">Giá giảm dần</a></li>
+								<li data-sort="created_on:desc"><a class="link" href="javascript:;" onclick="sortby('created-desc')">Hàng mới </a></li>
+													</ul>
+						</li>
+					</ul> -->
+
 						<form class="form-inline form-viewpro">
                             <div class="form-group">
                         <?php 
@@ -137,10 +139,8 @@
 </div>
 	
 
-<div class="products-view products-view-grid collection_reponsive list_hover_pro">
+<div class="products-view products-view-grid collection_reponsive list_hover_pro" id="list-product">
 	<div class="row product-list content-col">
-		
-		
 		
 		
         <!-- product list start -->
@@ -151,10 +151,11 @@
 			}else{
 			foreach ($list as $row){ 
 		?>
+
         <div class="col-6  col-sm-3  col-md-3 col-lg-3  product-col">
 			<div class="item_product_main">
 
-<form action="/cart/add" method="post" class="variants product-action" data-id="product-actions-1037739911" enctype="multipart/form-data">
+	<form action="/cart/add" method="post" class="variants product-action" data-id="product-actions-1037739911" enctype="multipart/form-data">
 	<div class="product-thumbnail pos-relative">
 		<span class="product-promo-tag product-promo-tag--1 product-promo-tag--image" style="--color: #333; --background: #f0f0f0; --border-color: #f0f0f0">
 			<img src="<?= base_url() ?>public/images/products/<?= $row['img'] ?>" alt="<?= $row['name'] ?>">
@@ -162,8 +163,8 @@
 		<a class="image_thumb pos-relative embed-responsive embed-responsive-1by1" href="<?= base_url() ?><?= $row['alias'] ?>" title="<?= $row['name'] ?>">
 			<img class="product-thumbnail__img product-thumbnail__img--primary" width="480" height="480" style="--image-scale: 1;" 
 				src="<?= base_url() ?>public/images/products/<?= $row['avatar'] ?>" alt="<?= $row['name'] ?>">
-			<img class="product-thumbnail__img product-thumbnail__img--secondary" width="480" height="480" style="--image-scale: 1;" 
-                src="<?= base_url() ?>public/images/products/<?= $row['img'] ?>" alt="<?= $row['name'] ?>">
+			<!-- <img class="product-thumbnail__img product-thumbnail__img--secondary" width="480" height="480" style="--image-scale: 1;" 
+                src="<?= base_url() ?>public/images/products/<?= $row['img'] ?>" alt="<?= $row['name'] ?>"> -->
 		</a>		
 		<div class="label_product d-none">
 			<div class="label_wrapper">
@@ -247,7 +248,8 @@
 			</div>
 		</form>	
 			</div>
-		</div>			
+		</div>	
+
 		
 <?php } ?>
 <div class = "text-center pull-right">
@@ -285,11 +287,12 @@
 		
 	</div>
 
-</div>																	</div>
+</div>				</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
 </section>
 
 

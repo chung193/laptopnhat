@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 30, 2022 lúc 05:16 PM
+-- Thời gian đã tạo: Th7 05, 2022 lúc 11:43 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -258,8 +258,16 @@ CREATE TABLE `db_order` (
   `district` int(10) NOT NULL,
   `address` varchar(255) NOT NULL,
   `trash` tinyint(1) NOT NULL DEFAULT 1,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `email` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `db_order`
+--
+
+INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`, `phone`, `money`, `province`, `district`, `address`, `trash`, `status`, `email`) VALUES
+(29, 'IbjXw5', 40, '2022-07-05 11:52:24', 'gdsgsggdgd', '0123456789', 41030000, 92, 925, 'btn-checkout frame-100-1 overflow-hidden border-pri', 1, 0, 'chungcnt52dh1@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -276,6 +284,14 @@ CREATE TABLE `db_orderdetail` (
   `trash` tinyint(1) NOT NULL DEFAULT 1,
   `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `db_orderdetail`
+--
+
+INSERT INTO `db_orderdetail` (`id`, `orderid`, `productid`, `count`, `price`, `trash`, `status`) VALUES
+(44, 29, 8, 1, 20000000, 1, 1),
+(45, 29, 1, 1, 21000000, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -303,7 +319,10 @@ CREATE TABLE `db_page` (
 --
 
 INSERT INTO `db_page` (`id`, `id_type`, `title`, `slug`, `introtext`, `fulltext`, `img`, `created`, `created_by`, `status`, `metakey`, `metadesc`) VALUES
-(3, 1, 'Giới thiệu', 'gioi-thieu', 'Giới thiệu', '<p>Giới thiệu</p>\r\n', '', '2022-06-01', '4', 1, 'Giới thiệu', 'Giới thiệu');
+(3, 1, 'Giới thiệu', 'gioi-thieu', 'Giới thiệu', '<p>Giới thiệu</p>\r\n', '', '2022-06-01', '4', 1, 'Giới thiệu', 'Giới thiệu'),
+(4, 5, 'Hướng dẫn bán máy cũ', 'huong-dan-ban-may-cu', 'Hướng dẫn bán máy cũ', '<p>Hướng dẫn b&aacute;n m&aacute;y cũ</p>\r\n', '', '2022-07-05', '4', 1, 'Hướng dẫn bán máy cũ', 'Hướng dẫn bán máy cũ'),
+(5, 5, 'Hướng dẫn mua online', 'huong-dan-mua-online', 'Hướng dẫn mua online', '<p>Hướng dẫn mua online</p>\r\n', '', '2022-07-05', '4', 1, 'Hướng dẫn mua online', 'Hướng dẫn mua online'),
+(6, 5, 'Hướng dẫn trả góp', 'huong-dan-tra-gop', 'Hướng dẫn trả góp', '<p>Hướng dẫn trả g&oacute;p</p>\r\n', '', '2022-07-05', '4', 1, 'Hướng dẫn trả góp', 'Hướng dẫn trả góp');
 
 -- --------------------------------------------------------
 
@@ -323,7 +342,8 @@ CREATE TABLE `db_page_type` (
 
 INSERT INTO `db_page_type` (`id`, `name`, `link`) VALUES
 (1, 'Chính sách', 'chinh-sach'),
-(4, 'Hỗ trợ khách hàng', 'ho-tro-khach-hang');
+(4, 'Hỗ trợ khách hàng', 'ho-tro-khach-hang'),
+(5, 'Hướng dẫn mua hàng', 'huong-dan-mua-hang');
 
 -- --------------------------------------------------------
 
@@ -1392,7 +1412,7 @@ CREATE TABLE `db_user` (
 --
 
 INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`, `gender`, `phone`, `img`, `created`, `trash`, `access`, `status`) VALUES
-(4, 'Supper Admin', 'supperadmin', 'adc909449d4d5002003ac2a7613648305e681a83', 1, 'chungvd.it@gmail.com', 1, '0123456789', 'a22aeef917ae5c59006182ced50f72e8.png', '2016-10-03 22:30:00', 1, 1, 1);
+(4, 'Supper Admin', 'supperadmin', 'adc909449d4d5002003ac2a7613648305e681a83', 1, 'chungvd.it@gmail.com', 1, '0123456789', 'c2448e7f92a67aff23ab0a69c4e589b8.jpg', '2016-10-03 22:30:00', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1606,25 +1626,25 @@ ALTER TABLE `db_location`
 -- AUTO_INCREMENT cho bảng `db_order`
 --
 ALTER TABLE `db_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `db_page`
 --
 ALTER TABLE `db_page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `db_page_type`
 --
 ALTER TABLE `db_page_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `db_producer`

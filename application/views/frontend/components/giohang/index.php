@@ -141,7 +141,7 @@
 		<div class="coupon_body">
 		<div class="coupon_head">
 			<h3 class="coupon_title">NHẬP MÃ:  FREESHIP</h3>
-			<div class="coupon_desc">Miễn phí vận chuyển cho đơn hàng từ 500k. Áp dụng cho khu vực Tp.HCM			</div>
+			<div class="coupon_desc">Miễn phí vận chuyển cho đơn hàng từ 500k. Áp dụng cho khu vực Tp.HCM</div>
 
 		</div>
 		<div class="d-flex align-items-center flex-wrap justify-content-between">
@@ -238,11 +238,14 @@ $(document).ready(()=>{
 					</div>
 				</div>
 
+	<div class="header-cart-content">
+		<div class="cart_page_mobile content-product-list">
+
 	<?php foreach ($cart as $key => $value) {
 			$row = $this->Mproduct->product_detail_id($key);?>					
-				<div class="header-cart-content">
-					<div class="cart_page_mobile content-product-list">
-	  <div class="item-product item productid-1082488495 ">
+
+	  <div class="item-product item ">
+
 		<div class="text-center">
 			<a class="remove-itemx remove-item-cart " title="Xóa" href="javascript:;"  onclick="onRemoveProduct(<?php echo $row['id']; ?>)" data-id="1082488495">
 				<svg class="icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -261,20 +264,19 @@ $(document).ready(()=>{
 
 
 		<div class="item-product-cart-mobile">
-			<a href="<?php echo $row['alias'] ?>">	
-				</a><a class="product-images1  pos-relative embed-responsive embed-responsive-1by1" href="" title="<?php echo $row['name'] ?>">
+				<a class="product-images1  pos-relative embed-responsive embed-responsive-1by1" href="<?php echo base_url().$row['alias'] ?>" title="<?php echo $row['name'] ?>">
 					<img class="img-fluid" src="public/images/products/<?php echo $row['avatar'] ?>" alt="<?php echo $row['alias'] ?>">
 				</a>
-			
 		</div>
+
 		<div class="product-cart-infor">
+
 		<div class="title-product-cart-mobile">
 			<h3 class="product-name"> 
 				<a class="text2line" href="<?php echo $row['alias'] ?>" title="<?php echo $row['alias'] ?>">
 					<?php echo $row['name'] ?>
 				</a>  
 			</h3>
-			
 		</div>
 		
 		<div class="cart-price">
@@ -312,30 +314,15 @@ $(document).ready(()=>{
 			?>
 			</span>
 		</div>
-		<!-- <div class="select-item-qty-mobile">
-			<div class="txt_center">
-				<input class="variantID" type="hidden" name="variantId" value="1082488495">
+		
+	</div>
+</div>
 
-				<button onclick="var result = document.getElementById('qtyMobile1082488495'); var qtyMobile1082488495 = result.value; if( !isNaN( qtyMobile1082488495 ) &amp;&amp; qtyMobile1082488495 > 1 ) result.value--;return false;" class="reduced items-count btn-minus btn" type="button">
-					<svg class="icon">
-						<use xlink:href="#icon-minus"></use>
-					</svg>
-				</button>
+	  <?php } ?>
 
-				<input type="text" maxlength="3" min="1" class="form-control input-text number-sidebar qtyMobile1082488495" id="qtyMobile1082488495" name="Lines" size="4" value="2">
-				
-				<button onclick="var result = document.getElementById('qtyMobile1082488495'); var qtyMobile1082488495 = result.value; if( !isNaN( qtyMobile1082488495 )) result.value++;return false;" class="increase items-count btn-plus btn" type="button">
-					<svg class="icon">
-						<use xlink:href="#icon-plus"></use>
-					</svg>
-				</button>
-
-			</div>
-		</div> -->
-		</div>
+	  <!-- </div>
 	  </div>
-				
-			
+	</div> -->
 	</div>
 
 	  <div class="header-cart-price">
@@ -351,7 +338,6 @@ $(document).ready(()=>{
 		  <div class="timedeli-overaly">
 		</div>
 	  </div>
-	  <?php } ?>
 	  
 
 	  <?php $total = 0; ?>

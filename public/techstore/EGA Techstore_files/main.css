@@ -542,7 +542,7 @@ a.link:hover {
 }
 #search-header .custom-input-group .input-group-field {
 	background: #f1f1f1;
-	padding-right: 58px;
+	padding-right: 0px;
 }
 @media (max-width: 991px) {
 	#search-header .custom-input-group .input-group-field {

@@ -1,5 +1,18 @@
 
-
+<style>
+	.slick-dotted.slick-slider{
+		margin-bottom:0
+	}
+	.slick-arrow.slick-next:before,.slick-arrow.slick-prev:before {
+		padding-top: 12px;
+	}
+	.slick-dots li button:before {
+		opacity: 0 !important;
+	}
+	.slick-dots li button:before:hover {
+		opacity: 0 !important;
+	}
+</style>
 
 <!-- subheader == mobile nav -->
 <div class="subheader ">
@@ -321,27 +334,24 @@
 
 		</div>
 
-	<!-- <ul class="shop-policises list-unstyled d-flex align-items-center flex-wrap m-0 pr-0">
-							<li>
-		<div class="">
-				<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_1.png" width="32" height="32" alt="Hướng dẫn bán máy cũ">
-			</div>
-			<a class="link" href="<?= base_url() ?>pages/huong-dan-ban-may-cu" title="Hướng dẫn bán máy cũ">Hướng dẫn bán máy cũ</a>
-		</li>
-									<li>
-			<div class="">
-				<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_2.png" width="32" height="32" alt="Hướng dẫn mua online">
-			</div>
-			<a class="link" href="<?= base_url() ?>pages/huong-dan-mua-hang-online" title="Hướng dẫn mua online">Hướng dẫn mua online</a>
-		</li>
-									<li>
-			<div class="">
-				<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_3.png" width="32" height="32" alt="Hướng dẫn trả góp">
-			</div>
-			<a class="link" href="<?= base_url() ?>pages/huong-dan-tra-gop" title="Hướng dẫn trả góp">Hướng dẫn trả góp</a>
-		</li>
-				
-	</ul> -->
+	<ul class="shop-policises list-unstyled d-flex align-items-center flex-wrap m-0 pr-0">
+	<?php 
+		$page = $this->Mpage->list();
+		$i = 1;
+			foreach($page as $value){
+				if($value['id_type'] == 5){
+			?>
+				<li>
+					<div class="">
+						<img class="img-fluid " src="<?= base_url()?>public/techstore/EGA Techstore_files/policy_header_image_<?= $i ?>.png" width="32" height="32" alt="<?= $value['title'] ?>">
+					</div>
+					<a class="link" href="<?= base_url().'trang/'.$value['slug']?>" title="<?= $value['title'] ?>"><?= $value['title'] ?></a>
+				</li>
+			<?php 
+			$i++;
+				}
+			} ?>			
+	</ul>
 
 	</div>
 </div>
@@ -443,7 +453,7 @@
 	$slider= $this->Mslider->list_img_banner('slideshow');
 ?>
 <div class="col-xl-9 col-12 home-banner-group pl-xl-0">
-	<div class="home-banner-left" style="--grid-colum: 1 / span 2">
+	<div class="home-banner-left" style="--grid-colum: 1 / span 3">
 		<div class="section_slider clearfix">
 
 			<div class="home-slider">
@@ -454,8 +464,8 @@
 					<div aria-live="polite" class="slick-list draggable">
 						<a href="<?= $val['link']?>" title="<?= $val['name']?>" tabindex="-1">
 							<picture>
-								<source media="(max-width: 480px)" srcset="<?= base_url()?>public/images/banners/<?= $val['img']?>">
-								<img class=" img-fluid mx-auto" src="<?= base_url()?>public/images/banners/<?= $val['img']?>" width="593" height="290" alt="<?= $val['link']?>">
+								<source media="(max-width: 100%)" srcset="<?= base_url()?>public/images/banners/<?= $val['img']?>">
+								<img class=" img-fluid mx-auto" src="<?= base_url()?>public/images/banners/<?= $val['img']?>" width="890" height="290" alt="<?= $val['link']?>">
 							</picture>
 						</a>
 					</div>

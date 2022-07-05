@@ -1,6 +1,23 @@
 <?php 
     defined('BASEPATH') OR exit('No direct script access allowed'); 
 ?>
+
+<style>
+    .width30{
+        width: 30%
+    }
+
+    table, td, th{
+        padding: 10px;
+        border: 1px solid #4d5b7c
+    }
+
+    #checkout-cart{
+        margin-top: 20px;
+    }
+
+</style>
+
 <section id="checkout-cart">
     <div class="container">
         <div class="col-md-12">
@@ -13,13 +30,13 @@
                         <div class="checkout-header _progress-bar">
                             <ol class="step-breadcrumb _list">
                                 <li class="step-breadcrumb _item">
-                                    <span class="step-breadcrumb _text">1.Cửa hàng</span>
+                                    <span class="step-breadcrumb _text">Cửa hàng</span>
                                 </li>
                                 <li class="step-breadcrumb _item">
-                                    <span class="step-breadcrumb _text">2.Địa chỉ</span>
+                                    <span class="step-breadcrumb _text">Địa chỉ</span>
                                 </li>
                                 <li class="step-breadcrumb _item -current">
-                                    <span class="step-breadcrumb _text">3.Kết quả</span>
+                                    <span class="step-breadcrumb _text">Kết quả</span>
                                 </li>
                             </ol>
                         </div>
@@ -27,16 +44,17 @@
                 </div>
                 <div class="checkout-content">
                     <div class="tks-header">
-                        <h3 class="fa fa-check-circle">  Một email vừa được gửi đến địa chỉ 
+                        <h3>  
+                            Một email vừa được gửi đến địa chỉ 
                             <?php 
                                 if($this->session->userdata('info-customer')){
-                                    $data=$this->session->userdata('info-customer');
-                                    echo $data['email'];
-                                }else{
-                                    if($this->session->userdata('sessionMacStore')){
-                                    $data=$this->session->userdata('sessionMacStore');
-                                    echo $data['email'];
-                                }
+                                        $data=$this->session->userdata('info-customer');
+                                        echo $data['email'];
+                                    }else{
+                                        if($this->session->userdata('sessionMacStore')){
+                                        $data=$this->session->userdata('sessionMacStore');
+                                        echo $data['email'];
+                                    }
                                 }
                             ?>
                              . Hãy đăng nhập để kiểm tra thông tin đơn hàng.
@@ -44,6 +62,8 @@
                     </div>
                     <div class="tks-content" style="min-height: 1px;
     overflow: hidden;">
+                    <div class="row">
+
                         <div class="col-xs-12 col-sm-12 col-md-7 col-login-checkout" style="margin-bottom: 20px">
                             <table class="table tks-tabele-info-cus">
                                 <thead>
@@ -77,6 +97,7 @@
                                 </tbody>
                             </table>
                         </div>
+
                         <div class="col-xs-12 col-sm-12 col-md-5 products-detail">
                             <div class="no-margin-table" style="width: 95%; float: right;">
                                 <table class="table" style="color: #333;">
@@ -117,10 +138,13 @@
                                 </table>
                             </div>
                         </div>
+
+                        </div>
+
                     </div>
                     <div class="btn-tks clearfix">
-                        <button type="button" onclick="window.location.href='<?php echo base_url() ?>trang-chu'" class="btn-next-checkout pull-left">Tiếp tục mua hàng</button>
-                        <button type="button" onclick="window.print()" class="btn-update-order pull-left">In</button>
+                        <button type="button" style="color:white;border:none;background-color: #f39c12;padding:5px 8px;width:150px;" onclick="window.location.href='<?php echo base_url() ?>trang-chu'" class="btn-next-checkout pull-left">Tiếp tục mua hàng</button>
+                        <button type="button"  style="color:white;border:none;background-color: #f39c12;padding:5px 8px;width:150px;" onclick="window.print()" class="btn-update-order pull-left">In</button>
                     </div>
                 </div>
             </div>

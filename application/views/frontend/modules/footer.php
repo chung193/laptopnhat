@@ -101,7 +101,9 @@
 				<?php 
 					$page = $this->Mpage->list();
 					$pagetype = $this->Mpagetype->list();
+					$i = 1;
 					foreach($pagetype as $val){
+						if($i<3){
 				?>
 
 				<div class="col-xs-12 col-md-6 col-xl-2 footer-click">
@@ -111,10 +113,10 @@
 					<ul class="list-menu toggle-mn">
 						<?php 
 							foreach($page as $value){
-								if($value['id_type'] == $val['id']){
+								if($value['id_type'] == $val['id'] ){
 						?>
 							<li class="li_menu">
-								<a class="link" href="<?= $value['slug'] ?>" title="<?= $value['title'] ?>"><?= $value['title'] ?></a>
+								<a class="link" href="<?= base_url().'trang/'.$value['slug'] ?>" title="<?= $value['title'] ?>"><?= $value['title'] ?></a>
 							</li>
 						<?php 
 							}
@@ -122,7 +124,9 @@
 					</ul>
 				</div>
 
-				<?php } ?>
+				<?php }
+			$i++;
+			} ?>
 				
 				
 				<div class="col-xs-12 col-md-6 col-xl-4 footer-click">

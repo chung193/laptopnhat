@@ -15,6 +15,18 @@
 		font-weight: bold;
 		border: 2px solid green;
 	}
+	.slick-dotted.slick-slider{
+		margin-bottom:0
+	}
+	.slick-arrow.slick-next:before,.slick-arrow.slick-prev:before {
+		padding-top: 12px;
+	}
+	.slick-dots li button:before {
+		opacity: 0 !important;
+	}
+	.slick-dots li button:before:hover {
+		opacity: 0 !important;
+	}
 </style>
 <section class="bread-crumb mb-3 mt-3">
 	<span class="crumb-border"></span>
