@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 11, 2022 lúc 02:04 AM
--- Phiên bản máy phục vụ: 10.4.22-MariaDB
--- Phiên bản PHP: 7.3.33
+-- Thời gian đã tạo: Th7 11, 2022 lúc 10:27 AM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -419,18 +419,6 @@ CREATE TABLE `db_product` (
   `status` tinyint(4) NOT NULL DEFAULT 1,
   `metakey` varchar(155) NOT NULL,
   `metadesc` varchar(155) NOT NULL,
-  `ram` varchar(11) NOT NULL,
-  `ocung` varchar(11) NOT NULL,
-  `ram1` varchar(11) NOT NULL,
-  `ocung1` varchar(11) NOT NULL,
-  `sale1` int(11) NOT NULL,
-  `price1` int(11) NOT NULL,
-  `price_sale1` int(11) NOT NULL,
-  `ram2` varchar(11) NOT NULL,
-  `ocung2` varchar(11) NOT NULL,
-  `sale2` int(11) NOT NULL,
-  `price2` int(11) NOT NULL,
-  `price_sale2` int(11) NOT NULL,
   `showprice` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -438,15 +426,16 @@ CREATE TABLE `db_product` (
 -- Đang đổ dữ liệu cho bảng `db_product`
 --
 
-INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sortDesc`, `detail`, `producer`, `number`, `number_buy`, `sale`, `price`, `price_sale`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `access`, `status`, `metakey`, `metadesc`, `ram`, `ocung`, `ram1`, `ocung1`, `sale1`, `price1`, `price_sale1`, `ram2`, `ocung2`, `sale2`, `price2`, `price_sale2`, `showprice`) VALUES
-(1, 2, 'HP Probook 450 G7', 'hp-probook-450-g7', '2cd863892213bf7a5e5f8032c0273381.jpg', '2cd863892213bf7a5e5f8032c0273381.jpg', 'HP Probook 450 G7 màu bạc cực sang trọng\r\n', '<p>M&aacute;y Nhật x&aacute;ch tay cực bền, h&igrave;nh thức như mới</p>\r\n\r\n<p>Cấu h&igrave;nh:</p>\r\n\r\n<p>CPU i5 10210u</p>\r\n\r\n<p>Ram 16gb</p>\r\n\r\n<p>Ổ cứng 1T SSD</p>\r\n\r\n<p>M&agrave;n h&igrave;nh 15,6</p>\r\n\r\n<p>Gi&aacute; 21,x tr</p>\r\n\r\n<p>BH 03 th&aacute;ng</p>\r\n\r\n<p>Tặng k&egrave;m cặp, chuột kh&ocirc;ng d&acirc;y mới</p>\r\n', '18', 1, 1, 0, 21000000, 21000000, '2022-06-06 11:13:28', '4', '2022-06-06 11:13:28', '4', 1, 1, 1, '', '', '10', '1000', '10', '1', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(2, 8, 'Nec Lavie LX850', 'nec-lavie-lx850', '', '285190565_414524797174392_1287337625674404125_n.jpg', 'Chiếc Ultrabook 15,6 inch mỏng nhất thế giới, được xem là \"kẻ kế nhiệm\" của chiếc Ultrabook nhẹ nhất thế giới Lavie Z mà hãng ra mắt. LaVie X gây ấn tượng đặc biệt với độ mỏng chỉ 12,8 mm và cân nặng chỉ khoảng 1,58 kg trong \"hình hài\" có thể coi là \"to lớn\" nhất trong làng Ultrabook hiện nay với màn hình 15,6 inch. \r\n', '<p>Nec Lavie LX850</p>\r\n\r\n<p>Chiếc Ultrabook 15,6 inch mỏng nhất thế giới, được xem l&agrave; &quot;kẻ kế nhiệm&quot; của chiếc Ultrabook nhẹ nhất thế giới Lavie Z m&agrave; h&atilde;ng ra mắt. LaVie X g&acirc;y ấn tượng đặc biệt với độ mỏng chỉ 12,8 mm v&agrave; c&acirc;n nặng chỉ khoảng 1,58 kg trong &quot;h&igrave;nh h&agrave;i&quot; c&oacute; thể coi l&agrave; &quot;to lớn&quot; nhất trong l&agrave;ng Ultrabook hiện nay với m&agrave;n h&igrave;nh 15,6 inch.</p>\r\n\r\n<p>Cấu h&igrave;nh:</p>\r\n\r\n<p>CPU i7 3537u</p>\r\n\r\n<p>Ram 4gb</p>\r\n\r\n<p>SSD 60gb</p>\r\n\r\n<p>Gi&aacute; 10.x tr (Gi&aacute; chuẩn l&agrave; 12,5tr tuy nhi&ecirc;n do pin k&eacute;m n&ecirc;n b&aacute;n = gi&aacute; pin hỏng)</p>\r\n\r\n<p>MAC STORE HP</p>\r\n', '18', 1, 1, 0, 12500000, 12500000, '2022-06-06 16:01:12', '4', '2022-06-06 16:01:12', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(3, 8, 'faffsafsafs', 'faffsafsafs', 'default.png', '', 'sfsafsfs', '<p>faffsafsafs</p>\r\n', '19', 1, 1, 0, 100000, 100000, '2022-06-06 16:34:42', '4', '2022-06-06 16:34:42', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(4, 8, '1`131313', '1-131313', 'default.png', 'c9aab1096a5e8c63420e33f9e2150fd8.jpg#c5721617b8ab5ac5116003dd93fc5078.jpg', '4142', '<p>42142421421</p>\r\n', '19', 1, 1, 0, 1000, 900, '2022-06-09 11:13:13', '4', '2022-06-09 11:13:13', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(5, 8, '1314124214', '1314124214', 'cbe122601872b0925778d16c7b921b66.jpg', '17af9d5d150159de60714ad08b57d549.jpg#e7f45ac1c778466b43096805403406aa.jpg', '421424', '<p>214124214242421</p>\r\n', '19', 1, 1, 0, 10000, 10000, '2022-06-09 11:19:53', '4', '2022-06-09 11:19:53', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(6, 1, '123', '123', '0a99d9e9098afcd5d4927c9af83308c5.jpg', '9f71102bc8b80834b43a9cd3ddadd704.png', '124214214', '<p>2142424214214242</p>\r\n', '19', 1, 1, 0, 100, 100, '2022-06-14 11:09:57', '4', '2022-06-14 11:09:57', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(7, 8, 'abcdef', 'abcdef', '25530b0196db04faa842fa524894ee4e.png', 'b21d9cd3a6886a1598361435ba85073c.jpg', 'abcdef', '<p>abcdef</p>\r\n', '19', 100, 100, 0, 10000, 10000, '2022-06-16 16:35:41', '4', '2022-06-16 16:51:02', '4', 0, 1, 1, '', '', '0', '0', '0', '0', 0, 0, 0, '0', '0', 0, 0, 0, 0),
-(8, 2, 'Laptop Lenovo Legion Gaming Y7000', 'laptop-lenovo-legion-gaming-y7000', '6dc7523f48bca92e3703d0d4f15fe851.jpg', '95fce5f930a04467e247e8bb5c4d31a1.jpg#2439dfed631548e471116fbc6139e530.jpg#5e7969e49d7546c48b7fb92d4a1f9e8f.jpg', 'Laptop Lenovo Legion Gaming Y7000', '<p>Laptop Lenovo Legion Gaming Y7000 c&oacute; thiết kế c&aacute; t&iacute;nh b&ecirc;n ngo&agrave;i v&agrave; mạnh mẽ ở b&ecirc;n trong, mang lại sự c&acirc;n bằng l&iacute; tưởng giữa hiệu năng chơi game v&agrave; t&iacute;nh di động, tiện lợi. Nh&igrave;n v&agrave;o bề ngo&agrave;i, người ta sẽ biết ngay đ&acirc;y l&agrave; một cỗ m&aacute;y để chơi game, với thiết kế rất đẳng cấp kể cả khi so s&aacute;nh với phần lớn những laptop gaming c&oacute; cấu h&igrave;nh tương đương, Y7000 vẫn mang nhiều phong c&aacute;ch hơn</p>\r\n\r\n<p>CPU Intel Core i7 -8750H 2.20GHz up to 4.10GHz 9MB</p>\r\n\r\n<p>RAM 16GB DDR4 2666MHz (2x SO-DIMM socket, up to 32GB SDRAM)</p>\r\n\r\n<p>&Ocirc;̉ cứng HDD 1TB + SSD 128GB M2</p>\r\n\r\n<p>Card đồ họa NVIDIA GeForce GTX 1050ti 4GB GDDR5 + Intel UHD Graphics 630</p>\r\n\r\n<p>M&agrave;n h&igrave;nh 15.6&quot; FHD (1920 x 1080) IPS, Anti-Glare, 60Hz, 45% Color Gamut, 250nits</p>\r\n\r\n<p>Gi&aacute; LH để c&oacute; gi&aacute; đẹp</p>\r\n\r\n<p>BH 03 th&aacute;ng</p>\r\n\r\n<p>Tặng k&egrave;m cặp, chuột kh&ocirc;ng d&acirc;y mới</p>\r\n\r\n<p>MAC STORE HP</p>\r\n\r\n<p><img alt=\"⛔️\" src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t44/1.5/16/26d4.png\" style=\"height:16px; width:16px\" /> 12 Lạch Tray - Hải Ph&ograve;ng</p>\r\n\r\n<p><img alt=\"⛔️\" src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t44/1.5/16/26d4.png\" style=\"height:16px; width:16px\" /> 0916020826</p>\r\n', '18', 1, 1, 0, 20000000, 20000000, '2022-06-30 10:07:59', '4', '2022-06-30 10:07:59', '4', 1, 1, 1, '', '', '8GB', '256GB', '16GB', '512GB', 0, 22000000, 22000000, '32GB', '1TB', 0, 25000000, 25000000, 1);
+INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sortDesc`, `detail`, `producer`, `number`, `number_buy`, `sale`, `price`, `price_sale`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `access`, `status`, `metakey`, `metadesc`, `showprice`) VALUES
+(1, 2, 'HP Probook 450 G7', 'hp-probook-450-g7', '2cd863892213bf7a5e5f8032c0273381.jpg', '2cd863892213bf7a5e5f8032c0273381.jpg', 'HP Probook 450 G7 màu bạc cực sang trọng\r\n', '<p>M&aacute;y Nhật x&aacute;ch tay cực bền, h&igrave;nh thức như mới</p>\r\n\r\n<p>Cấu h&igrave;nh:</p>\r\n\r\n<p>CPU i5 10210u</p>\r\n\r\n<p>Ram 16gb</p>\r\n\r\n<p>Ổ cứng 1T SSD</p>\r\n\r\n<p>M&agrave;n h&igrave;nh 15,6</p>\r\n\r\n<p>Gi&aacute; 21,x tr</p>\r\n\r\n<p>BH 03 th&aacute;ng</p>\r\n\r\n<p>Tặng k&egrave;m cặp, chuột kh&ocirc;ng d&acirc;y mới</p>\r\n', '18', 1, 1, 0, 21000000, 21000000, '2022-06-06 11:13:28', '4', '2022-06-06 11:13:28', '4', 1, 1, 1, '', '', 0),
+(2, 8, 'Nec Lavie LX850', 'nec-lavie-lx850', '', '285190565_414524797174392_1287337625674404125_n.jpg', 'Chiếc Ultrabook 15,6 inch mỏng nhất thế giới, được xem là \"kẻ kế nhiệm\" của chiếc Ultrabook nhẹ nhất thế giới Lavie Z mà hãng ra mắt. LaVie X gây ấn tượng đặc biệt với độ mỏng chỉ 12,8 mm và cân nặng chỉ khoảng 1,58 kg trong \"hình hài\" có thể coi là \"to lớn\" nhất trong làng Ultrabook hiện nay với màn hình 15,6 inch. \r\n', '<p>Nec Lavie LX850</p>\r\n\r\n<p>Chiếc Ultrabook 15,6 inch mỏng nhất thế giới, được xem l&agrave; &quot;kẻ kế nhiệm&quot; của chiếc Ultrabook nhẹ nhất thế giới Lavie Z m&agrave; h&atilde;ng ra mắt. LaVie X g&acirc;y ấn tượng đặc biệt với độ mỏng chỉ 12,8 mm v&agrave; c&acirc;n nặng chỉ khoảng 1,58 kg trong &quot;h&igrave;nh h&agrave;i&quot; c&oacute; thể coi l&agrave; &quot;to lớn&quot; nhất trong l&agrave;ng Ultrabook hiện nay với m&agrave;n h&igrave;nh 15,6 inch.</p>\r\n\r\n<p>Cấu h&igrave;nh:</p>\r\n\r\n<p>CPU i7 3537u</p>\r\n\r\n<p>Ram 4gb</p>\r\n\r\n<p>SSD 60gb</p>\r\n\r\n<p>Gi&aacute; 10.x tr (Gi&aacute; chuẩn l&agrave; 12,5tr tuy nhi&ecirc;n do pin k&eacute;m n&ecirc;n b&aacute;n = gi&aacute; pin hỏng)</p>\r\n\r\n<p>MAC STORE HP</p>\r\n', '18', 1, 1, 0, 12500000, 12500000, '2022-06-06 16:01:12', '4', '2022-06-06 16:01:12', '4', 0, 1, 1, '', '', 0),
+(3, 8, 'faffsafsafs', 'faffsafsafs', 'default.png', '', 'sfsafsfs', '<p>faffsafsafs</p>\r\n', '19', 1, 1, 0, 100000, 100000, '2022-06-06 16:34:42', '4', '2022-06-06 16:34:42', '4', 0, 1, 1, '', '', 0),
+(4, 8, '1`131313', '1-131313', 'default.png', 'c9aab1096a5e8c63420e33f9e2150fd8.jpg#c5721617b8ab5ac5116003dd93fc5078.jpg', '4142', '<p>42142421421</p>\r\n', '19', 1, 1, 0, 1000, 900, '2022-06-09 11:13:13', '4', '2022-06-09 11:13:13', '4', 0, 1, 1, '', '', 0),
+(5, 8, '1314124214', '1314124214', 'cbe122601872b0925778d16c7b921b66.jpg', '17af9d5d150159de60714ad08b57d549.jpg#e7f45ac1c778466b43096805403406aa.jpg', '421424', '<p>214124214242421</p>\r\n', '19', 1, 1, 0, 10000, 10000, '2022-06-09 11:19:53', '4', '2022-06-09 11:19:53', '4', 0, 1, 1, '', '', 0),
+(6, 1, '123', '123', '0a99d9e9098afcd5d4927c9af83308c5.jpg', '9f71102bc8b80834b43a9cd3ddadd704.png', '124214214', '<p>2142424214214242</p>\r\n', '19', 1, 1, 0, 100, 100, '2022-06-14 11:09:57', '4', '2022-06-14 11:09:57', '4', 0, 1, 1, '', '', 0),
+(7, 8, 'abcdef', 'abcdef', '25530b0196db04faa842fa524894ee4e.png', 'b21d9cd3a6886a1598361435ba85073c.jpg', 'abcdef', '<p>abcdef</p>\r\n', '19', 100, 100, 0, 10000, 10000, '2022-06-16 16:35:41', '4', '2022-06-16 16:51:02', '4', 0, 1, 1, '', '', 0),
+(8, 2, 'Laptop Lenovo Legion Gaming Y7000', 'laptop-lenovo-legion-gaming-y7000', '6dc7523f48bca92e3703d0d4f15fe851.jpg', '95fce5f930a04467e247e8bb5c4d31a1.jpg#2439dfed631548e471116fbc6139e530.jpg#5e7969e49d7546c48b7fb92d4a1f9e8f.jpg', 'Laptop Lenovo Legion Gaming Y7000', '<p>Laptop Lenovo Legion Gaming Y7000 c&oacute; thiết kế c&aacute; t&iacute;nh b&ecirc;n ngo&agrave;i v&agrave; mạnh mẽ ở b&ecirc;n trong, mang lại sự c&acirc;n bằng l&iacute; tưởng giữa hiệu năng chơi game v&agrave; t&iacute;nh di động, tiện lợi. Nh&igrave;n v&agrave;o bề ngo&agrave;i, người ta sẽ biết ngay đ&acirc;y l&agrave; một cỗ m&aacute;y để chơi game, với thiết kế rất đẳng cấp kể cả khi so s&aacute;nh với phần lớn những laptop gaming c&oacute; cấu h&igrave;nh tương đương, Y7000 vẫn mang nhiều phong c&aacute;ch hơn</p>\r\n\r\n<p>CPU Intel Core i7 -8750H 2.20GHz up to 4.10GHz 9MB</p>\r\n\r\n<p>RAM 16GB DDR4 2666MHz (2x SO-DIMM socket, up to 32GB SDRAM)</p>\r\n\r\n<p>&Ocirc;̉ cứng HDD 1TB + SSD 128GB M2</p>\r\n\r\n<p>Card đồ họa NVIDIA GeForce GTX 1050ti 4GB GDDR5 + Intel UHD Graphics 630</p>\r\n\r\n<p>M&agrave;n h&igrave;nh 15.6&quot; FHD (1920 x 1080) IPS, Anti-Glare, 60Hz, 45% Color Gamut, 250nits</p>\r\n\r\n<p>Gi&aacute; LH để c&oacute; gi&aacute; đẹp</p>\r\n\r\n<p>BH 03 th&aacute;ng</p>\r\n\r\n<p>Tặng k&egrave;m cặp, chuột kh&ocirc;ng d&acirc;y mới</p>\r\n\r\n<p>MAC STORE HP</p>\r\n\r\n<p><img alt=\"⛔️\" src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t44/1.5/16/26d4.png\" style=\"height:16px; width:16px\" /> 12 Lạch Tray - Hải Ph&ograve;ng</p>\r\n\r\n<p><img alt=\"⛔️\" src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t44/1.5/16/26d4.png\" style=\"height:16px; width:16px\" /> 0916020826</p>\r\n', '18', 1, 1, 0, 20000000, 20000000, '2022-06-30 10:07:59', '4', '2022-06-30 10:07:59', '4', 1, 1, 1, '', '', 1),
+(9, 2, 'sản phẩm nháp', 'san-pham-nhap', 'default.png', '1c15d4bffa6664d573bd013305658a71.jpg', 'gagagggdagdgdgđagdgdgda', '<p>gagagggdagdgdgđagdgdgda</p>\r\n', '19', 1, 1, NULL, 0, 0, '2022-07-11 09:25:26', '4', '2022-07-11 09:32:42', '4', 1, 1, 1, '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -467,7 +456,8 @@ CREATE TABLE `db_product_instance` (
 INSERT INTO `db_product_instance` (`id`, `id_product`, `id_option`) VALUES
 (1, 1, 5),
 (2, 1, 6),
-(3, 1, 7);
+(3, 1, 7),
+(4, 9, 8);
 
 -- --------------------------------------------------------
 
@@ -477,7 +467,6 @@ INSERT INTO `db_product_instance` (`id`, `id_product`, `id_option`) VALUES
 
 CREATE TABLE `db_product_option` (
   `id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
   `lb1` varchar(255) NOT NULL,
   `op1` varchar(255) NOT NULL,
   `lb2` varchar(255) NOT NULL,
@@ -499,14 +488,11 @@ CREATE TABLE `db_product_option` (
 -- Đang đổ dữ liệu cho bảng `db_product_option`
 --
 
-INSERT INTO `db_product_option` (`id`, `product_id`, `lb1`, `op1`, `lb2`, `op2`, `lb3`, `op3`, `lb4`, `op4`, `lb5`, `op5`, `lb6`, `op6`, `price`, `sale`, `price_sale`) VALUES
-(1, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0),
-(2, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0),
-(3, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0),
-(4, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0),
-(5, 1, 'ggdsg', 'gdgdgd', 'gdgd', 'gdgd', 'dgdg', 'gdgdg', 'gddgd', 'gdgdgd', 'gdgd', 'gdgdgd', 'gddg', 'ddgdg', 0, 0, 0),
-(6, 1, '242', 'fasfs', 'fsfsfsa', 'fsasa', 'fasfsa', 'sfsfs', 'sfss', 'fsfsfs', 'fsfs', 'fsfss', 'sfsfsf', 'sfsfsf', 0, 0, 0),
-(7, 1, 'CPU', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', 10000, 10, 10000);
+INSERT INTO `db_product_option` (`id`, `lb1`, `op1`, `lb2`, `op2`, `lb3`, `op3`, `lb4`, `op4`, `lb5`, `op5`, `lb6`, `op6`, `price`, `sale`, `price_sale`) VALUES
+(5, 'ggdsg', 'gdgdgd', 'gdgd', 'gdgd', 'dgdg', 'gdgdg', 'gddgd', 'gdgdgd', 'gdgd', 'gdgdgd', 'gddg', 'ddgdg', 0, 0, 0),
+(6, '242', 'fasfs', 'fsfsfsa', 'fsasa', 'fasfsa', 'sfsfs', 'sfss', 'fsfsfs', 'fsfs', 'fsfss', 'sfsfsf', 'sfsfsf', 0, 0, 0),
+(7, 'CPU', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', 10000, 10, 10000),
+(8, 'faffs', 'sfgsaf', 'faffs', 'faffs', 'faffs', 'faffs', 'faffs', 'faffs', 'faffs', 'faffs', 'faffs', 'faffs', 10000, 10, 10000);
 
 -- --------------------------------------------------------
 
@@ -1660,19 +1646,19 @@ ALTER TABLE `db_producer`
 -- AUTO_INCREMENT cho bảng `db_product`
 --
 ALTER TABLE `db_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `db_product_instance`
 --
 ALTER TABLE `db_product_instance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `db_product_option`
 --
 ALTER TABLE `db_product_option`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `db_slider`
