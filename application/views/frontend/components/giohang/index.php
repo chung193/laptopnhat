@@ -282,34 +282,14 @@ $(document).ready(()=>{
 		<div class="cart-price">
 			<span class="product-price price">
 			<?php 
-				if($value['option'] == 1){
-					if($row['price_sale'] > 0){
-						echo (number_format($row['price_sale']*$value['qty'])).'₫';
+				$data = $this->Mproduct->get_option($value['option']);
+				print_r($data); die();
+					if($data['price_sale'] > 0){
+						echo (number_format($data['price_sale']*$value['qty'])).'₫';
 					}else{
-						echo (number_format($row['price']*$value['qty'])).'₫';
+						echo (number_format($data['price']*$value['qty'])).'₫';
 					}
-					echo '<p style="font-weight: 100; font-size:12px; color: black">Phiên bản '.$row['ram'].'/ '.$row['ocung'].'</p>';
-				}
-
-				if($value['option'] == 2){
-					if($row['price_sale1'] > 0){
-						echo (number_format($row['price_sale1']*$value['qty'])).'₫';
-					}else{
-						echo (number_format($row['price1']*$value['qty'])).'₫';
-					}
-					echo '<p style="font-weight: 100; font-size:12px; color: black">Phiên bản '.$row['ram1'].'/ '.$row['ocung1'].'</p>';
-
-				}
-
-				if($value['option'] == 3){
-					if($row['price_sale2'] > 0){
-						echo (number_format($row['price_sale2']*$value['qty'])).'₫';
-					}else{
-						echo (number_format($row['price2']*$value['qty'])).'₫';
-					}
-					echo '<p style="font-weight: 100; font-size:12px; color: black">Phiên bản '.$row['ram2'].'/ '.$row['ocung2'].'</p>';
-
-				}
+					echo '<p style="font-weight: 100; font-size:12px; color: black">Phiên bản '.$data['lb1'].': '.$data['op1'].'</p>';
 				
 			?>
 			</span>

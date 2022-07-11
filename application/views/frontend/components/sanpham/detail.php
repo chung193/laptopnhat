@@ -119,71 +119,42 @@
 												</a>
 											</span>
 									</div>
-				<div class="price-box" id="price1">
+
+				<?php 
+				$option = $this->Mproduct->get_all_option($row['id']);
+				foreach($option as $val){
+					if($row['showprice']){
+				?>
+				<div class="price-box" id="price<?= $val['id']?>">
 					<span class="special-price">
 						<span class="price product-price">
 							<?php 
-								echo number_format($row['price']);
+								echo number_format($val['price']);
 							?>₫
 						</span> 
 					</span> <!-- Giá Khuyến mại -->
-								<?php if($row['price_sale']>0&&$row['sale']>0): ?>
+								<?php if($val['price_sale']>0&&$val['sale']>0): ?>
 									<span class="old-price">
-										<del class="price product-price-old sale"><?php echo number_format($row['price_sale']) ?>₫</del> 
+										<del class="price product-price-old sale"><?php echo number_format($val['price_sale']) ?>₫</del> 
 									</span>
-									<div class="label_product">-<?php echo $row['sale'] ?>%</div>
-									<div class="save-price">(Tiết kiệm <span><?php echo number_format($row['price'] - $row['price_sale'])?>₫</span>)</div>
+									<div class="label_product">-<?php echo $val['sale'] ?>%</div>
+									<div class="save-price">(Tiết kiệm <span><?php echo number_format($val['price'] - $val['price_sale'])?>₫</span>)</div>
 								<?php endif; ?>
 
 					<!-- Giá gốc -->
 				</div>
 
-				<div class="price-box" id="price2">
+				<?php }else{?>
+					<div class="price-box" id="price<?= $val['id']?>">
 					<span class="special-price">
 						<span class="price product-price">
-							<?php 
-								echo number_format($row['price1']);
-							?>₫
+							Giá liên hệ
 						</span> 
-					</span> <!-- Giá Khuyến mại -->
-								<?php if($row['price_sale1']>0&&$row['sale1']>0): ?>
-									<span class="old-price">
-										<del class="price product-price-old sale"><?php echo number_format($row['price_sale1']) ?>₫</del> 
-									</span>
-									<div class="label_product">-<?php echo $row['sale1'] ?>%</div>
-									<div class="save-price">(Tiết kiệm <span><?php echo number_format($row['price1'] - $row['price_sale1'])?>₫</span>)</div>
-								<?php endif; ?>
-
-					<!-- Giá gốc -->
+					</span> 
 				</div>
+			<?php 	}
+			} ?>
 
-				<div class="price-box" id="price3">
-					<span class="special-price">
-						<span class="price product-price">
-							<?php 
-								echo number_format($row['price2']);
-							?>₫
-						</span> 
-					</span> <!-- Giá Khuyến mại -->
-								<?php if($row['price_sale2']>0&&$row['sale']>0): ?>
-									<span class="old-price">
-										<del class="price product-price-old sale"><?php echo number_format($row['price_sale2']) ?>₫</del> 
-									</span>
-									<div class="label_product">-<?php echo $row['sale2'] ?>%</div>
-									<div class="save-price">(Tiết kiệm <span><?php echo number_format($row['price2'] - $row['price_sale2'])?>₫</span>)</div>
-								<?php endif; ?>
-
-					<!-- Giá gốc -->
-				</div>
-
-<!-- <span class="product-promo-tag product-promo-tag--1 product-promo-tag--image" style="--color: #333; --background: #f0f0f0; --border-color: #f0f0f0">
-		<img src="//theme.hstatic.net/200000458129/1000869299/14/promo_tag_1.png?v=53" alt="OPPO Reno6 Z 5G">
-</span>
-
-
-<span class="product-promo-tag product-promo-tag--3 product-promo-tag--text-2" style="--color: #8f8f8f; --background: transparent; --border-color: #ff1010">
-		Tặng gói bảo hành Gold trị giá 300K
-</span> -->
 
 <div class="form-product pt-sm-2">
 		<div class="product-promotion rounded-sm" id="ega-salebox">
@@ -220,12 +191,12 @@
 			<!-- <strong>Cấu hình: </strong>
 			<span class="p-2 mr-2 rounded border view cursor-pointer" id="1">cấu hình 1</span>
 			<?php 
-				if($row['ram1']!= '' && $row['ocung1']!= '' ){
-					echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="2">cấu hình 2</span>';
-				}
-				if($row['ram2']!= '' && $row['ocung2']!= '' ){
-					echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="3">cấu hình 3</span>';
-				}
+				// if($row['ram1']!= '' && $row['ocung1']!= '' ){
+				// 	echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="2">cấu hình 2</span>';
+				// }
+				// if($row['ram2']!= '' && $row['ocung2']!= '' ){
+				// 	echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="3">cấu hình 3</span>';
+				// }
 			?> -->
 			
 			
@@ -275,7 +246,20 @@
 					</div>
 				</div>
 
-				<input type="hidden" id="option" value="1">
+				<?php 
+				$temnp = '';
+				if(count($option)){
+					foreach($option as $val){
+						$temp = $val['id'];
+						break;
+					}
+				}else{
+					$temp = 0;
+				}
+				
+				?>
+
+				<input type="hidden" id="option" value="<?= $temp ?>">
 
 							<div class="button_actions">				
 									<button type="submit" class="btn btn_base buynow" onclick="onAddCart(<?php echo $row['id']  ?>, document.getElementById('qtym').value, document.getElementById('option').value)">MUA NGAY<span>Giao hàng tận nơi hoặc nhận tại cửa hàng</span></button>
@@ -295,7 +279,7 @@
 		</div>
 	</div>
 </div>									</form>
-																	</div>
+									</div>
 							</div>
 						</div>
 						</div>
@@ -308,51 +292,49 @@
 						
 					<div class="col-xl-12 col-lg col-md-5 col-9">
 						<h3><strong>Cấu hình chi tiết</strong></h3>
-					
-							<div id="full-description-box">
-							<table class="table table-striped view-product" id="product1">
-									<tbody>
-										<tr class="bg-light">
-											<td class="p-2" style="min-width: 95px">RAM</td>
-											<td class="p-2"><?= $row['ram'] ?></td>
-										</tr>
-										<tr>
-											<td class="p-2">Ổ cứng</td>
-											<td class="p-2"><?= $row['ocung']?></td>
-										</tr>
-									</tbody>
-								</table>
-
-							<?php if($row['ram1']!= '' && $row['ocung1']!= '' ){ ?>
-								<table class="table table-striped view-product" id="product2">
-									<tbody>
-										<tr class="bg-light">
-											<td class="p-2" style="min-width: 95px">RAM</td>
-											<td class="p-2"><?=$row['ram1']?></td>
-										</tr>
-										<tr>
-											<td class="p-2">Ổ cứng</td>
-											<td class="p-2"><?=$row['ocung1']?></td>
-										</tr>
-									</tbody>
-								</table>
-							<?php } ?>
+						<div id="full-description-box">
+							<?php 
+							$option = $this->Mproduct->get_all_option($row['id']);
 								
-							<?php if($row['ram2']!= '' && $row['ocung2']!= '' ){ ?>
-								<table class="table table-striped view-product" id="product3">
+								foreach($option as $val){
+							?>
+								<table class="table table-striped view-product" id="product<?= $val['id']?>">
 									<tbody>
 										<tr class="bg-light">
-											<td class="p-2" style="min-width: 95px">RAM</td>
-											<td class="p-2"><?=$row['ram2']?></td>
+											<td class="p-2" style="min-width: 95px"><?= $val['lb1'] ?></td>
+											<td class="p-2"><?= $val['op1'] ?></td>
 										</tr>
-										<tr>
-											<td class="p-2">Ổ cứng</td>
-											<td class="p-2"><?=$row['ocung2']?></td>
+										<tr class="bg-light">
+											<td class="p-2" style="min-width: 95px"><?= $val['lb2'] ?></td>
+											<td class="p-2"><?= $val['op2'] ?></td>
+										</tr>
+
+										<tr class="bg-light">
+											<td class="p-2" style="min-width: 95px"><?= $val['lb3'] ?></td>
+											<td class="p-2"><?= $val['op3'] ?></td>
+										</tr>
+
+										<tr class="bg-light">
+											<td class="p-2" style="min-width: 95px"><?= $val['lb4'] ?></td>
+											<td class="p-2"><?= $val['op4'] ?></td>
+										</tr>
+
+										<tr class="bg-light">
+											<td class="p-2" style="min-width: 95px"><?= $val['lb5'] ?></td>
+											<td class="p-2"><?= $val['op5'] ?></td>
+										</tr>
+
+										<tr class="bg-light">
+											<td class="p-2" style="min-width: 95px"><?= $val['lb6'] ?></td>
+											<td class="p-2"><?= $val['op6'] ?></td>
 										</tr>
 									</tbody>
 								</table>
-							<?php } ?>
-
+							<?php 
+								}	
+							
+							?>
+							
 							</div>
 					</div>
 			</div>			
@@ -366,7 +348,7 @@
 </div>
 
 <div class="product-policises-wrapper">
-
+<!-- 
 <ul class="product-policises list-unstyled card border-0 p-3 m-0">
 
 	<li class="media">
@@ -386,7 +368,7 @@
 			Trả góp lãi suất 0% qua thẻ tín dụng Visa, Master, JCB
 		</div>
 	</li>
-</ul>
+</ul> -->
 
 </div>
 </div>
@@ -445,6 +427,10 @@
                                             <a href="<?php echo $row['alias'] ?>" title="<?php echo $row['name'] ?>" class="ws-nw overflow ellipsis"><?php echo $row['name'] ?></a>
                                         </h4>
                                     </div>
+
+									<?php 
+										if($row['showprice']){
+									?>
                                     <div class="price-product-item">
                                         <?php if($row['sale'] > 0) :?>
                                             <span class=""><?php echo(number_format($row['price_sale'])); ?>₫</span>
@@ -459,6 +445,12 @@
                                             -<?php echo $row['sale'] ?>%
                                         </div>
                                     <?php endif; ?>
+									<?php } else {
+									?>
+									<div class="price-product-item">
+										<span class="">Giá liên hệ</span>
+									</div>
+									<?php } ?>
                                     <div class="btn-action">
                                         <button type="button" class="fa fa-shopping-cart" onclick="onAddCart(<?php echo $row['id']  ?>,1,1)"></button>
                                         <button type="button" class="fa fa-eye""></button>

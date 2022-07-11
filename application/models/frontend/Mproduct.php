@@ -25,6 +25,14 @@ class Mproduct extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_option($id)
+    {
+
+        $this->db->where('db_product_option.id', $id);
+        $query = $this->db->get('db_product_option');
+        return $query->result_array();
+    }
+
     public function get_all_option($id)
     {
         $this->db->select('db_product_option.*, db_product_option.sale as op_sale, db_product_option.price_sale as op_price_sale, db_product_option.price as op_price');
