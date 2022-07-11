@@ -33,13 +33,13 @@ class Product_option extends CI_Controller {
 	}
 
 	public function insert(){
+		// print_r($_POST);die();
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->library('alias');
 		$this->form_validation->set_rules('product_id', 'Tên sản phẩm', 'required');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
-				'product_id'=>$_POST['product_id'],
 
 				'lb1'=>$_POST['lb1'],
 				'op1'=>$_POST['op1'],
@@ -95,8 +95,10 @@ class Product_option extends CI_Controller {
 		}
 	}
 
-	public function update($id){
+	public function update($id, $instance){
+		// echo $instance; die();
 		$this->data['row']=$this->Mproduct_option->product_option_detail($id);
+		$this->data['instance'] = $instance;
 		$d=getdate();
 		$today=$d['year']."/".$d['mon']."/".$d['mday']." ".$d['hours'].":".$d['minutes'].":".$d['seconds'];
 		$this->load->library('form_validation');
@@ -108,7 +110,6 @@ class Product_option extends CI_Controller {
 		// $this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
-				'product_id'=>$_POST['product_id'],
 
 				'lb1'=>$_POST['lb1'],
 				'op1'=>$_POST['op1'],
@@ -133,6 +134,16 @@ class Product_option extends CI_Controller {
 				'price_sale'=>$_POST['price_sale'],
 			);
 			$this->Mproduct_option->product_option_update($mydata, $id);
+
+			$option = array(
+				'id_product' =>$_POST['product_id'],
+				'id_option' =>$id 
+			);
+
+			print_r($option); die();
+
+			$this->Mproduct_option->product_instance_update($option, $instance);
+
 			$this->session->set_flashdata('success', 'Cập nhật option sản phẩm thành công');
 			redirect('admin/product_option','refresh');
 		} 

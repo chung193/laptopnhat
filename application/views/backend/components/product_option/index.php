@@ -1,6 +1,9 @@
+<?php 
+//  print_r($list); die(); 
+?>
 <div class="content-wrapper">
 	<section class="content-header">
-		<h1><i class="glyphicon glyphicon-cd"></i> Danh sách sản phẩm</h1>
+		<h1><i class="glyphicon glyphicon-cd"></i> Danh sách cấu hình chi tiết sản phẩm</h1>
 		<div class="breadcrumb">
 			<a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/product_option/insert" role="button">
 				<span class="glyphicon glyphicon-plus"></span> Thêm mới
@@ -92,7 +95,7 @@
 											<td style="width:50px">
 												<img src="public/images/products/<?php echo $val['avatar'] ?>" alt="<?php echo $val['name'] ?>" class="img-responsive">
 											</td>
-											<td><a href="<?php echo base_url() ?>admin/product/update/<?php echo $val['id'] ?>"><?php echo $val['name'] ?>(<?php echo $val['number'] ?>)</a></td>
+											<td><a href="<?php echo base_url() ?>admin/product_option/update/<?php echo $val['id'] ?>"><?php echo $val['name'] ?>(<?php echo $val['number'] ?>)</a></td>
 											<td><?php echo $val['lb1'].'/ '.$val['op1'] ?></td>
 											<td><?php echo $val['lb2'].'/ '.$val['op2'] ?></td>
 											<td><?php echo $val['lb3'].'/ '.$val['op3'] ?></td>
@@ -121,7 +124,7 @@
 												</a>
 											</td> -->
 											<td class="text-center">
-												<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/product_option/update/<?php echo $val['id']?>" role = "button">
+												<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/product_option/update/<?php echo $val['id']?>/<?php echo $val['instanceid']?>" role = "button">
 													<span class="glyphicon glyphicon-edit"></span> Sửa
 												</a>
 											</td>

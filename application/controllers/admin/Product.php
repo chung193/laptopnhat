@@ -39,7 +39,7 @@ class Product extends CI_Controller {
 		$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required|is_unique[db_product.name]');
 		$this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
 		$this->form_validation->set_rules('producer', 'Nhà cung cấp', 'required');
-		$this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
+		// $this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
 				'catid'=>$_POST['catid'],
@@ -50,9 +50,9 @@ class Product extends CI_Controller {
 				'sortDesc'=>$_POST['sortDesc'], 
 				'number'=>$_POST['number'],
 				'number_buy'=>$_POST['number'],
-				'sale'=>$_POST['sale_of'],
-				'price'=>$_POST['price_root'],
-				'price_sale'=>$_POST['price_buy'],
+				// 'sale'=>$_POST['sale_of'],
+				// 'price'=>$_POST['price_root'],
+				// 'price_sale'=>$_POST['price_buy'],
 				'created'=>$today,
 				'created_by'=>$this->session->userdata('id'),
 				'modified'=>$today,
@@ -61,20 +61,20 @@ class Product extends CI_Controller {
 				'status'=>$_POST['status'],
 				'access'=>$_POST['access'],
 
-				'ram'=>$_POST['ram'],
-				'ocung'=>$_POST['ocung'],
+				// 'ram'=>$_POST['ram'],
+				// 'ocung'=>$_POST['ocung'],
 
-				'ram1'=>$_POST['ram1'],
-				'ocung1'=>$_POST['ocung1'],
-				'sale1'=>$_POST['sale1'],
-				'price1'=>$_POST['price1'],
-				'price_sale1'=>$_POST['price_sale1'],
+				// 'ram1'=>$_POST['ram1'],
+				// 'ocung1'=>$_POST['ocung1'],
+				// 'sale1'=>$_POST['sale1'],
+				// 'price1'=>$_POST['price1'],
+				// 'price_sale1'=>$_POST['price_sale1'],
 
-				'ram2'=>$_POST['ram2'],
-				'ocung2'=>$_POST['ocung2'],
-				'sale2'=>$_POST['sale2'],
-				'price2'=>$_POST['price2'],
-				'price_sale2'=>$_POST['price_sale2'],
+				// 'ram2'=>$_POST['ram2'],
+				// 'ocung2'=>$_POST['ocung2'],
+				// 'sale2'=>$_POST['sale2'],
+				// 'price2'=>$_POST['price2'],
+				// 'price_sale2'=>$_POST['price_sale2'],
 
 				'showprice'=>$_POST['showprice'],
 			);
@@ -176,7 +176,7 @@ class Product extends CI_Controller {
 		$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required');
 		$this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
 		$this->form_validation->set_rules('producer', 'Nhà cung cấp', 'required');
-		$this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
+		// $this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
 				'catid'=>$_POST['catid'],
@@ -187,28 +187,28 @@ class Product extends CI_Controller {
 				'sortDesc'=>$_POST['sortDesc'], 
 				'number'=>$_POST['number'],
 				'number_buy'=>$_POST['number'],
-				'sale'=>$_POST['sale_of'],
-				'price'=>$_POST['price_root'],
-				'price_sale'=>$_POST['price_buy'],
+				// 'sale'=>$_POST['sale_of'],
+				// 'price'=>$_POST['price_root'],
+				// 'price_sale'=>$_POST['price_buy'],
 				'modified'=>$today,
 				'modified_by'=>$this->session->userdata('id'),
 				'status'=>$_POST['status'],
 				'access'=>$_POST['access'],
 
-				'ram'=>$_POST['ram'],
-				'ocung'=>$_POST['ocung'],
+				// 'ram'=>$_POST['ram'],
+				// 'ocung'=>$_POST['ocung'],
 
-				'ram1'=>$_POST['ram1'],
-				'ocung1'=>$_POST['ocung1'],
-				'sale1'=>$_POST['sale1'],
-				'price1'=>$_POST['price1'],
-				'price_sale1'=>$_POST['price_sale1'],
+				// 'ram1'=>$_POST['ram1'],
+				// 'ocung1'=>$_POST['ocung1'],
+				// 'sale1'=>$_POST['sale1'],
+				// 'price1'=>$_POST['price1'],
+				// 'price_sale1'=>$_POST['price_sale1'],
 
-				'ram2'=>$_POST['ram2'],
-				'ocung2'=>$_POST['ocung2'],
-				'sale2'=>$_POST['sale2'],
-				'price2'=>$_POST['price2'],
-				'price_sale2'=>$_POST['price_sale2'],
+				// 'ram2'=>$_POST['ram2'],
+				// 'ocung2'=>$_POST['ocung2'],
+				// 'sale2'=>$_POST['sale2'],
+				// 'price2'=>$_POST['price2'],
+				// 'price_sale2'=>$_POST['price_sale2'],
 
 				'showprice'=>$_POST['showprice'],
 			);

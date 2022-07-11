@@ -204,20 +204,20 @@
 
 		<div class="mt-2 mb-2">
 		<?php 
-				// $option = $this->Mproduct->get_all_option($row['id']);
-				// if(count($option)){
-				// 	echo '<strong>Cấu hình: </strong>';
-				// 	$i = 1;
-				// 	foreach($option as $val){
-				// 		echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="'.$val['id'].'">cấu hình '.$i.'</span>';
-				// 		$i++;
-				// 	}	
-				// }	
+				$option = $this->Mproduct->get_all_option($row['id']);
+				if(count($option)){
+					echo '<strong>Cấu hình: </strong>';
+					$i = 1;
+					foreach($option as $val){
+						echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="'.$val['id'].'">cấu hình '.$i.'</span>';
+						$i++;
+					}	
+				}	
 
 
 						
 			?>
-			<strong>Cấu hình: </strong>
+			<!-- <strong>Cấu hình: </strong>
 			<span class="p-2 mr-2 rounded border view cursor-pointer" id="1">cấu hình 1</span>
 			<?php 
 				if($row['ram1']!= '' && $row['ocung1']!= '' ){
@@ -226,7 +226,7 @@
 				if($row['ram2']!= '' && $row['ocung2']!= '' ){
 					echo '<span class="p-2 mr-2 rounded border view cursor-pointer" id="3">cấu hình 3</span>';
 				}
-			?>
+			?> -->
 			
 			
 	</div>

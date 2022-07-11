@@ -25,7 +25,7 @@ class Mproduct_option extends CI_Model {
 
     public function product_option_sanpham($limit,$first)
     {
-        $this->db->select('db_product.*, db_product_instance.*, db_product_option.*, db_product_option.sale as option_sale,db_product_option.price as option_price, db_product_option.price_sale as option_pricesale');
+        $this->db->select('db_product.*, db_product_instance.*, db_product_instance.id as instanceid, db_product_instance.id_product as pr_id, db_product_option.*, db_product_option.sale as option_sale,db_product_option.price as option_price, db_product_option.price_sale as option_pricesale');
 		$this->db->join('db_product_instance', 'db_product_instance.id_option =  db_product_option.id');
 		$this->db->join('db_product', 'db_product.id =  db_product_instance.id_product');
         $query = $this->db->get($this->table, $limit,$first);
@@ -34,8 +34,8 @@ class Mproduct_option extends CI_Model {
 
 	public function product_option_detail($id)
     {
-        
-        $this->db->where('id', $id);
+		$this->db->join('db_product_instance', 'db_product_instance.id_option =  db_product_option.id');
+		$this->db->where('db_product_option.id', $id);
         $query = $this->db->get($this->table);
         return $query->row_array();   
     }
@@ -72,6 +72,12 @@ class Mproduct_option extends CI_Model {
 	{
 		$this->db->where('id',$id);
 		$this->db->update($this->table, $mydata);
+	}
+
+	public function product_instance_update($mydata,$id)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('db_product_instance', $mydata);
 	}
 
 	public function product_option_restore($id)

@@ -68,7 +68,8 @@
 							</div>
 
 							<div class="col-md-3">
-								<div class="form-group">
+
+								<!-- <div class="form-group">
 									<label>Giá gốc</label>
 									<input name="price_root" class="form-control" type="number" value="0" min="0" step="1" max="1000000000">
 								</div>
@@ -80,7 +81,8 @@
 									<label>Giá bán</label>
 									<input name="price_buy" class="form-control" type="number" value="0" min="0" step="1" max="1000000000">
 									<div class="error" id="password_error"><?php echo form_error('price_buy')?></div>
-								</div>
+								</div> -->
+
 								<div class="form-group">
 									<label>Số lượng</label>
 									<input name="number" class="form-control" type="number" value="1" min="1" step="1" max="1000">
@@ -127,7 +129,7 @@
 		
 		  </div>
 		  <!-- /.row -->
-		  				<div class="box">	
+		  				<!-- <div class="box">	
 						  <div class="box-body">	
 						 	<label>Option 1</label>	
 							<hr>					
@@ -215,7 +217,7 @@
 								</div>
 							</div>
 							</div>
-						</div>
+						</div> -->
 
 		</section>
 	</form>

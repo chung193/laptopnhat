@@ -127,8 +127,8 @@ class Mcategory extends CI_Model {
 	public function category_name($id)
     {
         $this->db->where('id', $id);
-        $this->db->where('status', 1);
-        $this->db->where('trash', 1);
+        // $this->db->where('status', 1);
+        // $this->db->where('trash', 1);
         $this->db->limit(1);
         $query = $this->db->get($this->table);
         $row=$query->row_array();

@@ -1,4 +1,7 @@
-<?php echo form_open_multipart('admin/product_option/update/'.$row['id']); ?>
+<?php echo form_open_multipart('admin/product_option/update/'.$row['id'].'/'.$instance); ?>
+<?php 
+// print_r($row); die(); 
+?>
 <div class="content-wrapper">
 	<form action="<?php echo base_url() ?>admin/product_option/update.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
 		<section class="content-header">
@@ -32,7 +35,7 @@
 										?>
 											<option value="<?= $value['id']?>"
 											<?php 
-												if($value['id'] == $row['product_id']){
+												if($value['id'] == $row['id_product']){
 													echo 'selected';
 												}
 											?>
