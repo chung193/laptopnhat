@@ -21,7 +21,7 @@
 		
 
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="EGA Techstore">
+	<meta property="og:title" content="Macstore Hải Phòng">
 	<meta property="og:image" content="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/240603177_246778910615649_3890510487922753768_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FtLNUgbL_0kAX9DUPDI&_nc_ht=scontent.fhan5-10.fna&oh=00_AT_u56HK3D9LDWbrFPvpEbAM8GJRxEBsg0USaOiuRW1V2w&oe=62A1B5C6">
 	<meta property="og:image:secure_url" content="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/240603177_246778910615649_3890510487922753768_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=FtLNUgbL_0kAX9DUPDI&_nc_ht=scontent.fhan5-10.fna&oh=00_AT_u56HK3D9LDWbrFPvpEbAM8GJRxEBsg0USaOiuRW1V2w&oe=62A1B5C6">
 
@@ -767,7 +767,7 @@ changelog: //theme.hstatic.net/200000458129/1000825962/14/ega-changelog.js?v=196
       }
 
 	  .section, .subheader, #template-index{
-		background-color:#F9F9FA
+		background-color:#dfe6e9;
 	  }
 
 	  #livesearch{
@@ -782,6 +782,28 @@ changelog: //theme.hstatic.net/200000458129/1000825962/14/ega-changelog.js?v=196
 	  .lives a:hover{
 		background-color:#F9F9FA
 	  }
+	.mid-header{
+		background-color:rgba(48,48,48,1);
+		//background-color:#dfe6e9;
+		color: white;
+	}
+	
+	.mid-header a{
+		color: white;
+	}
+	
+	.logo-wrapper {
+		background-color: white;
+		border-radius: 50%;
+		width: 100px;
+		height:100px;
+	}
+	
+	.logo-wrapper img{
+		width: 120px;
+		height:100px;
+		padding:20px
+	}
     </style>
 	<link rel="prefetch" href="<?= base_url() ?>collections/san-pham-noi-bat">
 	<body id="template-index">

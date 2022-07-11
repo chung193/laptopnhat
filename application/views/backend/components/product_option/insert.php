@@ -36,70 +36,95 @@
 								</div>
 
 								<div class="form-group">
-									<label>CPU</label>
-									<input type="text" class="form-control" name="cpu" style="width:100%" placeholder="CPU">
-									<div class="error" id="password_error"><?php echo form_error('cpu')?></div>
+									<label>Label 1</label>
+									<input type="text" class="form-control" name="lb1" style="width:100%" placeholder="Label 1">
+									<div class="error" id="password_error"><?php echo form_error('lb1')?></div>
 								</div>
 
 								<div class="form-group">
-									<label>RAM</label>
-									<input type="text" class="form-control" name="ram" style="width:100%" placeholder="RAM">
-									<div class="error" id="password_error"><?php echo form_error('ram')?></div>
+									<label>Option 1</label>
+									<input type="text" class="form-control" name="op1" style="width:100%" placeholder="Option 1">
+									<div class="error" id="password_error"><?php echo form_error('op1')?></div>
 								</div>
+
 								<div class="form-group">
-									<label>Ổ cứng</label>
-									<input type="text" class="form-control" name="hard_drive" style="width:100%" placeholder="ổ cứng">
-									<div class="error" id="password_error"><?php echo form_error('hard_drive')?></div>
+									<label>Label 2</label>
+									<input type="text" class="form-control" name="lb2" style="width:100%" placeholder="Label 2">
+									<div class="error" id="password_error"><?php echo form_error('lb2')?></div>
 								</div>
+
 								<div class="form-group">
-									<label>VGA</label>
-									<input type="text" class="form-control" name="vga" style="width:100%" placeholder="VGA">
-									<div class="error" id="password_error"><?php echo form_error('vga')?></div>
+									<label>Option 2</label>
+									<input type="text" class="form-control" name="op2" style="width:100%" placeholder="Option 2">
+									<div class="error" id="password_error"><?php echo form_error('op2')?></div>
 								</div>
+
 								<div class="form-group">
-									<label>Màn hình</label>
-									<input type="text" class="form-control" name="screen" style="width:100%" placeholder="Màn hình">
-									<div class="error" id="password_error"><?php echo form_error('screen')?></div>
+									<label>Label 3</label>
+									<input type="text" class="form-control" name="lb3" style="width:100%" placeholder="Label 3">
+									<div class="error" id="password_error"><?php echo form_error('lb3')?></div>
+								</div>
+
+								<div class="form-group">
+									<label>Option 3</label>
+									<input type="text" class="form-control" name="op3" style="width:100%" placeholder="Option 3">
+									<div class="error" id="password_error"><?php echo form_error('op3')?></div>
+								</div>
+
+								<div class="form-group">
+									<label>Label 4</label>
+									<input type="text" class="form-control" name="lb4" style="width:100%" placeholder="Label 4">
+									<div class="error" id="password_error"><?php echo form_error('lb4')?></div>
+								</div>
+
+								<div class="form-group">
+									<label>Option 4</label>
+									<input type="text" class="form-control" name="op4" style="width:100%" placeholder="Option 4">
+									<div class="error" id="password_error"><?php echo form_error('op4')?></div>
 								</div>
 
 							</div>
 
 							<div class="col-md-6">
 
+								
+
 								<div class="form-group">
-									<label>Hệ điều hành</label>
-									<input type="text" class="form-control" name="hdh" style="width:100%" placeholder="Hệ điều hành">
-									<div class="error" id="password_error"><?php echo form_error('hdh')?></div>
+									<label>Label 5</label>
+									<input type="text" class="form-control" name="lb5" style="width:100%" placeholder="Label 5">
+									<div class="error" id="password_error"><?php echo form_error('lb5')?></div>
 								</div>
 
 								<div class="form-group">
-									<label>Màu</label>
-									<input type="text" class="form-control" name="color" style="width:100%" placeholder="Màu">
-									<div class="error" id="password_error"><?php echo form_error('color')?></div>
+									<label>Option 5</label>
+									<input type="text" class="form-control" name="op5" style="width:100%" placeholder="Option 5">
+									<div class="error" id="password_error"><?php echo form_error('op5')?></div>
 								</div>
 
 								<div class="form-group">
-									<label>Pin</label>
-									<input type="text" class="form-control" name="pin" style="width:100%" placeholder="Dung lượng pin">
-									<div class="error" id="password_error"><?php echo form_error('pin')?></div>
+									<label>Label 6</label>
+									<input type="text" class="form-control" name="lb6" style="width:100%" placeholder="Label 6">
+									<div class="error" id="password_error"><?php echo form_error('lb6')?></div>
 								</div>
 
 								<div class="form-group">
-									<label>Kích thước</label>
-									<input type="text" class="form-control" name="kichthuoc" style="width:100%" placeholder="Kích thước">
-									<div class="error" id="password_error"><?php echo form_error('kichthuoc')?></div>
+									<label>Option 6</label>
+									<input type="text" class="form-control" name="op6" style="width:100%" placeholder="Option 6">
+									<div class="error" id="password_error"><?php echo form_error('op6')?></div>
 								</div>
 
 								<div class="form-group">
-									<label>Cân nặng</label>
-									<input type="text" class="form-control" name="cannang" style="width:100%" placeholder="Cân nặng">
-									<div class="error" id="password_error"><?php echo form_error('cannang')?></div>
+									<label>Giá gốc</label>
+									<input name="price" class="form-control" type="number" min="0" step="10000" max="1000000000">
 								</div>
-
 								<div class="form-group">
-									<label>Phụ kiện</label>
-									<input type="text" class="form-control" name="phukien" style="width:100%" placeholder="Phụ kiện">
-									<div class="error" id="password_error"><?php echo form_error('phukien')?></div>
+									<label>Khuyến mãi (%)</label>
+									<input name="sale" class="form-control" type="number" >
+								</div>
+								<div class="form-group">
+									<label>Giá bán</label>
+									<input name="price_sale" class="form-control" type="number"  min="0" step="10000" max="1000000000">
+									<div class="error" id="password_error"><?php echo form_error('price_buy')?></div>
 								</div>
 
 							</div>

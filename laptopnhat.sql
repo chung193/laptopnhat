@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 05, 2022 lúc 11:43 AM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 7.4.29
+-- Thời gian đã tạo: Th7 11, 2022 lúc 02:04 AM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
+-- Phiên bản PHP: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -466,7 +466,8 @@ CREATE TABLE `db_product_instance` (
 
 INSERT INTO `db_product_instance` (`id`, `id_product`, `id_option`) VALUES
 (1, 1, 5),
-(2, 1, 6);
+(2, 1, 6),
+(3, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -476,33 +477,36 @@ INSERT INTO `db_product_instance` (`id`, `id_product`, `id_option`) VALUES
 
 CREATE TABLE `db_product_option` (
   `id` int(11) NOT NULL,
-  `cpu` varchar(255) NOT NULL,
-  `ram` varchar(255) NOT NULL,
-  `hard_drive` varchar(255) NOT NULL,
-  `vga` varchar(255) NOT NULL,
-  `screen` varchar(255) NOT NULL,
-  `hdh` varchar(255) NOT NULL,
-  `color` varchar(255) NOT NULL,
-  `pin` varchar(255) NOT NULL,
-  `kichthuoc` varchar(255) NOT NULL,
-  `cannang` varchar(255) NOT NULL,
-  `phukien` varchar(255) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `lb1` varchar(255) NOT NULL,
+  `op1` varchar(255) NOT NULL,
+  `lb2` varchar(255) NOT NULL,
+  `op2` varchar(255) NOT NULL,
+  `lb3` varchar(255) NOT NULL,
+  `op3` varchar(255) NOT NULL,
+  `lb4` varchar(255) NOT NULL,
+  `op4` varchar(255) NOT NULL,
+  `lb5` varchar(255) NOT NULL,
+  `op5` varchar(255) NOT NULL,
+  `lb6` varchar(255) NOT NULL,
+  `op6` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
   `sale` int(11) NOT NULL,
-  `price_sale` int(11) NOT NULL,
-  `price` int(11) NOT NULL
+  `price_sale` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `db_product_option`
 --
 
-INSERT INTO `db_product_option` (`id`, `cpu`, `ram`, `hard_drive`, `vga`, `screen`, `hdh`, `color`, `pin`, `kichthuoc`, `cannang`, `phukien`, `sale`, `price_sale`, `price`) VALUES
-(1, '111', '111', '111', '111', '111', '111', '111', '111', '111', '111', '111', 0, 0, 0),
-(2, '111', '111', '111', '111', '1111', '111', '111', '111', '111', '11', '1111', 0, 0, 0),
-(3, '111', '111', '111', '111', '1111', '111', '111', '111', '111', '11', '1111', 0, 0, 0),
-(4, '111', '111', '111', '111', '111', '111', '111', '111', '111', '111', '111', 0, 0, 0),
-(5, '111', '111', '111', '111', '111', '111', '111', '111', '111', '111', '111', 0, 0, 0),
-(6, '222', '222', '222', '222', '222', '222', '222', '222', '222', '222', '222', 0, 0, 0);
+INSERT INTO `db_product_option` (`id`, `product_id`, `lb1`, `op1`, `lb2`, `op2`, `lb3`, `op3`, `lb4`, `op4`, `lb5`, `op5`, `lb6`, `op6`, `price`, `sale`, `price_sale`) VALUES
+(1, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0),
+(2, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0),
+(3, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0),
+(4, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0),
+(5, 1, 'ggdsg', 'gdgdgd', 'gdgd', 'gdgd', 'dgdg', 'gdgdg', 'gddgd', 'gdgdgd', 'gdgd', 'gdgdgd', 'gddg', 'ddgdg', 0, 0, 0),
+(6, 1, '242', 'fasfs', 'fsfsfsa', 'fsasa', 'fasfsa', 'sfsfs', 'sfss', 'fsfsfs', 'fsfs', 'fsfss', 'sfsfsf', 'sfsfsf', 0, 0, 0),
+(7, 1, 'CPU', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', 10000, 10, 10000);
 
 -- --------------------------------------------------------
 
@@ -1638,7 +1642,7 @@ ALTER TABLE `db_orderdetail`
 -- AUTO_INCREMENT cho bảng `db_page`
 --
 ALTER TABLE `db_page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `db_page_type`
@@ -1662,13 +1666,13 @@ ALTER TABLE `db_product`
 -- AUTO_INCREMENT cho bảng `db_product_instance`
 --
 ALTER TABLE `db_product_instance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `db_product_option`
 --
 ALTER TABLE `db_product_option`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `db_slider`

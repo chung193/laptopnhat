@@ -40,17 +40,28 @@ class Product_option extends CI_Controller {
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
 				'product_id'=>$_POST['product_id'],
-				'cpu'=>$_POST['cpu'],
-				'ram' =>$_POST['ram'], 
-				'hard_drive' =>$_POST['hard_drive'],
-				'vga'=>$_POST['vga'], 
-				'screen'=>$_POST['screen'], 
-				'hdh'=>$_POST['hdh'],
-				'color'=>$_POST['color'],
-				'pin'=>$_POST['pin'],
-				'kichthuoc'=>$_POST['kichthuoc'],
-				'cannang'=>$_POST['cannang'],
-				'phukien'=>$_POST['phukien'],
+
+				'lb1'=>$_POST['lb1'],
+				'op1'=>$_POST['op1'],
+
+				'lb2'=>$_POST['lb2'],
+				'op2'=>$_POST['op2'],
+
+				'lb3'=>$_POST['lb3'],
+				'op3'=>$_POST['op3'],
+
+				'lb4'=>$_POST['lb4'],
+				'op4'=>$_POST['op4'],
+
+				'lb5'=>$_POST['lb5'],
+				'op5'=>$_POST['op5'],
+
+				'lb6'=>$_POST['lb6'],
+				'op6'=>$_POST['op6'],
+
+				'price'=>$_POST['price'],
+				'sale'=>$_POST['sale'],
+				'price_sale'=>$_POST['price_sale'],
 			);
 			
 
@@ -91,31 +102,39 @@ class Product_option extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->library('alias');
-		$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required');
-		$this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
-		$this->form_validation->set_rules('producer', 'Nhà cung cấp', 'required');
-		$this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
+		$this->form_validation->set_rules('product_id', 'Tên sản phẩm', 'required');
+		// $this->form_validation->set_rules('catid', 'Loại sản phẩm', 'required');
+		// $this->form_validation->set_rules('producer', 'Nhà cung cấp', 'required');
+		// $this->form_validation->set_rules('price_buy','Giá bán','required|callback_check');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
-				'catid'=>$_POST['catid'],
-				'producer'=>$_POST['producer'],
-				'name' =>$_POST['name'], 
-				'alias' =>$string=$this->alias->str_alias($_POST['name']),
-				'detail'=>$_POST['detail'], 
-				'sortDesc'=>$_POST['sortDesc'], 
-				'number'=>$_POST['number'],
-				'number_buy'=>$_POST['number'],
-				'sale'=>$_POST['sale_of'],
-				'price'=>$_POST['price_root'],
-				'price_sale'=>$_POST['price_buy'],
-				'modified'=>$today,
-				'modified_by'=>$this->session->userdata('id'),
-				'status'=>$_POST['status'],
-				'access'=>$_POST['access']
+				'product_id'=>$_POST['product_id'],
+
+				'lb1'=>$_POST['lb1'],
+				'op1'=>$_POST['op1'],
+
+				'lb2'=>$_POST['lb2'],
+				'op2'=>$_POST['op2'],
+
+				'lb3'=>$_POST['lb3'],
+				'op3'=>$_POST['op3'],
+
+				'lb4'=>$_POST['lb4'],
+				'op4'=>$_POST['op4'],
+
+				'lb5'=>$_POST['lb5'],
+				'op5'=>$_POST['op5'],
+
+				'lb6'=>$_POST['lb6'],
+				'op6'=>$_POST['op6'],
+
+				'price'=>$_POST['price'],
+				'sale'=>$_POST['sale'],
+				'price_sale'=>$_POST['price_sale'],
 			);
 			$this->Mproduct_option->product_option_update($mydata, $id);
-			$this->session->set_flashdata('success', 'Cập nhật sản phẩm thành công');
-			redirect('admin/Product_option','refresh');
+			$this->session->set_flashdata('success', 'Cập nhật option sản phẩm thành công');
+			redirect('admin/product_option','refresh');
 		} 
 		$this->data['view']='update';
 		$this->data['title']='Cập nhật sản phẩm';

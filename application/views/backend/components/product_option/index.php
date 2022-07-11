@@ -5,9 +5,9 @@
 			<a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/product_option/insert" role="button">
 				<span class="glyphicon glyphicon-plus"></span> Thêm mới
 			</a>
-			<a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/product_option/recyclebin" role="button">
+			<!-- <a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/product_option/recyclebin" role="button">
 				<span class="glyphicon glyphicon-trash"></span> Thùng rác(<?php $total=$this->Mproduct->product_trash_count(); echo $total; ?>)
-			</a>
+			</a> -->
 		</div>
 	</section>
 	<!-- Main content -->
@@ -67,15 +67,18 @@
 											<th class="text-center" style="width:20px">ID</th>
 											<th>Hình</th>
 											<th>Tên sản phẩm</th>
-											<th>CPU</th>
-											<th>Màu</th>
-											<th>RAM</th>
+											<th>Thông tin cấu hình 1</th>
+											<th>Thông tin cấu hình 2</th>
+											<th>Thông tin cấu hình 3</th>
+											<th>Thông tin cấu hình 4</th>
+											<th>Thông tin cấu hình 5</th>
+											<th>Thông tin cấu hình 6</th>
 											<th>Khuyến mại</th>
 											<th>Giá</th>
+
 											<th>Giá khuyến mại</th>
 											<th>Loại sản phẩm</th>
 											<th class="text-center" style="width:90px">Trạng thái</th>
-											<th class="text-center" style="width:90px">Nhập hàng</th>
 											<!-- <th class="text-center" style="width:90px">Bình luận</th> -->
 											<th class="text-center" style="width:50px">Sửa</th>
 											<th class="text-center" style="width:50px">Xóa</th>
@@ -90,9 +93,12 @@
 												<img src="public/images/products/<?php echo $val['avatar'] ?>" alt="<?php echo $val['name'] ?>" class="img-responsive">
 											</td>
 											<td><a href="<?php echo base_url() ?>admin/product/update/<?php echo $val['id'] ?>"><?php echo $val['name'] ?>(<?php echo $val['number'] ?>)</a></td>
-											<td><?php echo $val['cpu'] ?></td>
-											<td><?php echo $val['color'] ?></td>
-											<td><?php echo $val['ram'] ?></td>
+											<td><?php echo $val['lb1'].'/ '.$val['op1'] ?></td>
+											<td><?php echo $val['lb2'].'/ '.$val['op2'] ?></td>
+											<td><?php echo $val['lb3'].'/ '.$val['op3'] ?></td>
+											<td><?php echo $val['lb4'].'/ '.$val['op4'] ?></td>
+											<td><?php echo $val['lb5'].'/ '.$val['op5'] ?></td>
+											<td><?php echo $val['lb6'].'/ '.$val['op6'] ?></td>
 											<td><?php echo $val['option_sale'] ?></td>
 											<td><?php echo $val['option_price'] ?></td>
 											<td><?php echo $val['option_pricesale'] ?></td>
@@ -109,18 +115,13 @@
 													<?php endif; ?>
 												</a>
 											</td>
-											<td class="text-center">
-												<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/product/import/<?php echo $val['id']?>" role = "button">
-													<span class="fa fa-cloud-upload"></span> Nhập hàng
-												</a>
-											</td>
 											<!-- <td class="text-center">
 												<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/product/comments/<?php echo $val['id']?>" role = "button">
 													<span class="fa fa-comment"></span> Bình luận
 												</a>
 											</td> -->
 											<td class="text-center">
-												<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/product/update/<?php echo $val['id']?>" role = "button">
+												<a class="btn btn-success btn-xs" href="<?php echo base_url() ?>admin/product_option/update/<?php echo $val['id']?>" role = "button">
 													<span class="glyphicon glyphicon-edit"></span> Sửa
 												</a>
 											</td>
